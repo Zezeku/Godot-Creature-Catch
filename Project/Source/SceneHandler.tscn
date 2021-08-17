@@ -289,7 +289,7 @@ position = Vector2( 312.5, 131 )
 z_index = 1
 frames = SubResource( 6 )
 animation = "WalkingDown"
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 3 )
 
