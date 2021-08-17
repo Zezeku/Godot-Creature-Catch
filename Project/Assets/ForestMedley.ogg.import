@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ForestMedley.ogg-9b9ee6cd108b4704970f710855552743.oggstr"
+
+[deps]
+
+source_file="res://Assets/ForestMedley.ogg"
+dest_files=[ "res://.import/ForestMedley.ogg-9b9ee6cd108b4704970f710855552743.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

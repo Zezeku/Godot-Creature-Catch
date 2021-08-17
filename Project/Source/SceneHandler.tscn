@@ -1,34 +1,35 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/GrassTiles.png" type="Texture" id=1]
 [ext_resource path="res://Assets/PlayerSprite.png" type="Texture" id=2]
 [ext_resource path="res://Source/AnimatedSprite.gd" type="Script" id=3]
+[ext_resource path="res://Assets/ForestMedley.ogg" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "WalkingDown",
 "speed": 3.0
 } ]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=6]
 0/name = "GrassTiles.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -287,14 +288,14 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 312.5, 131 )
 z_index = 1
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 animation = "WalkingDown"
 frame = 3
 playing = true
 script = ExtResource( 3 )
 
 [node name="Route1" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -307,3 +308,8 @@ __meta__ = {
 position = Vector2( 312.5, 151.5 )
 current = true
 zoom = Vector2( 0.25, 0.25 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
