@@ -290,7 +290,7 @@ position = Vector2( 312.5, 131 )
 z_index = 1
 frames = SubResource( 5 )
 animation = "WalkingDown"
-frame = 3
+frame = 2
 playing = true
 script = ExtResource( 3 )
 
@@ -311,5 +311,5 @@ zoom = Vector2( 0.25, 0.25 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
