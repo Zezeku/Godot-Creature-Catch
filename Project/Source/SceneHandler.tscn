@@ -276,13 +276,13 @@ volume_db = -15.0
 autoplay = true
 
 [node name="Creature002" type="Sprite" parent="."]
-position = Vector2( 522.128, 98.6563 )
+position = Vector2( 468.388, 107.849 )
 texture = ExtResource( 3 )
 
-[node name="Creature001" type="Sprite" parent="Creature002"]
-position = Vector2( -51.1749, -42.8988 )
-texture = ExtResource( 6 )
-
 [node name="Creature003" type="Sprite" parent="."]
-position = Vector2( 501.503, 142.872 )
+position = Vector2( 508.028, 97.9239 )
 texture = ExtResource( 7 )
+
+[node name="Creature001" type="Sprite" parent="."]
+position = Vector2( 429.481, 78.1995 )
+texture = ExtResource( 6 )
