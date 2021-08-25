@@ -273,6 +273,7 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Route1Scene"]
 stream = ExtResource( 4 )
 volume_db = -15.0
+autoplay = true
 
 [node name="Creature002" type="Sprite" parent="."]
 position = Vector2( 522.128, 98.6563 )
