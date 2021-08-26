@@ -4,7 +4,7 @@
 [ext_resource path="res://Source/TallGrass.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.07044, 1.61058 )
+extents = Vector2( 7.07044, 0.229641 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -42,7 +42,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.44545, 6.34765 )
+position = Vector2( 0.132433, 7.86757 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

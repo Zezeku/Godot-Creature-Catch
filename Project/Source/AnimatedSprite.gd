@@ -19,7 +19,7 @@ func get_input():
 	
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	translate(move_dir*speed) ;
 	

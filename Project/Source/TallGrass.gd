@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_Node2D_body_entered(body):
+func _on_Node2D_body_entered(_body):
 	$Sprite.visible = false;
 	$AnimatedSprite.frame = 0;
 	$AnimatedSprite.play("default");
