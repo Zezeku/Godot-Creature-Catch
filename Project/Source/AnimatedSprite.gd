@@ -19,3 +19,10 @@ func _physics_process(delta):
 	move_and_slide(velocity) ;
 	
 	
+
+func enteredGrass():
+	$Light2D.visible = true ;
+
+func exitGrass():
+	$Light2D.visible = false ;
+
