@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Assets/Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Source/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Creature003.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Creature004.png" type="Texture" id=8]
 [ext_resource path="res://Source/Area2D.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Creature005.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 0, 16, 16, 14, 16, 14, 2, 0, 2, 0, 0 )
@@ -907,21 +908,25 @@ stream = ExtResource( 4 )
 volume_db = -15.0
 
 [node name="Creature002" type="Sprite" parent="."]
-position = Vector2( 130.929, 13.1891 )
+position = Vector2( 135.049, 1.9518 )
 texture = ExtResource( 3 )
 
 [node name="Creature003" type="Sprite" parent="."]
-position = Vector2( 175.357, -20.2855 )
+position = Vector2( 175.732, -27.777 )
 texture = ExtResource( 7 )
 offset = Vector2( 0, 22.2631 )
 
 [node name="Creature001" type="Sprite" parent="."]
-position = Vector2( 260.699, -14.3676 )
+position = Vector2( 259.201, -25.6049 )
 texture = ExtResource( 6 )
 
 [node name="Creature004" type="Sprite" parent="."]
-position = Vector2( 233.179, -20.9217 )
+position = Vector2( 229.433, -35.9048 )
 texture = ExtResource( 8 )
+
+[node name="Creature005" type="Sprite" parent="."]
+position = Vector2( 301.756, -32.8294 )
+texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="Route1Scene/YSort/Batch1/Area2D" to="Route1Scene/YSort/Batch1/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Route1Scene/YSort/Batch1/Area2D" to="Route1Scene/YSort/Batch1/Area2D" method="_on_Area2D_body_exited"]

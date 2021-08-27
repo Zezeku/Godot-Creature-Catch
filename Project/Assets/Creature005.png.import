@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Creature005.png-acc621f7f36e514447a1141c201bcf81.stex"
+path="res://.import/Creature005.png-ddd0fc4ddc73e36539c512edfd05713a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToImport/Creature005.png"
-dest_files=[ "res://.import/Creature005.png-acc621f7f36e514447a1141c201bcf81.stex" ]
+source_file="res://Assets/Creature005.png"
+dest_files=[ "res://.import/Creature005.png-ddd0fc4ddc73e36539c512edfd05713a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
