@@ -894,6 +894,7 @@ position = Vector2( 288, 176 )
 script = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Route1Scene/YSort/Batch1/Area2D"]
+position = Vector2( -0.157501, -0.157501 )
 polygon = PoolVector2Array( 255.874, 106.575, 319.867, 106.398, 320.338, 134.134, 327.889, 134.134, 328.361, 200.441, 247.424, 200.913, 248.131, 165.754, 311.843, 166.226, 311.843, 138.145, 255.446, 137.909 )
 
 [node name="PlayerCamera" type="Camera2D" parent="Route1Scene"]
@@ -919,7 +920,7 @@ position = Vector2( 260.699, -14.3676 )
 texture = ExtResource( 6 )
 
 [node name="Creature004" type="Sprite" parent="."]
-position = Vector2( 231.077, -22.183 )
+position = Vector2( 233.179, -20.9217 )
 texture = ExtResource( 8 )
 
 [connection signal="body_entered" from="Route1Scene/YSort/Batch1/Area2D" to="Route1Scene/YSort/Batch1/Area2D" method="_on_Area2D_body_entered"]

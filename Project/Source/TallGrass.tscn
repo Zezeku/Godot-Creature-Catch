@@ -8,7 +8,7 @@ extents = Vector2( 6.6656, 8.02677 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "EnteredTallGrass"
-length = 0.5
+length = 0.25
 step = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")

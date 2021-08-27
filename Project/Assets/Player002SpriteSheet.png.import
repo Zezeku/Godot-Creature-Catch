@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TallGrassMask1.png-5b83538dc677527d48cf868711ed98b1.stex"
+path="res://.import/Player002SpriteSheet.png-ea02993806d8f197fe1f106f0e831971.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToImport/TallGrassMask1.png"
-dest_files=[ "res://.import/TallGrassMask1.png-5b83538dc677527d48cf868711ed98b1.stex" ]
+source_file="res://Assets/Player002SpriteSheet.png"
+dest_files=[ "res://.import/Player002SpriteSheet.png-ea02993806d8f197fe1f106f0e831971.stex" ]
 
 [params]
 
