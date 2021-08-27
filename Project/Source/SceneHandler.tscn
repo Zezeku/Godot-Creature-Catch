@@ -64,7 +64,7 @@ position = Vector2( 283.855, 108.135 )
 position = Vector2( 283.856, 124.027 )
 
 [node name="Node2D3" parent="Route1Scene/YSort" instance=ExtResource( 5 )]
-position = Vector2( 283.856, 91.9783 )
+position = Vector2( 283.856, 93.8661 )
 
 [node name="PlayerCamera" type="Camera2D" parent="Route1Scene"]
 position = Vector2( 312.5, 151.5 )
