@@ -51,189 +51,20 @@ __meta__ = {
 [node name="YSort" type="YSort" parent="Route1Scene"]
 
 [node name="Player" parent="Route1Scene/YSort" instance=ExtResource( 2 )]
+light_mask = 1024
 position = Vector2( 303.522, 88.8093 )
+z_index = 1
 
 [node name="Batch1" type="YSort" parent="Route1Scene/YSort"]
 
-[node name="Node2D" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 273.043, 103.344 )
+[node name="Node2D" parent="Route1Scene/YSort" instance=ExtResource( 5 )]
+position = Vector2( 283.855, 108.135 )
 
-[node name="Node2D2" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272.764, 93.4578 )
+[node name="Node2D2" parent="Route1Scene/YSort" instance=ExtResource( 5 )]
+position = Vector2( 283.856, 124.027 )
 
-[node name="Node2D3" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 265.646, 98.3302 )
-
-[node name="Node2D4" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 278.893, 98.3246 )
-
-[node name="Node2D5" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 262.109, 102.952 )
-
-[node name="Node2D6" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.635, 103.143 )
-
-[node name="Node2D7" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 262.531, 117.693 )
-
-[node name="Node2D8" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 262.252, 107.807 )
-
-[node name="Node2D9" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 255.134, 112.68 )
-
-[node name="Node2D10" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 268.381, 112.674 )
-
-[node name="Node2D11" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 253.232, 116.855 )
-
-[node name="Node2D12" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 273.124, 117.492 )
-
-[node name="Node2D13" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 290.897, 125.535 )
-
-[node name="Node2D14" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 290.618, 115.65 )
-
-[node name="Node2D15" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.5, 120.522 )
-
-[node name="Node2D16" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 287.736, 108.837 )
-
-[node name="Node2D22" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 287.736, 108.837 )
-
-[node name="Node2D19" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 282.397, 113.508 )
-
-[node name="Node2D21" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 270.55, 122.352 )
-
-[node name="Node2D23" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.705, 123.019 )
-
-[node name="Node2D24" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 251.028, 121.684 )
-
-[node name="Node2D49" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 244.686, 96.3978 )
-
-[node name="Node2D50" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 242.784, 100.573 )
-
-[node name="Node2D51" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 241.572, 115.761 )
-
-[node name="Node2D52" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 241.293, 105.875 )
-
-[node name="Node2D53" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 234.174, 110.747 )
-
-[node name="Node2D57" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 261.335, 90.6004 )
-
-[node name="Node2D58" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.433, 94.776 )
-
-[node name="Node2D59" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 257.942, 100.077 )
-
-[node name="Node2D60" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 250.823, 104.95 )
-
-[node name="Node2D54" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 232.272, 114.923 )
-
-[node name="Node2D55" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 238.745, 121.087 )
-
-[node name="Node2D56" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 230.068, 119.752 )
-
-[node name="Node2D17" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.597, 124.698 )
-
-[node name="Node2D18" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 274.792, 108.983 )
-
-[node name="Node2D20" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 274.792, 108.983 )
-
-[node name="Node2D25" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 263.679, 66.4479 )
-
-[node name="Node2D26" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 263.4, 56.562 )
-
-[node name="Node2D27" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 256.282, 61.4344 )
-
-[node name="Node2D28" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 269.528, 61.4288 )
-
-[node name="Node2D29" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 254.38, 65.61 )
-
-[node name="Node2D30" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 274.271, 66.2469 )
-
-[node name="Node2D31" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 253.167, 80.7975 )
-
-[node name="Node2D32" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 252.888, 70.9115 )
-
-[node name="Node2D33" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 245.77, 75.784 )
-
-[node name="Node2D34" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.017, 75.7784 )
-
-[node name="Node2D35" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 243.868, 79.9596 )
-
-[node name="Node2D36" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 263.759, 80.5964 )
-
-[node name="Node2D37" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.532, 88.6396 )
-
-[node name="Node2D38" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.253, 78.7537 )
-
-[node name="Node2D39" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 274.135, 83.6262 )
-
-[node name="Node2D40" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 278.372, 71.9407 )
-
-[node name="Node2D41" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 278.372, 71.9407 )
-
-[node name="Node2D42" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 273.032, 76.6126 )
-
-[node name="Node2D43" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 261.186, 85.456 )
-
-[node name="Node2D44" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 250.34, 86.1234 )
-
-[node name="Node2D45" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 241.664, 84.7885 )
-
-[node name="Node2D46" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272.233, 87.8017 )
-
-[node name="Node2D47" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 265.428, 72.0868 )
-
-[node name="Node2D48" parent="Route1Scene/YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 265.428, 72.0868 )
+[node name="Node2D3" parent="Route1Scene/YSort" instance=ExtResource( 5 )]
+position = Vector2( 283.856, 91.9783 )
 
 [node name="PlayerCamera" type="Camera2D" parent="Route1Scene"]
 position = Vector2( 312.5, 151.5 )
@@ -243,7 +74,6 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Route1Scene"]
 stream = ExtResource( 4 )
 volume_db = -15.0
-autoplay = true
 
 [node name="Creature002" type="Sprite" parent="."]
 position = Vector2( 130.929, 13.1891 )

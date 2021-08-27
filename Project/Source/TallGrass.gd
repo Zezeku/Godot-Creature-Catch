@@ -1,29 +1,39 @@
 extends Area2D
 
+var body_exit;
+var body_enter;
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func on_ready():
+	body_exit = false;
+	body_enter = false;
 
 func _on_Node2D_body_entered(_body):
+	body_enter = true
 	$Sprite.visible = false;
 	$AnimatedSprite.frame = 0;
-	$AnimatedSprite.play("default");
+	$AnimatedSprite.play("HalfGrow");
+	$AnimatedSprite.visible = true ;
+	
+	
+
+func _on_Node2D_body_exited(body):
+	body_exit = true
+	$Sprite2.visible = false;
+	$AnimatedSprite.frame = 1 ;
+	$AnimatedSprite.play("FullGrow") ;
 	$AnimatedSprite.visible = true ;
 	
 
-
 func _on_AnimatedSprite_animation_finished():
-	$Sprite.visible = true ;
+	
+	if body_enter:
+		$Sprite2.visible = true ;
+	else:
+		$Sprite.visible = true ;
+	
 	$AnimatedSprite.visible = false ;
+	body_exit = false ;
+	body_enter = false ;
+
+
+

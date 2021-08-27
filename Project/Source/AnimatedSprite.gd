@@ -1,25 +1,21 @@
 extends KinematicBody2D
 
-var speed = 16 ;
-var move_dir = Vector2();
+var friction = 400 ;
+var acceleration = 150 ;
+var max_speed = 50 ;
+var velocity = Vector2.ZERO;
 
-func get_input():
-	print(position)
-	move_dir = Vector2();
+func _physics_process(delta):
+	var input_vector = Vector2.ZERO ;
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left") ;
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up") ;
 	
-	if Input.is_action_just_pressed("ui_right"):
-		move_dir.x += 0.25 ;
-	if Input.is_action_just_pressed("ui_left"):
-		move_dir.x -= 0.25 ;
-	if Input.is_action_just_pressed("ui_up"):
-		move_dir.y -= 0.25 ;
-	if Input.is_action_just_pressed("ui_down"):
-		move_dir.y += 0.25 ;
-		
+	if input_vector != Vector2.ZERO :
+		velocity += input_vector.normalized() * (acceleration * delta) ;
+		velocity = velocity.clamped(max_speed * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta) ;
 	
+	move_and_collide(velocity) ;
 	
-
-func _physics_process(_delta):
-	get_input()
-	translate(move_dir*speed) ;
 	
