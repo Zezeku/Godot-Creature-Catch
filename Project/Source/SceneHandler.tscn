@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Source/Route1Scene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Creature008.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Creature002.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Creature001.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Creature003.png" type="Texture" id=7]
@@ -14,6 +15,7 @@
 script = ExtResource( 13 )
 
 [node name="Route1Scene" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11.0905, -4.95534 )
 
 [node name="Creature002" type="Sprite" parent="."]
 position = Vector2( 231.423, -196.278 )
@@ -43,3 +45,7 @@ texture = ExtResource( 11 )
 [node name="Creature007" type="Sprite" parent="."]
 position = Vector2( 508.077, -230.28 )
 texture = ExtResource( 12 )
+
+[node name="Creature008" type="Sprite" parent="."]
+position = Vector2( 561.993, -232.728 )
+texture = ExtResource( 2 )
