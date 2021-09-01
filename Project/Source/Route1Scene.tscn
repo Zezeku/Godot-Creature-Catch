@@ -1,7 +1,8 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://Assets/Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/ForestMedley.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/flowerTest.png" type="Texture" id=3]
 [ext_resource path="res://Source/Batch1.gd" type="Script" id=4]
 [ext_resource path="res://Source/TallGrass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Source/Player.tscn" type="PackedScene" id=6]
@@ -817,81 +818,172 @@ light_mask = 1024
 position = Vector2( 303.522, 88.8093 )
 z_index = 1
 
+[node name="Sprite" type="Sprite" parent="YSort"]
+position = Vector2( 272.773, 87.783 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite2" type="Sprite" parent="YSort"]
+position = Vector2( 267.903, 84.0372 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite3" type="Sprite" parent="YSort"]
+position = Vector2( 275.02, 81.6025 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite4" type="Sprite" parent="YSort"]
+position = Vector2( 269.589, 77.6694 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite5" type="Sprite" parent="YSort"]
+position = Vector2( 261.161, 77.1076 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite6" type="Sprite" parent="YSort"]
+position = Vector2( 253.669, 82.3517 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite7" type="Sprite" parent="YSort"]
+position = Vector2( 254.231, 75.0474 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="Sprite8" type="Sprite" parent="YSort"]
+position = Vector2( 255.917, 87.4084 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite9" type="Sprite" parent="YSort"]
+position = Vector2( 257.041, 78.4186 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite10" type="Sprite" parent="YSort"]
+position = Vector2( 264.907, 80.2915 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite11" type="Sprite" parent="YSort"]
+position = Vector2( 264.532, 73.9237 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite12" type="Sprite" parent="YSort"]
+position = Vector2( 272.398, 81.7898 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite13" type="Sprite" parent="YSort"]
+position = Vector2( 263.97, 89.0941 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite14" type="Sprite" parent="YSort"]
+position = Vector2( 272.398, 91.5288 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite15" type="Sprite" parent="YSort"]
+position = Vector2( 250.298, 72.4254 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
+[node name="Sprite16" type="Sprite" parent="YSort"]
+position = Vector2( 249.736, 80.4788 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+frame = 1
+
 [node name="Batch1" type="YSort" parent="YSort"]
 script = ExtResource( 4 )
 
-[node name="Node2D" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 280, 129 )
-
-[node name="Node2D2" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 264, 129 )
-
-[node name="Node2D3" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 312, 129 )
-
-[node name="Node2D4" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 296, 129 )
-
-[node name="Node2D5" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 280, 113 )
-
-[node name="Node2D6" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 264, 113 )
-
-[node name="Node2D7" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 312, 113 )
-
-[node name="Node2D9" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 160 )
-
-[node name="Node2D10" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 144 )
-
-[node name="Node2D11" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 192 )
-
-[node name="Node2D12" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 176 )
-
-[node name="Node2D13" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 192 )
-
-[node name="Node2D14" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320, 176 )
-
-[node name="Node2D8" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 296, 113 )
-
-[node name="Node2D15" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272, 192 )
-
-[node name="Node2D16" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 256, 192 )
-
-[node name="Node2D17" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304, 192 )
-
-[node name="Node2D18" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 288, 192 )
-
-[node name="Node2D19" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272, 176 )
-
-[node name="Node2D20" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 256, 176 )
-
-[node name="Node2D21" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304, 176 )
-
-[node name="Node2D22" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 288, 176 )
-
 [node name="Area2D" type="Area2D" parent="YSort/Batch1"]
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Batch1/Area2D"]
 position = Vector2( -0.157501, -0.157501 )
 polygon = PoolVector2Array( 255.874, 106.575, 319.867, 106.398, 320.338, 134.134, 327.889, 134.134, 328.361, 200.441, 247.424, 200.913, 248.131, 165.754, 311.843, 166.226, 311.843, 138.145, 255.446, 137.909 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D265" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 264.881, 126.795 )
+
+[node name="Node2D266" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 281.89, 126.48 )
+
+[node name="Node2D267" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 298.584, 126.48 )
+
+[node name="Node2D268" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.278, 126.48 )
+
+[node name="Node2D269" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.003, 142.544 )
+
+[node name="Node2D270" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.318, 158.608 )
+
+[node name="Node2D271" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.632, 174.672 )
+
+[node name="Node2D272" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 304.568, 174.672 )
+
+[node name="Node2D273" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.632, 191.051 )
+
+[node name="Node2D274" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 304.883, 191.051 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2( 312.5, 151.5 )
@@ -901,6 +993,11 @@ zoom = Vector2( 0.25, 0.25 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -15.0
+
+[node name="PlayerCamera2" type="Camera2D" parent="."]
+position = Vector2( 312.5, 151.5 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
 
 [connection signal="body_entered" from="YSort/Batch1/Area2D" to="YSort/Batch1/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="YSort/Batch1/Area2D" to="YSort/Batch1/Area2D" method="_on_Area2D_body_exited"]
