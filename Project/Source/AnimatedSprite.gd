@@ -29,7 +29,7 @@ func _physics_process(delta):
 	
 
 func enteredGrass():
-	$Light2D.visible = true ;
+	$Light2D.visible = false ;
 
 func exitGrass():
 	$Light2D.visible = false ;

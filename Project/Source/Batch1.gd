@@ -1,7 +1,7 @@
 extends YSort
 
 
-const ENCOUNTER_RATE = 0.1 ;
+const ENCOUNTER_RATE = -1.0 ;
 
 func IsEncounter():
 	var rng = RandomNumberGenerator.new() ;

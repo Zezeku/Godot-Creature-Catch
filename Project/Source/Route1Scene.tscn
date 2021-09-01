@@ -955,35 +955,506 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Node2D265" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 264.881, 126.795 )
+[node name="Node2D279" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 287.919, 165.691 )
 
-[node name="Node2D266" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.89, 126.48 )
+[node name="Node2D280" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 271.811, 165.665 )
 
-[node name="Node2D267" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 298.584, 126.48 )
-
-[node name="Node2D268" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.278, 126.48 )
-
-[node name="Node2D269" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.003, 142.544 )
-
-[node name="Node2D270" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.318, 158.608 )
+[node name="Node2D281" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 255.974, 165.857 )
 
 [node name="Node2D271" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.632, 174.672 )
-
-[node name="Node2D272" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304.568, 174.672 )
+position = Vector2( 320.037, 165.902 )
 
 [node name="Node2D273" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.632, 191.051 )
+position = Vector2( 319.74, 163.969 )
 
 [node name="Node2D274" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304.883, 191.051 )
+position = Vector2( 320.186, 162.037 )
+
+[node name="Node2D275" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.808, 159.361 )
+
+[node name="Node2D276" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.456, 160.104 )
+
+[node name="Node2D277" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 322.267, 157.577 )
+
+[node name="Node2D356" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.294, 156.239 )
+
+[node name="Node2D357" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 318.997, 154.307 )
+
+[node name="Node2D358" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.443, 152.374 )
+
+[node name="Node2D359" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.064, 149.699 )
+
+[node name="Node2D360" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 322.713, 150.442 )
+
+[node name="Node2D361" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 321.524, 147.915 )
+
+[node name="Node2D362" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.74, 147.023 )
+
+[node name="Node2D363" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.443, 145.09 )
+
+[node name="Node2D364" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.889, 143.158 )
+
+[node name="Node2D365" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.51, 140.482 )
+
+[node name="Node2D366" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.159, 141.226 )
+
+[node name="Node2D367" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 321.97, 138.698 )
+
+[node name="Node2D368" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.74, 139.144 )
+
+[node name="Node2D369" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.443, 137.212 )
+
+[node name="Node2D370" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.889, 135.279 )
+
+[node name="Node2D371" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.51, 132.604 )
+
+[node name="Node2D372" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.159, 133.347 )
+
+[node name="Node2D373" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 321.97, 130.82 )
+
+[node name="Node2D272" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 303.825, 165.902 )
+
+[node name="Node2D282" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 285.689, 167.772 )
+
+[node name="Node2D283" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 269.582, 167.746 )
+
+[node name="Node2D284" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 253.744, 167.938 )
+
+[node name="Node2D278" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.808, 167.983 )
+
+[node name="Node2D285" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 301.595, 167.983 )
+
+[node name="Node2D286" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 292.378, 169.407 )
+
+[node name="Node2D287" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 276.271, 169.381 )
+
+[node name="Node2D288" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 260.434, 169.574 )
+
+[node name="Node2D289" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 324.497, 169.618 )
+
+[node name="Node2D290" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 308.284, 169.618 )
+
+[node name="Node2D291" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 292.378, 169.407 )
+
+[node name="Node2D292" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 276.271, 169.381 )
+
+[node name="Node2D293" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 260.434, 169.574 )
+
+[node name="Node2D294" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 324.497, 169.618 )
+
+[node name="Node2D295" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 308.284, 169.618 )
+
+[node name="Node2D296" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 288.811, 171.191 )
+
+[node name="Node2D297" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 272.703, 171.165 )
+
+[node name="Node2D298" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 256.866, 171.357 )
+
+[node name="Node2D299" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.929, 171.402 )
+
+[node name="Node2D300" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 304.717, 171.402 )
+
+[node name="Node2D301" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 291.784, 173.42 )
+
+[node name="Node2D302" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 275.676, 173.394 )
+
+[node name="Node2D303" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 259.839, 173.587 )
+
+[node name="Node2D304" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.902, 173.631 )
+
+[node name="Node2D305" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 307.69, 173.631 )
+
+[node name="Node2D306" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 285.54, 174.907 )
+
+[node name="Node2D307" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 269.433, 174.881 )
+
+[node name="Node2D308" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 253.596, 175.074 )
+
+[node name="Node2D309" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 317.659, 175.118 )
+
+[node name="Node2D310" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 301.446, 175.118 )
+
+[node name="Node2D311" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 289.554, 176.839 )
+
+[node name="Node2D312" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 273.447, 176.813 )
+
+[node name="Node2D313" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 257.609, 177.006 )
+
+[node name="Node2D314" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 321.673, 177.05 )
+
+[node name="Node2D315" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 305.46, 177.05 )
+
+[node name="Node2D316" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 284.351, 178.921 )
+
+[node name="Node2D317" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 268.244, 178.894 )
+
+[node name="Node2D318" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 252.407, 179.087 )
+
+[node name="Node2D319" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 316.47, 179.132 )
+
+[node name="Node2D320" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 300.257, 179.132 )
+
+[node name="Node2D321" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 291.635, 180.258 )
+
+[node name="Node2D322" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 275.528, 180.232 )
+
+[node name="Node2D323" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 259.691, 180.425 )
+
+[node name="Node2D324" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.754, 180.469 )
+
+[node name="Node2D325" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 307.541, 180.469 )
+
+[node name="Node2D326" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 288.216, 182.488 )
+
+[node name="Node2D327" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 272.109, 182.462 )
+
+[node name="Node2D328" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 256.272, 182.655 )
+
+[node name="Node2D329" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 320.335, 182.699 )
+
+[node name="Node2D330" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 304.122, 182.699 )
+
+[node name="Node2D331" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 291.486, 184.718 )
+
+[node name="Node2D332" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 275.379, 184.692 )
+
+[node name="Node2D333" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 259.542, 184.885 )
+
+[node name="Node2D334" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.605, 184.929 )
+
+[node name="Node2D335" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 307.392, 184.929 )
+
+[node name="Node2D336" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 286.284, 186.65 )
+
+[node name="Node2D337" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 270.176, 186.624 )
+
+[node name="Node2D338" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 254.339, 186.817 )
+
+[node name="Node2D339" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 318.402, 186.861 )
+
+[node name="Node2D340" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 302.19, 186.861 )
+
+[node name="Node2D341" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 291.635, 188.434 )
+
+[node name="Node2D342" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 275.528, 188.408 )
+
+[node name="Node2D343" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 259.691, 188.601 )
+
+[node name="Node2D344" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 323.754, 188.645 )
+
+[node name="Node2D345" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 307.541, 188.645 )
+
+[node name="Node2D346" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 287.324, 190.813 )
+
+[node name="Node2D347" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 271.217, 190.787 )
+
+[node name="Node2D348" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 255.38, 190.979 )
+
+[node name="Node2D349" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 319.443, 191.024 )
+
+[node name="Node2D350" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 303.23, 191.024 )
+
+[node name="Node2D351" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 289.851, 192.299 )
+
+[node name="Node2D352" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 273.744, 192.273 )
+
+[node name="Node2D353" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 257.907, 192.466 )
+
+[node name="Node2D354" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 321.97, 192.51 )
+
+[node name="Node2D355" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 305.757, 192.51 )
+
+[node name="Node2D374" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 295.478, 103.167 )
+
+[node name="Node2D375" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 279.371, 103.141 )
+
+[node name="Node2D376" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 263.534, 103.334 )
+
+[node name="Node2D377" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 311.384, 103.378 )
+
+[node name="Node2D378" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 293.248, 105.248 )
+
+[node name="Node2D379" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 277.141, 105.222 )
+
+[node name="Node2D380" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 261.304, 105.415 )
+
+[node name="Node2D381" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 309.154, 105.459 )
+
+[node name="Node2D382" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.938, 106.883 )
+
+[node name="Node2D383" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 283.83, 106.857 )
+
+[node name="Node2D384" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.993, 107.05 )
+
+[node name="Node2D385" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.844, 107.094 )
+
+[node name="Node2D386" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.938, 106.883 )
+
+[node name="Node2D387" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 283.83, 106.857 )
+
+[node name="Node2D388" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.993, 107.05 )
+
+[node name="Node2D389" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.844, 107.094 )
+
+[node name="Node2D390" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 296.37, 108.667 )
+
+[node name="Node2D391" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 280.263, 108.641 )
+
+[node name="Node2D392" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 264.426, 108.834 )
+
+[node name="Node2D393" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 312.276, 108.878 )
+
+[node name="Node2D394" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.343, 110.897 )
+
+[node name="Node2D395" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 283.236, 110.871 )
+
+[node name="Node2D396" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.399, 111.064 )
+
+[node name="Node2D397" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.249, 111.108 )
+
+[node name="Node2D398" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 293.1, 112.383 )
+
+[node name="Node2D399" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 276.993, 112.357 )
+
+[node name="Node2D400" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 261.155, 112.55 )
+
+[node name="Node2D401" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 309.006, 112.594 )
+
+[node name="Node2D402" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 297.113, 114.316 )
+
+[node name="Node2D403" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 281.006, 114.29 )
+
+[node name="Node2D404" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 265.169, 114.482 )
+
+[node name="Node2D405" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 313.02, 114.527 )
+
+[node name="Node2D406" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 291.911, 116.397 )
+
+[node name="Node2D407" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 275.803, 116.371 )
+
+[node name="Node2D408" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 259.966, 116.564 )
+
+[node name="Node2D409" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 307.817, 116.608 )
+
+[node name="Node2D410" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.194, 117.735 )
+
+[node name="Node2D411" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 283.087, 117.709 )
+
+[node name="Node2D412" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.25, 117.901 )
+
+[node name="Node2D413" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.101, 117.946 )
+
+[node name="Node2D414" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 295.776, 119.965 )
+
+[node name="Node2D415" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 279.668, 119.939 )
+
+[node name="Node2D416" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 263.831, 120.131 )
+
+[node name="Node2D417" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 311.682, 120.176 )
+
+[node name="Node2D418" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.046, 122.194 )
+
+[node name="Node2D419" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 282.939, 122.168 )
+
+[node name="Node2D420" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.101, 122.361 )
+
+[node name="Node2D421" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 314.952, 122.405 )
+
+[node name="Node2D422" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 293.843, 124.127 )
+
+[node name="Node2D423" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 277.736, 124.101 )
+
+[node name="Node2D424" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 261.899, 124.293 )
+
+[node name="Node2D425" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 309.749, 124.338 )
+
+[node name="Node2D426" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 299.194, 125.911 )
+
+[node name="Node2D427" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 283.087, 125.885 )
+
+[node name="Node2D428" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 267.25, 126.077 )
+
+[node name="Node2D429" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 315.101, 126.122 )
+
+[node name="Node2D430" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 294.884, 128.289 )
+
+[node name="Node2D431" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 278.776, 128.263 )
+
+[node name="Node2D432" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 262.939, 128.456 )
+
+[node name="Node2D433" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 310.79, 128.5 )
+
+[node name="Node2D434" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 297.411, 129.776 )
+
+[node name="Node2D435" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 281.303, 129.749 )
+
+[node name="Node2D436" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 265.466, 129.942 )
+
+[node name="Node2D437" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 313.317, 129.986 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2( 312.5, 151.5 )
