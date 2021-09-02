@@ -1690,6 +1690,7 @@ position = Vector2( 280, 200 )
 scale = Vector2( 0.25, 0.25 )
 z_index = 1
 texture = ExtResource( 3 )
+hframes = 2
 
 [node name="Sprite2" type="Sprite" parent="YSort/Deco1"]
 position = Vector2( 188.022, 229.919 )

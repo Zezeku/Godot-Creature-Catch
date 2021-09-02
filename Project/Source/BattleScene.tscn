@@ -1,14 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Source/BattleScene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creature001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Creature009.png" type="Texture" id=3]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 0.594574
-margin_right = 112.595
+margin_left = -120.0
+margin_right = -1.05945
 margin_bottom = 14.0
 text = "Encounter Time!!! Press Enter to go back!"
 __meta__ = {
@@ -16,5 +18,29 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 84.8528, 28.2843 )
+current = true
 zoom = Vector2( 0.25, 0.25 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -137.883, 55.5088 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 43.3947, -64.5946 )
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -65.0674, 77.9822 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+hframes = 2
+frame = 1
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 121.261, -35.9477 )
+texture = ExtResource( 3 )
+hframes = 2

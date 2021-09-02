@@ -16,7 +16,7 @@
 script = ExtResource( 13 )
 
 [node name="Route1Scene" parent="." instance=ExtResource( 1 )]
-position = Vector2( -11.0905, -4.95534 )
+position = Vector2( -10.8099, -5.23595 )
 
 [node name="Creature002" type="Sprite" parent="."]
 position = Vector2( 231.423, -196.278 )
