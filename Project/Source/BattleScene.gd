@@ -15,4 +15,4 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		get_parent().encounterOver() ;
+		get_parent().change_to_world_state() ;

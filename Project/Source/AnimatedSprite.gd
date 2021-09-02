@@ -20,11 +20,14 @@ func _physics_process(delta):
 		animationTree.set("parameters/Walk/blend_position",input_vector) ;
 		animationState.travel("Walk") ;
 		velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta) ;
+		
+	
 	else:
 		animationState.travel("Idle") ;
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta) ;
 	
 	move_and_slide(velocity) ;
+	
 	
 	
 
