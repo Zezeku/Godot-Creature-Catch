@@ -6,3 +6,4 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+Project/ToImport/Music/Abstraction - Ludum Dare 28 Loops.zip
