@@ -1,7 +1,7 @@
 [gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://Assets/Tileset.png" type="Texture" id=1]
-[ext_resource path="res://Assets/ForestMedley.ogg" type="AudioStream" id=2]
+[ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 2.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Creature001.png" type="Texture" id=3]
 [ext_resource path="res://Source/Batch1.gd" type="Script" id=4]
 [ext_resource path="res://Source/TallGrass.tscn" type="PackedScene" id=5]
@@ -2067,7 +2067,8 @@ texture = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -15.0
+volume_db = -10.0
+autoplay = true
 
 [node name="PlayerCamera2" type="Camera2D" parent="."]
 position = Vector2( 199.228, 254.069 )

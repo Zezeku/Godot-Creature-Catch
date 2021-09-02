@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Source/BattleScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Creature001.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Creature009.png" type="Texture" id=3]
+[ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 8.wav" type="AudioStream" id=4]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -44,3 +45,8 @@ frame = 1
 position = Vector2( 121.261, -35.9477 )
 texture = ExtResource( 3 )
 hframes = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
