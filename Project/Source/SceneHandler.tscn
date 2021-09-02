@@ -27,8 +27,9 @@ texture = ExtResource( 7 )
 offset = Vector2( 0, 22.2631 )
 
 [node name="Creature001" type="Sprite" parent="."]
-position = Vector2( 178.591, -221.852 )
+position = Vector2( 167.174, -230.304 )
 texture = ExtResource( 6 )
+region_rect = Rect2( 1, 1, 1, 1 )
 
 [node name="Creature004" type="Sprite" parent="."]
 position = Vector2( 341.855, -247.745 )
