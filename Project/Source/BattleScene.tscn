@@ -22,8 +22,8 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -137.883, 55.5088 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( -138.413, 32.7304 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 2
 frame = 1
@@ -34,8 +34,8 @@ texture = ExtResource( 2 )
 hframes = 2
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -65.0674, 77.9822 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( -44.4079, 63.6795 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 hframes = 2
 frame = 1
