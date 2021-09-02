@@ -25,7 +25,7 @@ func change_state(state):
 
 func world_state():
 	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
-	$Route1Scene/PlayerCamera.current = true ;
+	$Route1Scene/YSort/Player/PlayerCamera.current = true ;
 	move_child($Route1Scene, 0);
 	
 	$Route1Scene/YSort/Player.transform = player_pos ;

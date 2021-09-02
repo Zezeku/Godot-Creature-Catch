@@ -1,12 +1,14 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://Assets/Tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/ForestMedley.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/flowerTest.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Creature001.png" type="Texture" id=3]
 [ext_resource path="res://Source/Batch1.gd" type="Script" id=4]
 [ext_resource path="res://Source/TallGrass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Source/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Source/Area2D.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Tileset2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/flowerTest.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Tree1.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 0, 16, 16, 14, 16, 14, 2, 0, 2, 0, 0 )
@@ -813,6 +815,388 @@ points = PoolVector2Array( 0, 16, 0, 0, 16, 0, 16, 16, 14, 16, 14, 2, 2, 2, 2, 1
 3/shapes = [  ]
 3/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=88]
+points = PoolVector2Array( 24, 48, 12, 48, 12, 44, 24, 44 )
+
+[sub_resource type="ConvexPolygonShape2D" id=90]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 12, 16, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=89]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=87]
+0/name = "Tileset2.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 0, 32, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 88 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 88 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 1
+1/name = "Tileset2.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Tileset2.png 2"
+2/texture = ExtResource( 7 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Tileset2.png 3"
+3/texture = ExtResource( 7 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 48, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Tileset2.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 32, 16, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 89 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 89 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Tileset2.png 5"
+5/texture = ExtResource( 7 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Tileset2.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 16, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Tileset2.png 7"
+7/texture = ExtResource( 7 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 32, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Tileset2.png 8"
+8/texture = ExtResource( 7 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 48, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Tileset2.png 9"
+9/texture = ExtResource( 7 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 16, 48, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Tileset2.png 10"
+10/texture = ExtResource( 7 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 32, 48, 16, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Tileset2.png 11"
+11/texture = ExtResource( 7 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 64, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Tileset2.png 12"
+12/texture = ExtResource( 7 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 16, 64, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Tileset2.png 13"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 32, 64, 16, 16 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Tileset2.png 14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 80, 16, 16 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "Tileset2.png 15"
+15/texture = ExtResource( 7 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 16, 80, 16, 16 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "Tileset2.png 16"
+16/texture = ExtResource( 7 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 32, 80, 16, 16 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "Tileset2.png 17"
+17/texture = ExtResource( 7 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 96, 16, 16 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+18/name = "Tileset2.png 18"
+18/texture = ExtResource( 7 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 16, 96, 16, 16 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
+19/name = "Tileset2.png 19"
+19/texture = ExtResource( 7 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 64, 64, 16, 48 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
+20/name = "Tileset2.png 20"
+20/texture = ExtResource( 7 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 80, 64, 16, 48 )
+20/tile_mode = 0
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shape_offset = Vector2( 0, 0 )
+20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape_one_way = false
+20/shape_one_way_margin = 0.0
+20/shapes = [  ]
+20/z_index = 0
+21/name = "Tileset2.png 21"
+21/texture = ExtResource( 7 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 96, 64, 16, 16 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape = SubResource( 90 )
+21/shape_one_way = false
+21/shape_one_way_margin = 1.0
+21/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 90 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+21/z_index = 0
+23/name = "Tileset2.png 23"
+23/texture = ExtResource( 7 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 96, 96, 16, 16 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shape_offset = Vector2( 0, 0 )
+23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape_one_way = false
+23/shape_one_way_margin = 0.0
+23/shapes = [  ]
+23/z_index = 0
+24/name = "Tileset2.png 24"
+24/texture = ExtResource( 7 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 112, 64, 16, 48 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
+25/name = "Tileset2.png 25"
+25/texture = ExtResource( 7 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 128, 96, 16, 16 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
+
 [node name="Route1Scene" type="Node2D"]
 
 [node name="Route1" type="TileMap" parent="."]
@@ -820,669 +1204,869 @@ tile_set = SubResource( 86 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 131096, 0, 8, 131097, 0, 11, 131099, 0, 8, 131100, 0, 10, 131101, 0, 11, 196622, 0, 8, 196623, 0, 10, 196624, 0, 10, 196625, 0, 11, 196632, 0, 65544, 196633, 0, 131083, 196635, 0, 65544, 196636, 0, 131081, 196637, 0, 131083, 262158, 0, 65544, 262159, 0, 131081, 262160, 0, 131081, 262161, 0, 65542, 262162, 0, 10, 262163, 0, 10, 262164, 0, 10, 262165, 0, 10, 262166, 0, 10, 262167, 0, 10, 262168, 0, 65541, 262169, 0, 65542, 262170, 0, 10, 262171, 0, 65541, 262172, 0, 131081, 262173, 0, 65542, 262174, 0, 11, 327694, 0, 65544, 327695, 0, 131081, 327696, 0, 131081, 327697, 0, 131081, 327698, 0, 131081, 327699, 0, 131081, 327700, 0, 131078, 327701, 0, 196617, 327702, 0, 131077, 327703, 0, 131081, 327704, 0, 131078, 327705, 0, 196617, 327706, 0, 131077, 327707, 0, 131081, 327708, 0, 131081, 327709, 0, 131081, 327710, 0, 131083, 393229, 0, 8, 393230, 0, 65541, 393231, 0, 131081, 393232, 0, 131081, 393233, 0, 131081, 393234, 0, 131081, 393235, 0, 131081, 393236, 0, 131083, 393238, 0, 65544, 393239, 0, 131081, 393240, 0, 131083, 393242, 0, 65544, 393243, 0, 131081, 393244, 0, 131081, 393245, 0, 131078, 393246, 0, 196619, 458765, 0, 65544, 458766, 0, 131081, 458767, 0, 131081, 458768, 0, 131081, 458769, 0, 131081, 458770, 0, 131081, 458771, 0, 131081, 458772, 0, 65542, 458773, 0, 10, 458774, 0, 65541, 458775, 0, 131081, 458776, 0, 65542, 458777, 0, 10, 458778, 0, 65541, 458779, 0, 131078, 458780, 0, 196617, 458781, 0, 131079, 524301, 0, 65544, 524302, 0, 131081, 524303, 0, 131078, 524304, 0, 196617, 524305, 0, 196617, 524306, 0, 196617, 524307, 0, 131077, 524308, 0, 131078, 524309, 0, 196617, 524310, 0, 196617, 524311, 0, 196617, 524312, 0, 131077, 524313, 0, 131081, 524314, 0, 131081, 524315, 0, 131083, 524317, 0, 65536, 589837, 0, 65544, 589838, 0, 131081, 589839, 0, 131083, 589843, 0, 65544, 589844, 0, 131083, 589848, 0, 65544, 589849, 0, 131081, 589850, 0, 131081, 589851, 0, 131083, 589853, 0, 65536, 655373, 0, 65544, 655374, 0, 131081, 655375, 0, 65542, 655376, 0, 10, 655377, 0, 10, 655378, 0, 10, 655379, 0, 65541, 655380, 0, 131083, 655382, 0, 1, 655383, 0, 196610, 655384, 0, 131080, 655385, 0, 131081, 655386, 0, 131081, 655387, 0, 131083, 655389, 0, 65536, 720909, 0, 65544, 720910, 0, 131081, 720911, 0, 131081, 720912, 0, 131081, 720913, 0, 131081, 720914, 0, 131081, 720915, 0, 131081, 720916, 0, 131083, 720918, 0, 65536, 720920, 0, 65544, 720921, 0, 131081, 720922, 0, 131081, 720923, 0, 131083, 720925, 0, 131072, 786445, 0, 196616, 786446, 0, 196617, 786447, 0, 196617, 786448, 0, 131077, 786449, 0, 131081, 786450, 0, 131081, 786451, 0, 131081, 786452, 0, 65542, 786453, 0, 10, 786454, 0, 9, 786455, 0, 6, 786456, 0, 196613, 786457, 0, 196617, 786458, 0, 196617, 786459, 0, 196619, 851984, 0, 196616, 851985, 0, 131077, 851986, 0, 131081, 851987, 0, 131081, 851988, 0, 131081, 851989, 0, 131081, 851990, 0, 131081, 851991, 0, 131083, 917521, 0, 196616, 917522, 0, 196617, 917523, 0, 196617, 917524, 0, 196617, 917525, 0, 196617, 917526, 0, 196617, 917527, 0, 196619 )
+tile_data = PoolIntArray( -65508, 0, 0, 5, 0, 8, 6, 0, 10, 7, 0, 10, 8, 0, 10, 9, 0, 10, 10, 0, 10, 11, 0, 10, 12, 0, 10, 13, 0, 10, 14, 0, 10, 15, 0, 10, 16, 0, 10, 17, 0, 10, 18, 0, 10, 19, 0, 10, 20, 0, 10, 21, 0, 10, 22, 0, 10, 23, 0, 10, 24, 0, 10, 25, 0, 10, 26, 0, 10, 27, 0, 10, 28, 0, 9, 29, 0, 10, 30, 0, 10, 31, 0, 10, 32, 0, 10, 33, 0, 11, 65541, 0, 196616, 65542, 0, 196618, 65543, 0, 196617, 65544, 0, 196617, 65545, 0, 196617, 65546, 0, 196617, 65547, 0, 196617, 65548, 0, 196617, 65549, 0, 196617, 65550, 0, 196617, 65551, 0, 196617, 65552, 0, 196617, 65553, 0, 196617, 65554, 0, 196617, 65555, 0, 196617, 65556, 0, 196617, 65557, 0, 196617, 65558, 0, 196617, 65559, 0, 196617, 65560, 0, 196617, 65561, 0, 196617, 65562, 0, 196617, 65563, 0, 196617, 65564, 0, 196617, 65565, 0, 196617, 65566, 0, 196617, 65567, 0, 196617, 65568, 0, 196617, 65569, 0, 196619, 131078, 0, 65536, 196614, 0, 65536, 262149, 0, 8, 262150, 0, 9, 262151, 0, 10, 262152, 0, 10, 262153, 0, 10, 262154, 0, 10, 262155, 0, 10, 262156, 0, 10, 262157, 0, 10, 262158, 0, 10, 262159, 0, 10, 262160, 0, 10, 262161, 0, 10, 262162, 0, 10, 262163, 0, 10, 262164, 0, 10, 262165, 0, 10, 262166, 0, 10, 262167, 0, 10, 262168, 0, 10, 262169, 0, 10, 262170, 0, 10, 262171, 0, 10, 262172, 0, 10, 262173, 0, 10, 262174, 0, 10, 262175, 0, 10, 262176, 0, 10, 262177, 0, 11, 327685, 0, 196616, 327686, 0, 196617, 327687, 0, 196617, 327688, 0, 196617, 327689, 0, 196617, 327690, 0, 196617, 327691, 0, 196617, 327692, 0, 196617, 327693, 0, 196617, 327694, 0, 196617, 327695, 0, 196617, 327696, 0, 196617, 327697, 0, 196617, 327698, 0, 196617, 327699, 0, 196617, 327700, 0, 196617, 327701, 0, 196617, 327702, 0, 196617, 327703, 0, 196617, 327704, 0, 196617, 327705, 0, 196617, 327706, 0, 196617, 327707, 0, 196617, 327708, 0, 196617, 327709, 0, 196617, 327710, 0, 196618, 327711, 0, 196617, 327712, 0, 196617, 327713, 0, 196619, 393246, 0, 65536, 458782, 0, 65536, 524293, 0, 8, 524294, 0, 6, 524295, 0, 196610, 524296, 0, 196610, 524297, 0, 196610, 524298, 0, 196610, 524299, 0, 2, 524300, 0, 196610, 524301, 0, 196611, 524309, 0, 196609, 524310, 0, 196610, 524311, 0, 2, 524312, 0, 196610, 524313, 0, 196610, 524314, 0, 196610, 524315, 0, 196610, 524316, 0, 5, 524317, 0, 10, 524318, 0, 9, 524319, 0, 10, 524320, 0, 10, 524321, 0, 11, 589829, 0, 65544, 589830, 0, 131083, 589835, 0, 65536, 589839, 0, 8, 589840, 0, 10, 589841, 0, 10, 589842, 0, 10, 589843, 0, 11, 589847, 0, 65536, 589852, 0, 65544, 589853, 0, 131081, 589854, 0, 131081, 589855, 0, 131081, 589856, 0, 131081, 589857, 0, 131083, 655365, 0, 65544, 655366, 0, 131083, 655368, 0, 8, 655369, 0, 10, 655370, 0, 10, 655371, 0, 9, 655372, 0, 10, 655373, 0, 10, 655374, 0, 10, 655375, 0, 65541, 655376, 0, 131081, 655377, 0, 131081, 655378, 0, 131081, 655379, 0, 131083, 655383, 0, 65536, 655388, 0, 65544, 655389, 0, 131081, 655390, 0, 131081, 655391, 0, 131081, 655392, 0, 131081, 655393, 0, 131083, 720901, 0, 65544, 720902, 0, 131083, 720904, 0, 65544, 720905, 0, 131081, 720906, 0, 131081, 720907, 0, 131081, 720908, 0, 131081, 720909, 0, 131081, 720910, 0, 131081, 720911, 0, 131081, 720912, 0, 131081, 720913, 0, 131081, 720914, 0, 131081, 720915, 0, 131083, 720917, 0, 8, 720918, 0, 10, 720919, 0, 9, 720920, 0, 10, 720921, 0, 11, 720924, 0, 65544, 720925, 0, 131081, 720926, 0, 131081, 720927, 0, 131081, 720928, 0, 131081, 720929, 0, 131083, 786437, 0, 65544, 786438, 0, 131083, 786440, 0, 65544, 786441, 0, 131081, 786442, 0, 131081, 786443, 0, 131081, 786444, 0, 131081, 786445, 0, 131081, 786446, 0, 131081, 786447, 0, 131081, 786448, 0, 131081, 786449, 0, 131078, 786450, 0, 196617, 786451, 0, 196619, 786453, 0, 65544, 786454, 0, 131081, 786455, 0, 131081, 786456, 0, 131081, 786457, 0, 131083, 786460, 0, 196616, 786461, 0, 196617, 786462, 0, 196617, 786463, 0, 196617, 786464, 0, 131077, 786465, 0, 131083, 851973, 0, 65544, 851974, 0, 131083, 851976, 0, 65544, 851977, 0, 131081, 851978, 0, 131081, 851979, 0, 131081, 851980, 0, 131081, 851981, 0, 131081, 851982, 0, 131081, 851983, 0, 131081, 851984, 0, 131081, 851985, 0, 131083, 851989, 0, 65544, 851990, 0, 131081, 851991, 0, 131081, 851992, 0, 131081, 851993, 0, 131083, 852000, 0, 65544, 852001, 0, 131083, 917509, 0, 65544, 917510, 0, 131083, 917512, 0, 65544, 917513, 0, 131081, 917514, 0, 131081, 917515, 0, 131081, 917516, 0, 131081, 917517, 0, 131081, 917518, 0, 131081, 917519, 0, 131081, 917520, 0, 131081, 917521, 0, 65547, 917522, 0, 196610, 917523, 0, 196610, 917524, 0, 5, 917525, 0, 65541, 917526, 0, 131081, 917527, 0, 131081, 917528, 0, 131081, 917529, 0, 131083, 917536, 0, 65544, 917537, 0, 131083, 983045, 0, 65544, 983046, 0, 131083, 983048, 0, 65544, 983049, 0, 131081, 983050, 0, 131081, 983051, 0, 131081, 983052, 0, 131081, 983053, 0, 131081, 983054, 0, 131081, 983055, 0, 131081, 983056, 0, 131081, 983057, 0, 131083, 983060, 0, 65544, 983061, 0, 131081, 983062, 0, 131081, 983063, 0, 131081, 983064, 0, 131081, 983065, 0, 65542, 983066, 0, 10, 983067, 0, 10, 983068, 0, 10, 983069, 0, 11, 983072, 0, 65544, 983073, 0, 131083, 1048581, 0, 196616, 1048582, 0, 196619, 1048584, 0, 196616, 1048585, 0, 196617, 1048586, 0, 196617, 1048587, 0, 196617, 1048588, 0, 196617, 1048589, 0, 196617, 1048590, 0, 196617, 1048591, 0, 196617, 1048592, 0, 196617, 1048593, 0, 196619, 1048596, 0, 196616, 1048597, 0, 196617, 1048598, 0, 196617, 1048599, 0, 196617, 1048600, 0, 196617, 1048601, 0, 196617, 1048602, 0, 196617, 1048603, 0, 196617, 1048604, 0, 196617, 1048605, 0, 196619, 1048608, 0, 196616, 1048609, 0, 196619 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Route1-L2" type="TileMap" parent="."]
+tile_set = SubResource( 87 )
+cell_size = Vector2( 8, 8 )
+cell_quadrant_size = 46
+format = 1
+tile_data = PoolIntArray( -458721, 4, 0, -458720, 4, 0, -458718, 4, 0, -458716, 4, 0, -458715, 4, 0, -458714, 4, 0, -393186, 4, 0, -393184, 4, 0, -393182, 4, 0, -393180, 4, 0, -393178, 4, 0, -327650, 4, 0, -327648, 4, 0, -327646, 4, 0, -327644, 4, 0, -327642, 4, 0, -262134, 19, 0, -262132, 20, 0, -262130, 19, 0, -262128, 20, 0, -262126, 19, 0, -262124, 20, 0, -262122, 19, 0, -262120, 20, 0, -262118, 19, 0, -262116, 20, 0, -262114, 4, 0, -262112, 4, 0, -262110, 4, 0, -262108, 4, 0, -262106, 4, 0, -262104, 20, 0, -262102, 19, 0, -262100, 20, 0, -262098, 19, 0, -262096, 20, 0, -262094, 19, 0, -262092, 20, 0, -262090, 19, 0, -262088, 20, 0, -262086, 19, 0, -262084, 20, 0, -262082, 19, 0, -262080, 20, 0, -262078, 19, 0, -196578, 4, 0, -196576, 4, 0, -196574, 4, 0, -196572, 4, 0, -196570, 4, 0, -131042, 4, 0, -131040, 4, 0, -131038, 4, 0, -131036, 4, 0, -131034, 4, 0, -131016, 21, 0, -65506, 4, 0, -65504, 4, 0, -65502, 4, 0, -65500, 4, 0, -65498, 4, 0, 30, 4, 0, 32, 4, 0, 34, 4, 0, 36, 4, 0, 38, 4, 0, 65564, 2, 0, 65566, 1, 0, 65567, 1, 0, 65568, 1, 0, 65569, 1, 0, 65570, 1, 0, 65571, 1, 0, 65572, 1, 0, 65573, 1, 0, 65574, 1, 0, 65575, 1, 0, 65576, 3, 0, 196638, 4, 0, 196640, 4, 0, 196641, 4, 0, 196642, 4, 0, 196643, 4, 0, 196644, 4, 0, 196646, 4, 0, 262154, 20, 0, 262156, 24, 0, 262158, 20, 0, 262160, 19, 0, 262162, 20, 0, 262164, 19, 0, 262166, 20, 0, 262168, 19, 0, 262170, 20, 0, 262172, 19, 0, 262174, 4, 0, 262176, 4, 0, 262177, 4, 0, 262178, 4, 0, 262179, 4, 0, 262180, 4, 0, 262182, 4, 0, 262184, 19, 0, 262186, 20, 0, 262188, 19, 0, 262190, 20, 0, 262192, 19, 0, 262194, 20, 0, 262196, 19, 0, 262198, 20, 0, 262200, 19, 0, 262202, 20, 0, 262204, 19, 0, 262206, 20, 0, 262208, 19, 0, 262210, 20, 0, 327708, 4, 0, 327709, 4, 0, 327710, 4, 0, 327711, 4, 0, 327712, 4, 0, 327714, 4, 0, 327715, 4, 0, 327716, 4, 0, 327717, 4, 0, 327718, 4, 0, 327719, 4, 0, 327720, 4, 0, 393244, 4, 0, 393256, 4, 0, 458780, 4, 0, 458781, 4, 0, 458782, 4, 0, 458783, 4, 0, 458784, 4, 0, 458785, 4, 0, 458786, 4, 0, 458787, 4, 0, 458789, 4, 0, 458790, 4, 0, 458791, 4, 0, 458792, 4, 0, 524298, 23, 0, 524302, 25, 0, 589850, 2, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0, 589855, 1, 0, 589856, 1, 0, 589857, 1, 0, 589858, 1, 0, 589859, 1, 0, 589860, 1, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 589864, 1, 0, 589866, 3, 0, 720924, 4, 0, 720926, 4, 0, 720928, 4, 0, 720929, 4, 0, 720930, 4, 0, 720931, 4, 0, 720932, 4, 0, 720933, 4, 0, 720934, 4, 0, 720936, 4, 0, 786442, 20, 0, 786444, 19, 0, 786446, 20, 0, 786448, 19, 0, 786450, 20, 0, 786452, 19, 0, 786454, 20, 0, 786456, 19, 0, 786458, 20, 0, 786460, 4, 0, 786462, 4, 0, 786464, 4, 0, 786465, 4, 0, 786466, 4, 0, 786467, 4, 0, 786468, 4, 0, 786469, 4, 0, 786470, 4, 0, 786472, 4, 0, 786474, 20, 0, 786476, 19, 0, 786478, 20, 0, 786480, 19, 0, 786482, 20, 0, 786484, 19, 0, 786486, 20, 0, 786488, 19, 0, 786490, 20, 0, 786492, 24, 0, 786494, 20, 0, 786496, 19, 0, 786498, 20, 0, 851998, 4, 0, 852000, 4, 0, 852001, 4, 0, 852002, 4, 0, 852003, 4, 0, 852004, 4, 0, 852005, 4, 0, 852006, 4, 0, 852008, 4, 0, 917532, 4, 0, 917534, 4, 0, 917536, 4, 0, 917540, 4, 0, 917541, 4, 0, 917542, 4, 0, 983070, 4, 0, 983073, 4, 0, 983074, 4, 0, 983075, 4, 0, 983076, 4, 0, 983078, 4, 0, 983080, 4, 0, 1048598, 5, 0, 1048604, 4, 0, 1048606, 4, 0, 1048607, 4, 0, 1048608, 4, 0, 1048609, 4, 0, 1048610, 4, 0, 1048611, 4, 0, 1048612, 4, 0, 1048613, 4, 0, 1048614, 4, 0, 1048616, 4, 0, 1048622, 5, 0, 1048634, 23, 0, 1048638, 25, 0, 1114152, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0, 1179667, 4, 0, 1179668, 4, 0, 1179670, 6, 0, 1179672, 4, 0, 1179673, 4, 0, 1179675, 4, 0, 1179676, 4, 0, 1179688, 4, 0, 1179690, 4, 0, 1179691, 4, 0, 1179692, 4, 0, 1179694, 6, 0, 1179696, 4, 0, 1179697, 4, 0, 1179698, 4, 0, 1179699, 4, 0, 1179700, 4, 0, 1179701, 4, 0, 1179702, 4, 0, 1245224, 4, 0, 1310734, 4, 0, 1310742, 7, 0, 1310760, 4, 0, 1310762, 4, 0, 1310763, 4, 0, 1310764, 4, 0, 1310766, 6, 0, 1310768, 4, 0, 1310769, 4, 0, 1310770, 4, 0, 1310771, 4, 0, 1310772, 4, 0, 1310774, 4, 0, 1376270, 4, 0, 1376308, 4, 0, 1376310, 4, 0, 1441806, 4, 0, 1441832, 4, 0, 1441838, 7, 0, 1441844, 4, 0, 1441846, 4, 0, 1507342, 4, 0, 1507345, 12, 0, 1507359, 8, 0, 1507368, 4, 0, 1507374, 9, 0, 1507380, 4, 0, 1507382, 4, 0, 1572878, 4, 0, 1572904, 4, 0, 1572916, 4, 0, 1572918, 4, 0, 1638414, 4, 0, 1638418, 18, 0, 1638431, 12, 0, 1638440, 4, 0, 1638446, 10, 0, 1638452, 4, 0, 1638454, 4, 0, 1703950, 4, 0, 1703972, 4, 0, 1703973, 4, 0, 1703974, 4, 0, 1703975, 4, 0, 1703976, 4, 0, 1703988, 4, 0, 1703990, 4, 0, 1703991, 4, 0, 1703992, 4, 0, 1703993, 4, 0, 1703994, 4, 0, 1703995, 4, 0, 1703996, 4, 0, 1703997, 4, 0, 1703998, 4, 0, 1769486, 4, 0, 1769491, 16, 0, 1769494, 13, 0, 1769496, 16, 0, 1769498, 16, 0, 1769501, 16, 0, 1769517, 17, 0, 1769524, 4, 0, 1769525, 4, 0, 1769526, 4, 0, 1769527, 4, 0, 1769528, 4, 0, 1769529, 4, 0, 1769530, 4, 0, 1769531, 4, 0, 1769532, 4, 0, 1769533, 4, 0, 1769534, 4, 0, 1835022, 4, 0, 1835040, 13, 0, 1835044, 1, 0, 1835045, 1, 0, 1835046, 1, 0, 1835047, 1, 0, 1835048, 1, 0, 1835050, 3, 0, 1835051, 16, 0, 1835055, 14, 0, 1835060, 4, 0, 1835061, 4, 0, 1835062, 4, 0, 1835063, 4, 0, 1835064, 4, 0, 1835065, 4, 0, 1835066, 4, 0, 1835070, 4, 0, 1900558, 4, 0, 1900568, 12, 0, 1900604, 4, 0, 1900606, 4, 0, 1966094, 4, 0, 1966116, 4, 0, 1966117, 4, 0, 1966118, 4, 0, 1966128, 10, 0, 1966142, 4, 0, 2031630, 4, 0, 2031652, 4, 0, 2031653, 4, 0, 2031654, 4, 0, 2031666, 16, 0, 2031676, 4, 0, 2031678, 4, 0, 2097166, 4, 0, 2097188, 4, 0, 2097190, 4, 0, 2097212, 4, 0, 2097214, 4, 0, 2162724, 4, 0, 2162726, 4, 0, 2162748, 4, 0, 2162750, 4, 0, 2228234, 20, 0, 2228236, 19, 0, 2228238, 4, 0, 2228240, 19, 0, 2228242, 20, 0, 2228244, 19, 0, 2228246, 20, 0, 2228248, 19, 0, 2228250, 20, 0, 2228252, 19, 0, 2228254, 20, 0, 2228256, 19, 0, 2228258, 20, 0, 2228260, 4, 0, 2228261, 4, 0, 2228262, 4, 0, 2228264, 19, 0, 2228266, 20, 0, 2228268, 19, 0, 2228270, 20, 0, 2228272, 19, 0, 2228274, 20, 0, 2228276, 19, 0, 2228278, 20, 0, 2228280, 19, 0, 2228282, 20, 0, 2228284, 4, 0, 2228286, 4, 0, 2228288, 19, 0, 2228290, 20, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 6 )]
 light_mask = 1024
-position = Vector2( 303.522, 88.8093 )
+position = Vector2( 216, 236 )
 z_index = 1
 
-[node name="Sprite" type="Sprite" parent="YSort"]
-position = Vector2( 272.773, 87.783 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite2" type="Sprite" parent="YSort"]
-position = Vector2( 267.903, 84.0372 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite3" type="Sprite" parent="YSort"]
-position = Vector2( 275.02, 81.6025 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite4" type="Sprite" parent="YSort"]
-position = Vector2( 269.589, 77.6694 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite5" type="Sprite" parent="YSort"]
-position = Vector2( 261.161, 77.1076 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite6" type="Sprite" parent="YSort"]
-position = Vector2( 253.669, 82.3517 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite7" type="Sprite" parent="YSort"]
-position = Vector2( 254.231, 75.0474 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-
-[node name="Sprite8" type="Sprite" parent="YSort"]
-position = Vector2( 255.917, 87.4084 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite9" type="Sprite" parent="YSort"]
-position = Vector2( 257.041, 78.4186 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite10" type="Sprite" parent="YSort"]
-position = Vector2( 264.907, 80.2915 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite11" type="Sprite" parent="YSort"]
-position = Vector2( 264.532, 73.9237 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite12" type="Sprite" parent="YSort"]
-position = Vector2( 272.398, 81.7898 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite13" type="Sprite" parent="YSort"]
-position = Vector2( 263.97, 89.0941 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite14" type="Sprite" parent="YSort"]
-position = Vector2( 272.398, 91.5288 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite15" type="Sprite" parent="YSort"]
-position = Vector2( 250.298, 72.4254 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
-
-[node name="Sprite16" type="Sprite" parent="YSort"]
-position = Vector2( 249.736, 80.4788 )
-z_index = 1
-texture = ExtResource( 3 )
-centered = false
-hframes = 2
-frame = 1
+[node name="PlayerCamera" type="Camera2D" parent="YSort/Player"]
+current = true
+zoom = Vector2( 0.2, 0.2 )
 
 [node name="Batch1" type="YSort" parent="YSort"]
 script = ExtResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="YSort/Batch1"]
-script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Batch1/Area2D"]
-position = Vector2( -0.157501, -0.157501 )
-polygon = PoolVector2Array( 255.874, 106.575, 319.867, 106.398, 320.338, 134.134, 327.889, 134.134, 328.361, 200.441, 247.424, 200.913, 248.131, 165.754, 311.843, 166.226, 311.843, 138.145, 255.446, 137.909 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Node2D" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 84 )
 
-[node name="Node2D279" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 287.919, 165.691 )
+[node name="Node2D2" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 84 )
 
-[node name="Node2D280" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 271.811, 165.665 )
+[node name="Node2D3" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 84 )
 
-[node name="Node2D281" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 255.974, 165.857 )
+[node name="Node2D4" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 84 )
 
-[node name="Node2D271" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.037, 165.902 )
+[node name="Node2D5" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 84 )
 
-[node name="Node2D273" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.74, 163.969 )
+[node name="Node2D6" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 84 )
 
-[node name="Node2D274" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.186, 162.037 )
+[node name="Node2D7" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 84 )
 
-[node name="Node2D275" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.808, 159.361 )
+[node name="Node2D8" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 84 )
 
-[node name="Node2D276" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.456, 160.104 )
+[node name="Node2D9" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 80 )
 
-[node name="Node2D277" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 322.267, 157.577 )
+[node name="Node2D10" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 80 )
 
-[node name="Node2D356" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.294, 156.239 )
+[node name="Node2D11" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 80 )
 
-[node name="Node2D357" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 318.997, 154.307 )
+[node name="Node2D12" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 80 )
 
-[node name="Node2D358" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.443, 152.374 )
+[node name="Node2D13" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 80 )
 
-[node name="Node2D359" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.064, 149.699 )
+[node name="Node2D14" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 80 )
 
-[node name="Node2D360" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 322.713, 150.442 )
+[node name="Node2D15" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 80 )
 
-[node name="Node2D361" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 321.524, 147.915 )
+[node name="Node2D16" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 80 )
 
-[node name="Node2D362" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.74, 147.023 )
+[node name="Node2D17" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 76 )
 
-[node name="Node2D363" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.443, 145.09 )
+[node name="Node2D18" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 76 )
 
-[node name="Node2D364" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.889, 143.158 )
+[node name="Node2D19" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 76 )
 
-[node name="Node2D365" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.51, 140.482 )
+[node name="Node2D20" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 76 )
 
-[node name="Node2D366" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.159, 141.226 )
+[node name="Node2D21" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 76 )
 
-[node name="Node2D367" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 321.97, 138.698 )
+[node name="Node2D22" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 76 )
 
-[node name="Node2D368" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.74, 139.144 )
+[node name="Node2D23" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 76 )
 
-[node name="Node2D369" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.443, 137.212 )
+[node name="Node2D24" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 76 )
 
-[node name="Node2D370" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.889, 135.279 )
+[node name="Node2D25" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 72 )
 
-[node name="Node2D371" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.51, 132.604 )
+[node name="Node2D26" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 72 )
 
-[node name="Node2D372" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.159, 133.347 )
+[node name="Node2D27" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 72 )
 
-[node name="Node2D373" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 321.97, 130.82 )
+[node name="Node2D28" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 72 )
 
-[node name="Node2D272" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 303.825, 165.902 )
+[node name="Node2D29" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 72 )
 
-[node name="Node2D282" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 285.689, 167.772 )
+[node name="Node2D30" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 72 )
 
-[node name="Node2D283" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 269.582, 167.746 )
+[node name="Node2D31" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 72 )
 
-[node name="Node2D284" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 253.744, 167.938 )
+[node name="Node2D32" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 72 )
 
-[node name="Node2D278" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.808, 167.983 )
+[node name="Node2D33" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 68 )
 
-[node name="Node2D285" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 301.595, 167.983 )
+[node name="Node2D34" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 68 )
 
-[node name="Node2D286" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 292.378, 169.407 )
+[node name="Node2D35" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 68 )
 
-[node name="Node2D287" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 276.271, 169.381 )
+[node name="Node2D36" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 68 )
 
-[node name="Node2D288" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 260.434, 169.574 )
+[node name="Node2D37" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 68 )
 
-[node name="Node2D289" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 324.497, 169.618 )
+[node name="Node2D38" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 68 )
 
-[node name="Node2D290" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 308.284, 169.618 )
+[node name="Node2D39" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 68 )
 
-[node name="Node2D291" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 292.378, 169.407 )
+[node name="Node2D40" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 68 )
 
-[node name="Node2D292" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 276.271, 169.381 )
+[node name="Node2D41" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 364, 64 )
 
-[node name="Node2D293" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 260.434, 169.574 )
+[node name="Node2D42" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 378.481, 64 )
 
-[node name="Node2D294" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 324.497, 169.618 )
+[node name="Node2D43" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 394.44, 64 )
 
-[node name="Node2D295" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 308.284, 169.618 )
+[node name="Node2D44" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 408.921, 64 )
 
-[node name="Node2D296" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 288.811, 171.191 )
+[node name="Node2D45" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 424, 64 )
 
-[node name="Node2D297" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272.703, 171.165 )
+[node name="Node2D46" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 438.481, 64 )
 
-[node name="Node2D298" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 256.866, 171.357 )
+[node name="Node2D47" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 454.44, 64 )
 
-[node name="Node2D299" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.929, 171.402 )
+[node name="Node2D48" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 468.921, 64 )
 
-[node name="Node2D300" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304.717, 171.402 )
+[node name="Node2D49" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 84 )
 
-[node name="Node2D301" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 291.784, 173.42 )
+[node name="Node2D50" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 84 )
 
-[node name="Node2D302" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 275.676, 173.394 )
+[node name="Node2D51" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 84 )
 
-[node name="Node2D303" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.839, 173.587 )
+[node name="Node2D52" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 84 )
 
-[node name="Node2D304" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.902, 173.631 )
+[node name="Node2D53" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 84 )
 
-[node name="Node2D305" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 307.69, 173.631 )
+[node name="Node2D54" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 84 )
 
-[node name="Node2D306" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 285.54, 174.907 )
+[node name="Node2D55" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 84 )
 
-[node name="Node2D307" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 269.433, 174.881 )
+[node name="Node2D56" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 84 )
 
-[node name="Node2D308" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 253.596, 175.074 )
+[node name="Node2D57" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 80 )
 
-[node name="Node2D309" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 317.659, 175.118 )
+[node name="Node2D58" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 80 )
 
-[node name="Node2D310" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 301.446, 175.118 )
+[node name="Node2D59" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 80 )
 
-[node name="Node2D311" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 289.554, 176.839 )
+[node name="Node2D60" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 80 )
 
-[node name="Node2D312" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 273.447, 176.813 )
+[node name="Node2D61" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 80 )
 
-[node name="Node2D313" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 257.609, 177.006 )
+[node name="Node2D62" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 80 )
 
-[node name="Node2D314" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 321.673, 177.05 )
+[node name="Node2D63" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 80 )
 
-[node name="Node2D315" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 305.46, 177.05 )
+[node name="Node2D64" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 80 )
 
-[node name="Node2D316" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 284.351, 178.921 )
+[node name="Node2D65" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 76 )
 
-[node name="Node2D317" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 268.244, 178.894 )
+[node name="Node2D66" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 76 )
 
-[node name="Node2D318" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 252.407, 179.087 )
+[node name="Node2D67" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 76 )
 
-[node name="Node2D319" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 316.47, 179.132 )
+[node name="Node2D68" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 76 )
 
-[node name="Node2D320" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 300.257, 179.132 )
+[node name="Node2D69" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 76 )
 
-[node name="Node2D321" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 291.635, 180.258 )
+[node name="Node2D70" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 76 )
 
-[node name="Node2D322" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 275.528, 180.232 )
+[node name="Node2D71" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 76 )
 
-[node name="Node2D323" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.691, 180.425 )
+[node name="Node2D72" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 76 )
 
-[node name="Node2D324" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.754, 180.469 )
+[node name="Node2D73" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 72 )
 
-[node name="Node2D325" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 307.541, 180.469 )
+[node name="Node2D74" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 72 )
 
-[node name="Node2D326" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 288.216, 182.488 )
+[node name="Node2D75" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 72 )
 
-[node name="Node2D327" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 272.109, 182.462 )
+[node name="Node2D76" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 72 )
 
-[node name="Node2D328" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 256.272, 182.655 )
+[node name="Node2D77" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 72 )
 
-[node name="Node2D329" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 320.335, 182.699 )
+[node name="Node2D78" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 72 )
 
-[node name="Node2D330" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 304.122, 182.699 )
+[node name="Node2D79" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 72 )
 
-[node name="Node2D331" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 291.486, 184.718 )
+[node name="Node2D80" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 72 )
 
-[node name="Node2D332" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 275.379, 184.692 )
+[node name="Node2D81" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 68 )
 
-[node name="Node2D333" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.542, 184.885 )
+[node name="Node2D82" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 68 )
 
-[node name="Node2D334" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.605, 184.929 )
+[node name="Node2D83" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 68 )
 
-[node name="Node2D335" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 307.392, 184.929 )
+[node name="Node2D84" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 68 )
 
-[node name="Node2D336" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 286.284, 186.65 )
+[node name="Node2D85" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 68 )
 
-[node name="Node2D337" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 270.176, 186.624 )
+[node name="Node2D86" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 68 )
 
-[node name="Node2D338" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 254.339, 186.817 )
+[node name="Node2D87" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 68 )
 
-[node name="Node2D339" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 318.402, 186.861 )
+[node name="Node2D88" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 68 )
 
-[node name="Node2D340" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 302.19, 186.861 )
+[node name="Node2D89" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 100, 64 )
 
-[node name="Node2D341" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 291.635, 188.434 )
+[node name="Node2D90" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 114.481, 64 )
 
-[node name="Node2D342" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 275.528, 188.408 )
+[node name="Node2D91" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.44, 64 )
 
-[node name="Node2D343" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.691, 188.601 )
+[node name="Node2D92" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 144.921, 64 )
 
-[node name="Node2D344" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 323.754, 188.645 )
+[node name="Node2D93" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 160, 64 )
 
-[node name="Node2D345" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 307.541, 188.645 )
+[node name="Node2D94" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 174.481, 64 )
 
-[node name="Node2D346" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 287.324, 190.813 )
+[node name="Node2D95" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.44, 64 )
 
-[node name="Node2D347" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 271.217, 190.787 )
+[node name="Node2D96" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 204.921, 64 )
 
-[node name="Node2D348" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 255.38, 190.979 )
+[node name="Node2D97" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 20 )
 
-[node name="Node2D349" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 319.443, 191.024 )
+[node name="Node2D98" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 20 )
 
-[node name="Node2D350" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 303.23, 191.024 )
+[node name="Node2D99" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 20 )
 
-[node name="Node2D351" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 289.851, 192.299 )
+[node name="Node2D102" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 20 )
 
-[node name="Node2D352" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 273.744, 192.273 )
+[node name="Node2D103" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 20 )
 
-[node name="Node2D353" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 257.907, 192.466 )
+[node name="Node2D104" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 20 )
 
-[node name="Node2D354" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 321.97, 192.51 )
+[node name="Node2D105" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 16 )
 
-[node name="Node2D355" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 305.757, 192.51 )
+[node name="Node2D106" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 16 )
 
-[node name="Node2D374" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 295.478, 103.167 )
+[node name="Node2D107" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 16 )
 
-[node name="Node2D375" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 279.371, 103.141 )
+[node name="Node2D110" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 16 )
 
-[node name="Node2D376" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 263.534, 103.334 )
+[node name="Node2D111" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 16 )
 
-[node name="Node2D377" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 311.384, 103.378 )
+[node name="Node2D112" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 16 )
 
-[node name="Node2D378" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 293.248, 105.248 )
+[node name="Node2D113" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 12 )
 
-[node name="Node2D379" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 277.141, 105.222 )
+[node name="Node2D114" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 12 )
 
-[node name="Node2D380" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 261.304, 105.415 )
+[node name="Node2D115" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 12 )
 
-[node name="Node2D381" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 309.154, 105.459 )
+[node name="Node2D118" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 12 )
 
-[node name="Node2D382" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.938, 106.883 )
+[node name="Node2D119" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 12 )
 
-[node name="Node2D383" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.83, 106.857 )
+[node name="Node2D120" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 12 )
 
-[node name="Node2D384" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.993, 107.05 )
+[node name="Node2D121" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 8 )
 
-[node name="Node2D385" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.844, 107.094 )
+[node name="Node2D122" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 8 )
 
-[node name="Node2D386" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.938, 106.883 )
+[node name="Node2D123" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 8 )
 
-[node name="Node2D387" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.83, 106.857 )
+[node name="Node2D126" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 8 )
 
-[node name="Node2D388" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.993, 107.05 )
+[node name="Node2D127" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 8 )
 
-[node name="Node2D389" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.844, 107.094 )
+[node name="Node2D128" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 8 )
 
-[node name="Node2D390" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 296.37, 108.667 )
+[node name="Node2D129" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 4 )
 
-[node name="Node2D391" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 280.263, 108.641 )
+[node name="Node2D130" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 4 )
 
-[node name="Node2D392" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 264.426, 108.834 )
+[node name="Node2D131" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 4 )
 
-[node name="Node2D393" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 312.276, 108.878 )
+[node name="Node2D134" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 4 )
 
-[node name="Node2D394" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.343, 110.897 )
+[node name="Node2D135" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 4 )
 
-[node name="Node2D395" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.236, 110.871 )
+[node name="Node2D136" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 4 )
 
-[node name="Node2D396" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.399, 111.064 )
+[node name="Node2D137" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 116, 0 )
 
-[node name="Node2D397" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.249, 111.108 )
+[node name="Node2D138" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 130.481, 0 )
 
-[node name="Node2D398" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 293.1, 112.383 )
+[node name="Node2D139" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 146.44, 0 )
 
-[node name="Node2D399" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 276.993, 112.357 )
+[node name="Node2D142" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 190.481, 0 )
 
-[node name="Node2D400" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 261.155, 112.55 )
+[node name="Node2D143" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 206.44, 0 )
 
-[node name="Node2D401" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 309.006, 112.594 )
+[node name="Node2D144" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 220.921, 0 )
 
-[node name="Node2D402" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 297.113, 114.316 )
+[node name="Node2D108" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 20 )
 
-[node name="Node2D403" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.006, 114.29 )
+[node name="Node2D109" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 20 )
 
-[node name="Node2D404" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 265.169, 114.482 )
+[node name="Node2D116" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 20 )
 
-[node name="Node2D405" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 313.02, 114.527 )
+[node name="Node2D117" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 16 )
 
-[node name="Node2D406" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 291.911, 116.397 )
+[node name="Node2D124" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 16 )
 
-[node name="Node2D407" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 275.803, 116.371 )
+[node name="Node2D125" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 16 )
 
-[node name="Node2D408" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 259.966, 116.564 )
+[node name="Node2D132" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 12 )
 
-[node name="Node2D409" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 307.817, 116.608 )
+[node name="Node2D133" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 12 )
 
-[node name="Node2D410" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.194, 117.735 )
+[node name="Node2D140" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 12 )
 
-[node name="Node2D411" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.087, 117.709 )
+[node name="Node2D141" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 8 )
 
-[node name="Node2D412" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.25, 117.901 )
+[node name="Node2D145" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 8 )
 
-[node name="Node2D413" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.101, 117.946 )
+[node name="Node2D146" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 8 )
 
-[node name="Node2D414" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 295.776, 119.965 )
+[node name="Node2D147" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 4 )
 
-[node name="Node2D415" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 279.668, 119.939 )
+[node name="Node2D148" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 4 )
 
-[node name="Node2D416" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 263.831, 120.131 )
+[node name="Node2D149" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 4 )
 
-[node name="Node2D417" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 311.682, 120.176 )
+[node name="Node2D150" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 384, 0 )
 
-[node name="Node2D418" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.046, 122.194 )
+[node name="Node2D151" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 399.959, 0 )
 
-[node name="Node2D419" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 282.939, 122.168 )
+[node name="Node2D152" parent="YSort/Batch1" instance=ExtResource( 5 )]
+position = Vector2( 414.44, 0 )
 
-[node name="Node2D420" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.101, 122.361 )
+[node name="Deco1" type="YSort" parent="YSort"]
 
-[node name="Node2D421" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 314.952, 122.405 )
+[node name="Sprite" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 280, 200 )
+scale = Vector2( 0.25, 0.25 )
+z_index = 1
+texture = ExtResource( 3 )
 
-[node name="Node2D422" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 293.843, 124.127 )
+[node name="Sprite2" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 184, 232 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D423" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 277.736, 124.101 )
+[node name="Sprite3" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 172, 228 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D424" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 261.899, 124.293 )
+[node name="Sprite4" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 268, 212 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D425" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 309.749, 124.338 )
+[node name="Sprite5" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 268, 200 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D426" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 299.194, 125.911 )
+[node name="Sprite6" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 272, 188 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D427" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 283.087, 125.885 )
+[node name="Sprite7" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 252, 260 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D428" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 267.25, 126.077 )
+[node name="Sprite8" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 244, 252 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D429" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 315.101, 126.122 )
+[node name="Sprite9" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 236, 260 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D430" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 294.884, 128.289 )
+[node name="Sprite10" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 360, 132 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D431" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 278.776, 128.263 )
+[node name="Sprite11" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 348, 132 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D432" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 262.939, 128.456 )
+[node name="Sprite12" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 400, 136 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D433" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 310.79, 128.5 )
+[node name="Sprite13" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 460, 148 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D434" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 297.411, 129.776 )
+[node name="Sprite14" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 472, 160 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D435" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 281.303, 129.749 )
+[node name="Sprite15" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 484, 164 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+frame = 1
 
-[node name="Node2D436" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 265.466, 129.942 )
+[node name="Sprite16" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 480, 148 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
 
-[node name="Node2D437" parent="YSort/Batch1" instance=ExtResource( 5 )]
-position = Vector2( 313.317, 129.986 )
+[node name="Sprite17" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 468, 148 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2( 312.5, 151.5 )
-current = true
-zoom = Vector2( 0.25, 0.25 )
+[node name="Sprite18" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 476, 164 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite19" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 476, 152 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite20" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 396, 136 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite21" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 356, 136 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite22" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 268, 192 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite23" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 272, 204 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite24" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 236, 248 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite25" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 236, 248 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite26" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 244, 260 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite27" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 248, 248 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite28" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 176, 232 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite29" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 164, 236 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite30" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 180, 240 )
+z_index = 1
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Sprite31" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 88, 240 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite32" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 96, 216 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite33" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 88, 192 )
+texture = ExtResource( 9 )
+
+[node name="Sprite34" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 88, 192 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite35" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 92, 168 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite36" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 92, 140 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite37" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 276, 172 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite38" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 296, 184 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite39" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 304, 156 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite40" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 276, 244 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite45" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 356, 196 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite46" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 356, 248 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite47" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 396, 188 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite48" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 392, 212 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite49" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 432, 232 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite50" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 468, 232 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite51" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 460, 172 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite52" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 484, 180 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite53" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 508, 184 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite54" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 524, 244 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite55" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 524, 212 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite56" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 520, 120 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite57" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 536, 136 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite58" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 536, 156 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite59" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 536, 172 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite60" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 512, 140 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite61" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 524, 52 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite62" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 536, 60 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite63" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 516, 72 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite64" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 88, -8 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite65" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 532, -8 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite66" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 536, 8 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite67" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 508, -4 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite41" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 244, 232 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite42" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 196, 196 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite43" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 208, 184 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="Sprite44" type="Sprite" parent="YSort/Deco1"]
+position = Vector2( 220, 200 )
+z_index = 1
+texture = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -15.0
 
 [node name="PlayerCamera2" type="Camera2D" parent="."]
-position = Vector2( 312.5, 151.5 )
-current = true
+position = Vector2( 199.228, 254.069 )
 zoom = Vector2( 0.25, 0.25 )
-
-[connection signal="body_entered" from="YSort/Batch1/Area2D" to="YSort/Batch1/Area2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="YSort/Batch1/Area2D" to="YSort/Batch1/Area2D" method="_on_Area2D_body_exited"]
