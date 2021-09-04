@@ -20,43 +20,45 @@ script = ExtResource( 13 )
 position = Vector2( -10.8099, -5.23595 )
 
 [node name="Creature002" type="Sprite" parent="."]
-position = Vector2( 231.423, -196.278 )
+position = Vector2( 142.428, -293.219 )
 texture = ExtResource( 3 )
 
 [node name="Creature003" type="Sprite" parent="."]
-position = Vector2( 281.472, -238.242 )
+position = Vector2( 250.748, -331.475 )
 texture = ExtResource( 7 )
 offset = Vector2( 0, 22.2631 )
 
 [node name="Creature001" type="Sprite" parent="."]
-position = Vector2( 167.174, -230.304 )
+position = Vector2( 524.743, -337.84 )
 texture = ExtResource( 6 )
+hframes = 2
 region_rect = Rect2( 1, 1, 1, 1 )
 
 [node name="Creature004" type="Sprite" parent="."]
-position = Vector2( 341.855, -247.745 )
+position = Vector2( 577.056, -334.621 )
 texture = ExtResource( 8 )
 
 [node name="Creature005" type="Sprite" parent="."]
-position = Vector2( 168.91, -163.956 )
+position = Vector2( 373.916, -336.648 )
 texture = ExtResource( 10 )
 
 [node name="Creature006" type="Sprite" parent="."]
-position = Vector2( 236.601, -168.611 )
+position = Vector2( 200.05, -334.417 )
 texture = ExtResource( 11 )
 
 [node name="Creature007" type="Sprite" parent="."]
-position = Vector2( 291.947, -160.885 )
+position = Vector2( 616.672, -329.869 )
 texture = ExtResource( 12 )
 
 [node name="Creature008" type="Sprite" parent="."]
-position = Vector2( 333.679, -169.16 )
+position = Vector2( 414.728, -335.496 )
 texture = ExtResource( 2 )
 
 [node name="Creature009" type="Sprite" parent="."]
-position = Vector2( 98.699, -190.298 )
+position = Vector2( 474.192, -336.558 )
 texture = ExtResource( 4 )
+hframes = 2
 
 [node name="Creature010" type="Sprite" parent="."]
-position = Vector2( 389.873, -205.198 )
+position = Vector2( 324.186, -338.69 )
 texture = ExtResource( 5 )
