@@ -4,11 +4,9 @@ onready var player = $Player ;
 onready var enemy = $Enemy ;
 
 
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		get_parent().change_to_world_state() ;
-	
-
-
 func _on_BattleStart_PlayBattleMusic():
 	$AudioStreamPlayer.play() ;
+
+
+func set_player(s_player) :
+	add_child(s_player) ;

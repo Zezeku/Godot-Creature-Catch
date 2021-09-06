@@ -30,7 +30,7 @@ func world_state():
 	
 	$Route1Scene/YSort/PlayerController.transform = player_pos ;
 	$Route1Scene/YSort/PlayerController.animationTree.set("parameters/Idle/blend_position", player_frame);
-	
+	#currently, reentering collision allows encounter check to happen. need to ensure upon scene entry, this is not checked
 
 func battle_state():
 	add_child(load("res://Source/BattleScene.tscn").instance()) ;
@@ -56,8 +56,4 @@ func change_to_battle_state():
 	remove_child($Route1Scene);
 	change_state(state) ;
 	
-	
 
-
-	
-	

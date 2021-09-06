@@ -3,9 +3,12 @@ extends Node
 
 #these shortcuts get used by children. so must account for them being 1 layer down from state
 onready var SceneHandler = get_node("../../../..") ;
-onready var Player = get_node("../../../Player") ;
+onready var Player = get_node("../../../../Player") ;
 onready var Enemy = get_node("../../../Enemy") ;
 onready var Creature = get_node("../../../BaseCreature") ;
+
+var runAttempt ;
+var activeChar ;
 
 var _fsm: StateMachine ;
 

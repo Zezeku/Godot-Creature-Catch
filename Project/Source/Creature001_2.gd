@@ -15,6 +15,8 @@ var Def = 10 ;
 var SpDef = 10 ;
 var Spd = 8 ;
 
+var stat_changes = [1,1,1,1,1] ;
+
 var moveSet = ["Scratch", "Bark Jab", "Sediment Trap"]
 
 # Called when the node enters the scene tree for the first time.

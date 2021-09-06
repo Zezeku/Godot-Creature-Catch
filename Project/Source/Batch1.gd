@@ -3,6 +3,7 @@ extends YSort
 
 const ENCOUNTER_RATE = 0.05;
 
+
 func IsEncounter():
 	var rng = RandomNumberGenerator.new() ;
 	rng.randomize() ;
