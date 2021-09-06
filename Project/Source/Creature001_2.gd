@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var HP = 25 ;
+var curHP = 25 ;
 var Energy = 50 ;
 var Rage = 20 ;
 

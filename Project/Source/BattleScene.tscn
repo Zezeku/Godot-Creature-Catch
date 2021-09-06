@@ -1,15 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Source/BattleScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Creature001.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Creature009.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Creatures/Creature009.png" type="Texture" id=3]
 [ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 8.wav" type="AudioStream" id=4]
+[ext_resource path="res://Source/BaseCreature.gd" type="Script" id=5]
 [ext_resource path="res://Source/Creature001.gd" type="Script" id=6]
 [ext_resource path="res://Source/Creature009.gd" type="Script" id=7]
 [ext_resource path="res://Source/Creature001_2.gd" type="Script" id=8]
 [ext_resource path="res://Source/Creature009_2.gd" type="Script" id=9]
 [ext_resource path="res://Source/Player.gd" type="Script" id=10]
 [ext_resource path="res://Source/Enemy.gd" type="Script" id=11]
+[ext_resource path="res://Source/StateMachine.gd" type="Script" id=12]
+[ext_resource path="res://Source/State.gd" type="Script" id=13]
+[ext_resource path="res://Source/BattleStart.gd" type="Script" id=14]
+[ext_resource path="res://Source/PlayerMon1Start.gd" type="Script" id=15]
+[ext_resource path="res://Source/PlayerMon2Start.gd" type="Script" id=16]
+[ext_resource path="res://Source/BattlePhase.gd" type="Script" id=17]
+[ext_resource path="res://Source/EnemyPhase.gd" type="Script" id=18]
+[ext_resource path="res://Source/BattleEnd.gd" type="Script" id=19]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,27 +61,49 @@ frame = 1
 position = Vector2( 101.784, -74.8134 )
 script = ExtResource( 11 )
 
-[node name="FightTeam" type="Node2D" parent="Enemy"]
-
-[node name="Creature001_2" type="Node2D" parent="Enemy/FightTeam"]
+[node name="Creature001_2" type="Node2D" parent="Enemy"]
 position = Vector2( -101.784, 74.8134 )
 script = ExtResource( 8 )
 
-[node name="Sprite3" type="Sprite" parent="Enemy/FightTeam/Creature001_2"]
+[node name="Sprite3" type="Sprite" parent="Enemy/Creature001_2"]
 position = Vector2( 50.4314, -82.3643 )
 texture = ExtResource( 2 )
 hframes = 3
 
-[node name="Creature009_2" type="Node2D" parent="Enemy/FightTeam"]
+[node name="Creature009_2" type="Node2D" parent="Enemy"]
 position = Vector2( -101.784, 74.8134 )
 script = ExtResource( 9 )
 
-[node name="Sprite4" type="Sprite" parent="Enemy/FightTeam/Creature009_2"]
+[node name="Sprite4" type="Sprite" parent="Enemy/Creature009_2"]
 position = Vector2( 134.88, -36.1655 )
 texture = ExtResource( 3 )
 hframes = 3
 
-[node name="TurnOrder" type="Node2D" parent="."]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 12 )
 
-[connection signal="move_selected" from="Player/Creature001" to="Player" method="_on_Creature001_move_selected"]
-[connection signal="move_selected" from="Player/Creature009" to="Player" method="_on_Creature009_move_selected"]
+[node name="State" type="Node" parent="StateMachine"]
+script = ExtResource( 13 )
+
+[node name="BattleStart" type="Node" parent="StateMachine/State"]
+script = ExtResource( 14 )
+
+[node name="PlayerMon1Start" type="Node" parent="StateMachine/State"]
+script = ExtResource( 15 )
+
+[node name="PlayerMon2Start" type="Node" parent="StateMachine/State"]
+script = ExtResource( 16 )
+
+[node name="BattlePhase" type="Node" parent="StateMachine/State"]
+script = ExtResource( 17 )
+
+[node name="EnemyPhase" type="Node" parent="StateMachine/State"]
+script = ExtResource( 18 )
+
+[node name="BattleEnd" type="Node" parent="StateMachine/State"]
+script = ExtResource( 19 )
+
+[node name="BaseCreature" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[connection signal="PlayBattleMusic" from="StateMachine/State/BattleStart" to="." method="_on_BattleStart_PlayBattleMusic"]

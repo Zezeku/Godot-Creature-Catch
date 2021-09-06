@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Creature004.png-49074ab93051deee7bcc4e68ca86669d.stex"
+path="res://.import/Creature011.png-4feb1c1c10f1d9ae1483645ed887b306.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Creature004.png"
-dest_files=[ "res://.import/Creature004.png-49074ab93051deee7bcc4e68ca86669d.stex" ]
+source_file="res://Assets/Creatures/Creature011.png"
+dest_files=[ "res://.import/Creature011.png-4feb1c1c10f1d9ae1483645ed887b306.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
