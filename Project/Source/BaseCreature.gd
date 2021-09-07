@@ -51,4 +51,4 @@ func RazorFin(source, target):
 	damageCalc(target, damage) ;
 
 func damageCalc(source, damage):
-	source.curHP -= damage ;
+	source.curHP -= clamp(damage, 1, source.curHP) ;
