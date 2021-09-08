@@ -52,3 +52,8 @@ func RazorFin(source, target):
 
 func damageCalc(source, damage):
 	source.curHP -= clamp(damage, 1, source.curHP) ;
+	if(source.curHP <= 0):
+		fainted(source) ;
+
+func fainted(source):
+	source.get_parent().remove_child(source) ;

@@ -27,6 +27,7 @@ func enter(fsm:StateMachine):
 	print("Enemy mon1: HP ", Enemy.mon1.curHP, " / ", Enemy.mon1.HP) ;
 	print("Enemy mon2: HP ", Enemy.mon2.curHP, " / ", Enemy.mon2.HP) ;
 	
+	
 	decide_next_state() ;
 	
 
