@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Assets/Player002SpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Player002SpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://Source/PlayerController.gd" type="Script" id=2]
-[ext_resource path="res://Assets/PlayerTallGrassMask.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 1 )
@@ -211,7 +210,6 @@ collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-light_mask = 2048
 position = Vector2( -7, -17 )
 texture = ExtResource( 1 )
 centered = false
@@ -239,9 +237,3 @@ active = true
 parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
-
-[node name="Light2D" type="Light2D" parent="."]
-visible = false
-texture = ExtResource( 3 )
-mode = 3
-range_item_cull_mask = 2048

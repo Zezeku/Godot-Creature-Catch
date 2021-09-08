@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RockCliffV2.png-a1f55cd52fce8903e3580a9dccd049d9.stex"
+path="res://.import/Village1Tileset.png-9bd0ef3ebe499a16032fe2ea09150eeb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RockCliffV2.png"
-dest_files=[ "res://.import/RockCliffV2.png-a1f55cd52fce8903e3580a9dccd049d9.stex" ]
+source_file="res://Assets/Tilesets/Village1Tileset.png"
+dest_files=[ "res://.import/Village1Tileset.png-9bd0ef3ebe499a16032fe2ea09150eeb.stex" ]
 
 [params]
 

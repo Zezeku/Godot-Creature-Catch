@@ -6,6 +6,7 @@
 extents = Vector2( 5, 1 )
 
 [node name="Tree" type="StaticBody2D"]
+light_mask = 1024
 position = Vector2( 0, -1 )
 z_index = 1
 

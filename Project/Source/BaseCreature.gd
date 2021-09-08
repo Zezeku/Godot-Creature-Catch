@@ -19,7 +19,7 @@ func getMove(source, target, moveName):
 
 func Scratch(source, target):
 	var potency = 20 ;
-	var damage = source.Atk * (1 + potency / 100) - target.Def ;
+	var damage = clamp(source.Atk * (1 + potency / 100) - target.Def, 1, target.curHP) ;
 	
 	print(source.name, " used Scratch on ", target.name, " and did ", damage, " damage!");
 	damageCalc(target, damage) ;
@@ -32,7 +32,7 @@ func SedimentTrap(source, target):
 
 func BarkJab(source, target):
 	var potency = 40 ;
-	var damage = source.Atk * (1 + potency / 100) * source.stat_changes[0] - target.Def * target.stat_changes[2] ;
+	var damage = clamp(source.Atk * (1 + potency / 100) * source.stat_changes[0] - target.Def * target.stat_changes[2],1,target.curHP) ;
 	
 	print(source.name, " used Bark Jab on ", target.name, " and did ", damage, " damage!");
 	damageCalc(target, damage) ;
@@ -45,7 +45,7 @@ func StareDown(source, target):
 
 func RazorFin(source, target):
 	var potency = 40 ;
-	var damage = source.Atk * (1 + potency / 100) * source.stat_changes[0] - target.Def * target.stat_changes[2] ;
+	var damage = clamp(source.Atk * (1 + potency / 100) * source.stat_changes[0] - target.Def * target.stat_changes[2],1,target.curHP) ;
 	
 	print(source.name, " used Razor Fin on ", target.name, " and did ", damage, " damage!");
 	damageCalc(target, damage) ;

@@ -44,12 +44,15 @@ func change_to_world_state():
 	#do not merge! they have different functionality
 	#pass data back and forth instead
 	state = WORLD ;
+	
+	$Player.visible = false ;
 	remove_child($BattleScene) ;
 	change_state(state) ;
 	
 func change_to_battle_state():
 	state = BATTLE ;
 	
+	$Player.visible = true ;
 	player_pos = $Route1Scene/YSort/PlayerController.transform ;
 	player_frame = $Route1Scene/YSort/PlayerController.animationTree.get("parameters/Idle/blend_position");
 	

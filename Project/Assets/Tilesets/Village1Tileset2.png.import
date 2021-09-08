@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerTallGrassMask.png-8c47890b23b06872e51ef7518b61930a.stex"
+path="res://.import/Village1Tileset2.png-f9518afdb214c3cccf1af3294cc26d89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PlayerTallGrassMask.png"
-dest_files=[ "res://.import/PlayerTallGrassMask.png-8c47890b23b06872e51ef7518b61930a.stex" ]
+source_file="res://Assets/Tilesets/Village1Tileset2.png"
+dest_files=[ "res://.import/Village1Tileset2.png-f9518afdb214c3cccf1af3294cc26d89.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
