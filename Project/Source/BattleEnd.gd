@@ -6,7 +6,6 @@ func enter(fsm:StateMachine):
 	
 	print("\n\nBATTLE ENDED!!\n\n")
 	
-	Player.mon1.stat_changes = [1,1,1,1,1] ;
-	Player.mon2.stat_changes = [1,1,1,1,1] ;
+	#reset all player creatures stats!
 	SceneHandler.change_to_world_state() ;
 

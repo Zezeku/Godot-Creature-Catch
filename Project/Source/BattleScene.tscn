@@ -24,33 +24,34 @@ script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.25, 0.25 )
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 101.784, -74.8134 )
 script = ExtResource( 11 )
 
 [node name="Creature001_2" type="Node2D" parent="Enemy"]
-position = Vector2( -101.784, 74.8134 )
+visible = false
 script = ExtResource( 8 )
 
 [node name="Sprite3" type="Sprite" parent="Enemy/Creature001_2"]
-position = Vector2( 50.4314, -82.3643 )
 texture = ExtResource( 2 )
+centered = false
 hframes = 4
 
 [node name="Creature009_2" type="Node2D" parent="Enemy"]
-position = Vector2( -101.784, 74.8134 )
+visible = false
 script = ExtResource( 9 )
 
 [node name="Sprite4" type="Sprite" parent="Enemy/Creature009_2"]
-position = Vector2( 134.88, -36.1655 )
 texture = ExtResource( 3 )
+centered = false
 hframes = 4
+
+[node name="PartyCreatures" type="Node2D" parent="Enemy"]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 12 )

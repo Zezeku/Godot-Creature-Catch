@@ -56,4 +56,8 @@ func damageCalc(source, damage):
 		fainted(source) ;
 
 func fainted(source):
+	var sourceIndex = source.get_parent().battleTeam.find(source) ;
+	source.visible = false ;
+	source.get_parent().battleTeam[sourceIndex] = null ;
 	source.get_parent().remove_child(source) ;
+	get_node("../Enemy/PartyCreatures").add_child(source) ;

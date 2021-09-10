@@ -7,27 +7,26 @@
 [ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=5]
 
 [node name="Player" type="Node2D"]
-position = Vector2( -119.622, 62.4333 )
 script = ExtResource( 3 )
 
 [node name="Creature001" type="Node2D" parent="."]
-position = Vector2( 119.622, -62.4333 )
+visible = false
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Creature001"]
-position = Vector2( -126.163, 26.7571 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 hframes = 4
 frame = 2
 
 [node name="Creature009" type="Node2D" parent="."]
-position = Vector2( 119.622, -62.4333 )
+visible = false
 script = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Creature009"]
-position = Vector2( -51.8372, 77.2984 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 hframes = 4
 frame = 2
+
+[node name="Party" type="Node2D" parent="."]

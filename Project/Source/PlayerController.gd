@@ -31,3 +31,9 @@ func _physics_process(delta):
 	
 	
 
+func _input(event):
+	if event.is_action_pressed("Sprint"):
+		max_speed = 100 ;
+	if event.is_action_released("Sprint"):
+		max_speed = 60 ;
+

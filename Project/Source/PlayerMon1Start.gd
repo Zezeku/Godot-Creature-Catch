@@ -6,10 +6,17 @@ func enter(fsm:StateMachine):
 	print("\nentered_player_mon_1_start") ;
 	print("[Moves, Run]") ;
 	
-	get_parent().activeChar = Player.mon1 ;
-	Player.mon1.get_child(0).frame = 3 ;
+	if !isMon1():
+		change_state("PlayerMon2Start") ;
+		return ;
+		
+	get_parent().activeChar = Player.battleTeam[0] ;
+	get_parent().activeChar.get_child(0).frame = 3 ;
 	
 
+func isMon1():
+	return Player.battleTeam[0] ;
+	
 func inputOne():
 	change_state("MoveState") ;
 

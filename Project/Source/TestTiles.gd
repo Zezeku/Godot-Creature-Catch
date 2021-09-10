@@ -5,6 +5,8 @@ onready var LavalCliffs = get_node("Route1-LowerCliffs") ;
 func _ready():
 		get_node("../YSort/BridgeSort/Bridge/Bridge2D").connect("LavaCliffsOff", self, "LavaCliffsOff") ;
 		get_node("../YSort/BridgeSort/Bridge/Bridge2D").connect("LavaCliffsOn", self, "LavaCliffsOn") ;
+		get_node("../YSort/BridgeSort/Bridge2/Bridge2D").connect("LavaCliffsOff", self, "LavaCliffsOff") ;
+		get_node("../YSort/BridgeSort/Bridge2/Bridge2D").connect("LavaCliffsOn", self, "LavaCliffsOn") ;
 	
 
 
