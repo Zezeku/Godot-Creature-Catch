@@ -51,5 +51,22 @@ text = "Climb the Mountain"
 align = 1
 autowrap = true
 
+[node name="Panel2" type="Panel" parent="."]
+margin_left = -61.0
+margin_top = -78.0
+margin_right = 59.0
+margin_bottom = -28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 109.0
+margin_bottom = 39.0
+text = "Stand here and press 'Enter'"
+autowrap = true
+
 [connection signal="body_entered" from="DialougeArea" to="DialougeArea" method="_on_DialougeArea_body_entered"]
 [connection signal="body_exited" from="DialougeArea" to="DialougeArea" method="_on_DialougeArea_body_exited"]

@@ -1,25 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Source/Route1Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Source/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Creatures/Creature017.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Creatures/Creature009.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Creatures/Creature016.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Creatures/Creature014.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Creatures/Creature015.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Creatures/Creature008.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Creatures/Creature010.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Creatures/Creature007.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Creatures/Creature005.png" type="Texture" id=12]
 [ext_resource path="res://Source/SceneHandler.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Creatures/Creature013.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Creatures/Creature006.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Creatures/Creature002.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Creatures/Creature012.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Creatures/Creature003.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Creatures/Creature004.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Creatures/Creature011.png" type="Texture" id=20]
 
 [node name="SceneHandler" type="Node"]
 script = ExtResource( 13 )
@@ -29,73 +12,3 @@ position = Vector2( -10.8099, -5.23595 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = false
-
-[node name="Creature001" type="Sprite" parent="."]
-position = Vector2( -661.324, 16.4365 )
-texture = ExtResource( 5 )
-hframes = 4
-
-[node name="Creature002" type="Sprite" parent="Creature001"]
-position = Vector2( 57.0583, 39.4352 )
-texture = ExtResource( 16 )
-
-[node name="Creature003" type="Sprite" parent="Creature001"]
-position = Vector2( 102.085, 16.1269 )
-texture = ExtResource( 18 )
-
-[node name="Creature004" type="Sprite" parent="Creature001"]
-position = Vector2( 162.036, -3.8389 )
-texture = ExtResource( 19 )
-
-[node name="Creature005" type="Sprite" parent="Creature001"]
-position = Vector2( 200.2, -2.15521 )
-texture = ExtResource( 12 )
-
-[node name="Creature006" type="Sprite" parent="Creature001"]
-position = Vector2( 251.833, -5.5226 )
-texture = ExtResource( 15 )
-
-[node name="Creature007" type="Sprite" parent="Creature001"]
-position = Vector2( 294.487, 2.89587 )
-texture = ExtResource( 11 )
-
-[node name="Creature008" type="Sprite" parent="Creature001"]
-position = Vector2( -6.33319, 62.3864 )
-texture = ExtResource( 9 )
-
-[node name="Creature009" type="Sprite" parent="Creature001"]
-position = Vector2( 59.3308, 64.07 )
-texture = ExtResource( 4 )
-hframes = 4
-
-[node name="Creature010" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 61.7354, -6.73476 )
-texture = ExtResource( 10 )
-
-[node name="Creature011" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 129.083, -15.7145 )
-texture = ExtResource( 20 )
-
-[node name="Creature012" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 192.502, 3.3674 )
-texture = ExtResource( 17 )
-
-[node name="Creature013" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 248.625, -11.2246 )
-texture = ExtResource( 14 )
-
-[node name="Creature014" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( -70.7151, 65.664 )
-texture = ExtResource( 7 )
-
-[node name="Creature015" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 6.7348, 51.6333 )
-texture = ExtResource( 8 )
-
-[node name="Creature016" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 74.6578, 52.3544 )
-texture = ExtResource( 6 )
-
-[node name="Creature017" type="Sprite" parent="Creature001/Creature009"]
-position = Vector2( 131.145, 62.4626 )
-texture = ExtResource( 3 )

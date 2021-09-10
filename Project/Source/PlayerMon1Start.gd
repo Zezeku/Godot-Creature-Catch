@@ -22,4 +22,5 @@ func inputOne():
 
 func inputTwo():
 	get_parent().runAttempt += 1 ;
+	get_parent().activeChar.get_child(0).frame = 2 ;
 	change_state("PlayerMon2Start") ;

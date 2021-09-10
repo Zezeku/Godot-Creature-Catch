@@ -20,6 +20,7 @@ func _input(event):
 
 func _on_DialougeArea_body_entered(body):
 	if body.name == "PlayerController":
+		get_node("../Panel2").visible = false ;
 		active = true ;
 
 

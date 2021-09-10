@@ -16,27 +16,26 @@ func enter(fsm:StateMachine):
 			print("Escape Failed!!")
 	
 	
-	#what if nothing to attack? ie your partner killed both others. this is just extra condition. fine for now
-	if Player.battleTeam[0]:
+	if Player.battleTeam[0] and (Enemy.battleTeam[0] or Enemy.battleTeam[1]):
 		if Enemy.battleTeam[Player.targetUse[0]]:
 			Creature.getMove(Player.battleTeam[0], Enemy.battleTeam[Player.targetUse[0]], Player.battleTeam[0].moveSet[Player.moveUse[0]] ) ;
 		else:
 			Creature.getMove(Player.battleTeam[0], Enemy.battleTeam[(Player.targetUse[0]+1)%2], Player.battleTeam[0].moveSet[Player.moveUse[0]] ) ;
 	
-	if Player.battleTeam[1]:
+	if Player.battleTeam[1] and (Enemy.battleTeam[0] or Enemy.battleTeam[1]):
 		if Enemy.battleTeam[Player.targetUse[1]]:
 			Creature.getMove(Player.battleTeam[1], Enemy.battleTeam[Player.targetUse[1]], Player.battleTeam[1].moveSet[Player.moveUse[1]] ) ;
 		else:
 			Creature.getMove(Player.battleTeam[1], Enemy.battleTeam[(Player.targetUse[1]+1)%2], Player.battleTeam[1].moveSet[Player.moveUse[1]] ) ;
 	
-	if Enemy.battleTeam[0]:
+	if Enemy.battleTeam[0] and (Player.battleTeam[0] or Player.battleTeam[1]):
 		if Player.battleTeam[Enemy.targetUse[0]]: 
 			Creature.getMove(Enemy.battleTeam[0], Player.battleTeam[Enemy.targetUse[0]], Enemy.battleTeam[0].moveSet[Enemy.moveUse[0]] ) ;
 		else:
 			Creature.getMove(Enemy.battleTeam[0], Player.battleTeam[(Enemy.targetUse[0]+1)%2], Enemy.battleTeam[0].moveSet[Enemy.moveUse[0]] ) ;
 	
 	
-	if Enemy.battleTeam[1]:
+	if Enemy.battleTeam[1] and (Player.battleTeam[0] or Player.battleTeam[1]):
 		if Player.battleTeam[Enemy.targetUse[0]]: 
 			Creature.getMove(Enemy.battleTeam[1], Player.battleTeam[Enemy.targetUse[1]], Enemy.battleTeam[1].moveSet[Enemy.moveUse[1]] ) ;
 		else:

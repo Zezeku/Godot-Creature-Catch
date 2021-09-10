@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Source/TestTiles.gd" type="Script" id=1]
 [ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 2.wav" type="AudioStream" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Source/Flower.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Source/House.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Source/VillageGirl.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Tilesets/StonewallTileSet.png" type="Texture" id=16]
+[ext_resource path="res://Source/Lamppost.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 16, 12, 0, 14, 0, 2, 16 )
@@ -713,6 +715,128 @@ points = PoolVector2Array( 32, 2, 32, 2, 30, 0, 32, 0 )
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=35]
+points = PoolVector2Array( 32, 16, 0, 16, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+points = PoolVector2Array( 16, 0, 16, 16, 4, 32, 0, 32, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 0, 0, 16, 16, 16, 32, 12, 32, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 8, 8, 16, 2, 16, 16, 8, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+points = PoolVector2Array( 0, 0, 8, 8, 8, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=40]
+0/name = "StonewallTileSet.png 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 0, 32, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 35 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 35 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "StonewallTileSet.png 1"
+1/texture = ExtResource( 16 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 16, 0, 16, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 36 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 36 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "StonewallTileSet.png 2"
+2/texture = ExtResource( 16 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 0, 16, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 37 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "StonewallTileSet.png 3"
+3/texture = ExtResource( 16 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 16, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 38 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "StonewallTileSet.png 4"
+4/texture = ExtResource( 16 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 80, 16, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 39 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
 [node name="Route1Scene" type="Node2D"]
 
 [node name="TestTiles" type="Node2D" parent="."]
@@ -761,6 +885,12 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 196617, 0, 1, 196626, 0, 65538, 196643, 0, 65538, 196647, 0, 1, 196650, 0, 1, 196652, 0, 1, 196657, 0, 131073, 196661, 0, 131073, 262154, 0, 65538, 262189, 0, 65537, 327732, 0, 131073, 393221, 0, 65536, 393239, 0, 2, 393263, 0, 0, 458758, 0, 1, 458800, 0, 65536, 458805, 0, 2, 524293, 0, 65537, 524312, 0, 65538, 655393, 0, 0, 655397, 0, 1, 655408, 0, 65538, 720898, 0, 2, 720931, 0, 2, 720935, 0, 1, 720947, 0, 1, 786435, 0, 65537, 786468, 0, 0, 786470, 0, 2, 786472, 0, 65538, 851970, 0, 65536, 852000, 0, 65537, 852005, 0, 2, 852007, 0, 65537, 852020, 0, 65537, 917535, 0, 0, 917537, 0, 65536, 917539, 0, 2, 917554, 0, 131073, 983072, 0, 131073, 983076, 0, 1, 983078, 0, 65538, 983081, 0, 65536, 1048589, 0, 65537, 1048597, 0, 65536, 1048607, 0, 0, 1048615, 0, 1, 1114132, 0, 0, 1114134, 0, 131073, 1114139, 0, 0, 1114143, 0, 0, 1114147, 0, 65538, 1114150, 0, 0, 1114152, 0, 2, 1179654, 0, 1, 1179665, 0, 65538, 1179682, 0, 65537, 1179685, 0, 1, 1179687, 0, 131073, 1179700, 0, 65537, 1245197, 0, 65536, 1245217, 0, 1, 1310726, 0, 131073, 1310776, 0, 65538, 1376314, 0, 65536, 1507379, 0, 1, 1507381, 0, 65538, 1703991, 0, 1 )
 
+[node name="Route1-StoneWall" type="TileMap" parent="TestTiles"]
+tile_set = SubResource( 40 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -983027, 3, 0, -983026, 0, 0, -983024, 0, 0, -983022, 2, 0, -917485, 4, 0, -917458, 3, 0, -917457, 2, 0, -851921, 1, 0, -786413, 1, 0, -786412, 4, 0, -786386, 1, 0, -720878, 1, 0, -720851, 1, 0, -655343, 3, 0, -655320, 3, 0, -655319, 0, 0, -655317, 0, 0, -262102, 3, 0, -262101, 0, 0, -262099, 0, 0, -262097, 4, 0, -196583, 3, 0, -196582, 4, 0, -131063, 3, 0, -131062, 0, 0, -131060, 0, 0, -131058, 0, 0, -131056, 4, 0, -131031, 3, 0, -131030, 0, 0, -131028, 0, 0, -131026, 4, 0, 1245217, 2, 0, 1245222, 1, 0, 1310754, 0, 0, 1310756, 0, 0 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="PlayerController" parent="YSort" instance=ExtResource( 6 )]
@@ -779,9 +909,6 @@ z_index = 1
 
 [node name="Batch1" type="YSort" parent="YSort"]
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Node2D" parent="YSort/Batch1" instance=ExtResource( 9 )]
 position = Vector2( 354, 197 )
@@ -1590,10 +1717,16 @@ position = Vector2( 552, -156 )
 position = Vector2( 650, -221 )
 
 [node name="Tree147" parent="YSort/TreeSort" instance=ExtResource( 5 )]
-position = Vector2( 747, -154 )
+position = Vector2( 762, -166 )
+
+[node name="Tree218" parent="YSort/TreeSort" instance=ExtResource( 5 )]
+position = Vector2( 751, -148 )
+
+[node name="Tree219" parent="YSort/TreeSort" instance=ExtResource( 5 )]
+position = Vector2( 744, -198 )
 
 [node name="Tree148" parent="YSort/TreeSort" instance=ExtResource( 5 )]
-position = Vector2( 752, -207 )
+position = Vector2( 758, -228 )
 
 [node name="Tree149" parent="YSort/TreeSort" instance=ExtResource( 5 )]
 position = Vector2( 688, -176 )
@@ -2022,7 +2155,7 @@ position = Vector2( 496, 317 )
 position = Vector2( 503, 330 )
 
 [node name="Tree84" parent="YSort/TreeSort" instance=ExtResource( 5 )]
-position = Vector2( 535, 330 )
+position = Vector2( 549, 282 )
 
 [node name="FlowerSort" type="YSort" parent="YSort"]
 
@@ -2452,6 +2585,35 @@ position = Vector2( 523, 212 )
 
 [node name="House5" parent="YSort/HouseSort" instance=ExtResource( 14 )]
 position = Vector2( 885, 399 )
+
+[node name="LampSort" type="YSort" parent="YSort"]
+
+[node name="Lamppost" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 107, 168 )
+
+[node name="Lamppost2" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 241, 106 )
+
+[node name="Lamppost3" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 213, 251 )
+
+[node name="Lamppost4" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 476, 271 )
+
+[node name="Lamppost5" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 306, 266 )
+
+[node name="Lamppost6" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 553, 204 )
+
+[node name="Lamppost7" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 640, 233 )
+
+[node name="Lamppost8" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 625, 334 )
+
+[node name="Lamppost9" parent="YSort/LampSort" instance=ExtResource( 17 )]
+position = Vector2( 584, 45 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
