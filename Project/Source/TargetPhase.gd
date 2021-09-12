@@ -28,7 +28,6 @@ func decide_next_state():
 		Enemy.battleTeam[1].get_child(0).frame = 0 ;
 	
 	if get_parent().activeChar == Player.battleTeam[0] and Player.battleTeam[1]:
-		print("player 2 turn")
 		Player.battleTeam[0].get_child(0).frame = 2 ;
 		change_state("PlayerMon2Start") ;
 		return ;

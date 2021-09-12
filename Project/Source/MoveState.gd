@@ -5,7 +5,7 @@ func enter(fsm:StateMachine):
 	_fsm = fsm ;
 	
 	print("\nenter_", get_parent().activeChar.name, "_moveState");
-	print(get_parent().activeChar.moveSet) ;
+	print(get_parent().activeChar.moveList) ;
 
 func decide_next_state():
 	change_state("TargetPhase") ;

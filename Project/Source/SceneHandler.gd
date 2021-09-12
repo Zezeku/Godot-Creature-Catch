@@ -3,6 +3,8 @@ extends Node
 onready var root = get_tree().root
 onready var base_size = root.get_visible_rect().size
 
+var scene_data = [] ;
+
 enum{ 
 	WORLD, 
 	MENU, 
@@ -18,6 +20,10 @@ func _ready():
 	
 	root.set_attach_to_screen_rect(root.get_visible_rect())
 	_on_screen_resized()
+	
+	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
+	add_child(load("res://Source/Player.tscn").instance()) ;
+	$Route1Scene/YSort/PlayerController.position = Vector2(35,200) ;
 
 func change_state(my_state):
 	match my_state:
@@ -32,7 +38,8 @@ func world_state():
 	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
 	$Route1Scene/YSort/PlayerController/PlayerCamera.current = true ;
 	move_child($Route1Scene, 0);
-	
+	$Route1Scene.loadData(scene_data) ;
+	scene_data = null ;
 	$Route1Scene/YSort/PlayerController.transform = player_pos ;
 	$Route1Scene/YSort/PlayerController.animationTree.set("parameters/Idle/blend_position", player_frame);
 	#currently, reentering collision allows encounter check to happen. need to ensure upon scene entry, this is not checked
@@ -61,7 +68,9 @@ func change_to_battle_state():
 	player_pos = $Route1Scene/YSort/PlayerController.transform ;
 	player_frame = $Route1Scene/YSort/PlayerController.animationTree.get("parameters/Idle/blend_position");
 	
+	scene_data.append($Route1Scene.saveData()) ;
 	remove_child($Route1Scene);
+	
 	change_state(state) ;
 	
 	

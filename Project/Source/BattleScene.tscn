@@ -1,12 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Source/BattleScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Creatures/Creature009.png" type="Texture" id=3]
 [ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 8.wav" type="AudioStream" id=4]
 [ext_resource path="res://Source/BaseCreature.gd" type="Script" id=5]
-[ext_resource path="res://Source/Creature001_2.gd" type="Script" id=8]
-[ext_resource path="res://Source/Creature009_2.gd" type="Script" id=9]
+[ext_resource path="res://Source/MasterUI.gd" type="Script" id=6]
 [ext_resource path="res://Source/Enemy.gd" type="Script" id=11]
 [ext_resource path="res://Source/StateMachine.gd" type="Script" id=12]
 [ext_resource path="res://Source/State.gd" type="Script" id=13]
@@ -27,31 +24,14 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 4 )
 volume_db = -10.0
 
 [node name="Enemy" type="Node2D" parent="."]
 script = ExtResource( 11 )
 
-[node name="Creature001_2" type="Node2D" parent="Enemy"]
-visible = false
-script = ExtResource( 8 )
-
-[node name="Sprite3" type="Sprite" parent="Enemy/Creature001_2"]
-texture = ExtResource( 2 )
-centered = false
-hframes = 4
-
-[node name="Creature009_2" type="Node2D" parent="Enemy"]
-visible = false
-script = ExtResource( 9 )
-
-[node name="Sprite4" type="Sprite" parent="Enemy/Creature009_2"]
-texture = ExtResource( 3 )
-centered = false
-hframes = 4
-
-[node name="PartyCreatures" type="Node2D" parent="Enemy"]
+[node name="Party" type="Node2D" parent="Enemy"]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 12 )
@@ -86,4 +66,41 @@ script = ExtResource( 21 )
 [node name="BaseCreature" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2( 850, 400 )
+transform = Transform2D( 1, 0, 0, 1, 850, 400 )
+
+[node name="MasterUI" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+margin_left = 208.265
+margin_top = 95.1425
+margin_right = 248.265
+margin_bottom = 135.143
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleBeginPopup" type="PopupDialog" parent="CanvasLayer/MasterUI"]
+margin_left = -122.007
+margin_top = -61.5356
+margin_right = 145.993
+margin_bottom = 129.464
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleBegingsLabel" type="Label" parent="CanvasLayer/MasterUI/BattleBeginPopup"]
+margin_left = 69.0314
+margin_top = 83.6234
+margin_right = 196.031
+margin_bottom = 97.6234
+text = "Let the Battle Begin"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="PlayBattleMusic" from="StateMachine/State/BattleStart" to="." method="_on_BattleStart_PlayBattleMusic"]
+[connection signal="ShowBattleStart" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_ShowBattleStart"]

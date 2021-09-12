@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Source/TestTiles.gd" type="Script" id=1]
 [ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 2.wav" type="AudioStream" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Source/Batch1.gd" type="Script" id=4]
 [ext_resource path="res://Source/Tree.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Source/PlayerController.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Source/Resources/RockCliff.tres" type="TileSet" id=7]
+[ext_resource path="res://Source/Resources/TilesetRes/RockCliff.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/Tilesets/Village1Tileset2.png" type="Texture" id=8]
 [ext_resource path="res://Source/TallGrass.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Tilesets/CliffV2.png" type="Texture" id=10]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Source/VillageGirl.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Tilesets/StonewallTileSet.png" type="Texture" id=16]
 [ext_resource path="res://Source/Lamppost.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Source/Route1Scene.gd" type="Script" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 16, 12, 0, 14, 0, 2, 16 )
@@ -838,6 +839,7 @@ points = PoolVector2Array( 0, 0, 8, 8, 8, 16, 0, 16 )
 4/z_index = 0
 
 [node name="Route1Scene" type="Node2D"]
+script = ExtResource( 18 )
 
 [node name="TestTiles" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -895,7 +897,6 @@ tile_data = PoolIntArray( -983027, 3, 0, -983026, 0, 0, -983024, 0, 0, -983022, 
 
 [node name="PlayerController" parent="YSort" instance=ExtResource( 6 )]
 light_mask = 1024
-position = Vector2( 35, 193 )
 z_index = 1
 collision_mask = 1
 
@@ -2592,7 +2593,7 @@ position = Vector2( 885, 399 )
 position = Vector2( 107, 168 )
 
 [node name="Lamppost2" parent="YSort/LampSort" instance=ExtResource( 17 )]
-position = Vector2( 241, 106 )
+position = Vector2( 247, 105 )
 
 [node name="Lamppost3" parent="YSort/LampSort" instance=ExtResource( 17 )]
 position = Vector2( 213, 251 )

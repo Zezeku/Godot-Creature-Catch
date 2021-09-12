@@ -14,6 +14,7 @@ func enter(fsm:StateMachine):
 	get_parent().activeChar.get_child(0).frame = 3 ;
 	
 
+#this one is ok, specific to battle scene
 func isMon1():
 	return Player.battleTeam[0] ;
 	

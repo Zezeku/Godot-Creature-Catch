@@ -9,14 +9,12 @@ func enter(fsm:StateMachine):
 	if Enemy.battleTeam[0]:
 		rng.randomize() ;
 		Enemy.moveUse[0] = rng.randi_range(0,2) ;
-	
 		rng.randomize() ;
 		Enemy.targetUse[0] = rng.randi_range(0,1) ;
 	
 	if Enemy.battleTeam[1]:
 		rng.randomize() ;
 		Enemy.moveUse[1] = rng.randi_range(0,2) ;
-	
 		rng.randomize() ;
 		Enemy.targetUse[1] = rng.randi_range(0,1) ;
 	

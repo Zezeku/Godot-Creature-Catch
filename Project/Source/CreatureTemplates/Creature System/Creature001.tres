@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Rage.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+creatureName = "Creature001"
+maxHP = 1.0
+maxEnergy = 5
+maxResource = 5
+ATK = 1.0
+SPATK = 0.75
+DEF = 1.0
+SPDEF = 1.0
+SPD = 0.75
+spriteSheet = ExtResource( 2 )
+resourceType = ExtResource( 3 )
+moveList = [ "Scratch", "Bark Jab", "Sediment Trap" ]
+moveLearn = [  ]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LamppostLight4.png-7a7fde063e35a343b2732c248d9502c9.stex"
+path="res://.import/LamppostLight1.png-8370301f642c71ca07bd373b22c5034d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToImport/LamppostLight4.png"
-dest_files=[ "res://.import/LamppostLight4.png-7a7fde063e35a343b2732c248d9502c9.stex" ]
+source_file="res://Assets/LamppostLight1.png"
+dest_files=[ "res://.import/LamppostLight1.png-8370301f642c71ca07bd373b22c5034d.stex" ]
 
 [params]
 

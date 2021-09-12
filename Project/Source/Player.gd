@@ -1,9 +1,16 @@
 extends Node2D
 
-onready var mon1 = get_child(0) ;
-onready var mon2 = get_child(1) ;
+onready var Party = $Party ;
+onready var creatureX = load("res://Source/CreatureTemplates/CreatureX.tscn") ;
 
-onready var battleTeam = [mon1, mon2] ;
+var battleTeam = [null, null] ;
+var moveUse = [null,null] ;
+var targetUse = [null,null] ;
 
-var moveUse = [0,0] ;
-var targetUse = [0,0] ;
+func _ready():
+	
+	$Party.add_child(creatureX.instance()) ;
+	$Party.get_child(0).initializeStats(load("res://Source/CreatureTemplates/Creature System/Creature001.tres"),4) ;
+	$Party.get_child(0).set_name($Party.get_child(0).creatureName) ;
+	
+	

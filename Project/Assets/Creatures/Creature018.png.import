@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lamppost.png-e271083fcd410d0db557fa8db0e26495.stex"
+path="res://.import/Creature018.png-5d3f9b290d21a35df6f7c45d39114804.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToImport/Lamppost.png"
-dest_files=[ "res://.import/Lamppost.png-e271083fcd410d0db557fa8db0e26495.stex" ]
+source_file="res://Assets/Creatures/Creature018.png"
+dest_files=[ "res://.import/Creature018.png-5d3f9b290d21a35df6f7c45d39114804.stex" ]
 
 [params]
 

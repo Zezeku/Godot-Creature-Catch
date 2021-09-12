@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "CreatureTemplate",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd"
+}, {
+"base": "Resource",
+"class": "ResourceTemplate",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Resource System/ResourceTemplate.gd"
+}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Source/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"CreatureTemplate": "",
+"ResourceTemplate": "",
 "StateMachine": ""
 }
 

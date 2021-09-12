@@ -1,14 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Source/Route1Scene.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Source/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Source/SceneHandler.gd" type="Script" id=13]
 
 [node name="SceneHandler" type="Node"]
 script = ExtResource( 13 )
-
-[node name="Route1Scene" parent="." instance=ExtResource( 1 )]
-position = Vector2( -10.8099, -5.23595 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-visible = false
