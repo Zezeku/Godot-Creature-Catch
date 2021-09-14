@@ -1,8 +1,11 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Creatures/Creature009.png" type="Texture" id=2]
 [ext_resource path="res://Source/CreatureTemplates/Resource System/Aether.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Scratch.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/StareDown.tres" type="Resource" id=5]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/RazorFin.tres" type="Resource" id=6]
 
 [resource]
 script = ExtResource( 1 )
@@ -17,5 +20,5 @@ SPDEF = 0.75
 SPD = 1.0
 spriteSheet = ExtResource( 2 )
 resourceType = ExtResource( 3 )
-moveList = [ "Stare Down", "Razor Fin", "Scratch" ]
-moveLearn = [  ]
+creatureType = [ "Water", "Stealth" ]
+skillList = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]

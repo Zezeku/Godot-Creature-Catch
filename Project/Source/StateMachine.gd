@@ -25,6 +25,8 @@ func previous_state():
 
 ########## INPUT SCHEME ##################
 func _input(event):
+	if event is InputEventMouseButton and state.has_method("inputEnter"):
+		state.inputEnter() ;
 	if event.is_action_pressed("ui_accept") and state.has_method("inputEnter"):
 		state.inputEnter() ;
 	if event.is_action_pressed("1") and state.has_method("inputOne"):

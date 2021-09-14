@@ -6,4 +6,3 @@ onready var enemy = $Enemy ;
 
 func _on_BattleStart_PlayBattleMusic():
 	$AudioStreamPlayer.play() ;
-

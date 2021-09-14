@@ -2,7 +2,8 @@ extends Resource
 
 class_name ResourceTemplate
 
-export(String) var resourceType
+export(String) var resourceName
+export(PackedScene) var resourceGUI
 
 func initialize(creature):
 	creature.resourceType = self

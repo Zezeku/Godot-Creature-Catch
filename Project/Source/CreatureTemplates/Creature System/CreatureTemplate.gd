@@ -19,17 +19,18 @@ export(Resource) var spriteSheet #resource for sprite sheet
 
 export(Resource) var resourceType #resource for resource GUI, update
 
-export(Resource) var creatureType #resource for type GUI, and check multipliers
+export(Array, String) var creatureType #resource for type GUI, and check multipliers
 
-export(Array, String) var moveList #will be resource later
-export(Array, Resource) var moveLearn
+export(Array, Resource) var skillList #will be resource later
 
 func initialize(creature, level):
 	#these should be equations based on level
 	creature.stat[creature.STAT.MAX_HP] = int(maxHP * 2 * level + 8) ;
 	creature.stat[creature.STAT.HP] =  int(maxHP * 2 * level + 8) ;
 	creature.stat[creature.STAT.MAX_ENERGY] =  maxEnergy ;
+	creature.stat[creature.STAT.ENERGY] =  maxEnergy ;
 	creature.stat[creature.STAT.MAX_RESOURCE] = maxResource ;
+	creature.stat[creature.STAT.RESOURCE] = maxResource ;
 	creature.stat[creature.STAT.ATK] = int(ATK * level + 2);
 	creature.stat[creature.STAT.SPATK] = int(SPATK * level + 2);
 	creature.stat[creature.STAT.DEF] = int(DEF * level + 2);
@@ -38,14 +39,15 @@ func initialize(creature, level):
 	
 	creature.creatureName = creatureName ;
 	
+	for skill in skillList.size():
+		creature.moveList.append(skillList[skill]) ;
+	
 	creature.spriteSheet = spriteSheet ;
 	creature.add_child(Sprite.new())
 	creature.get_child(0).texture = spriteSheet ;
 	creature.get_child(0).hframes = 4 ;
 	creature.get_child(0).frame = 2 ;
 	creature.get_child(0).scale = Vector2(2,2) ;
-	
-	creature.moveList = moveList ; #eventually a Resource
 	
 	resourceType.initialize(creature) ;
 

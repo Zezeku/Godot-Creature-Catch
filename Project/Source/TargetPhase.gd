@@ -27,18 +27,14 @@ func decide_next_state():
 	if Enemy.battleTeam[1]:
 		Enemy.battleTeam[1].get_child(0).frame = 0 ;
 	
-	if get_parent().activeChar == Player.battleTeam[0] and Player.battleTeam[1]:
-		Player.battleTeam[0].get_child(0).frame = 2 ;
-		change_state("PlayerMon2Start") ;
-		return ;
-	
-	if get_parent().activeChar == Player.battleTeam[0] and !Player.battleTeam[1]:
-		Player.battleTeam[0].get_child(0).frame = 2 ;
-		change_state("EnemyPhase") ;
-		return ;
-	
-	else :
-		Player.battleTeam[1].get_child(0).frame = 2 ;
+	if get_parent().activeChar == Player.battleTeam[0]:
+		get_parent().activeChar.get_child(0).frame = 2 ;
+		if Player.battleTeam[1]:
+			get_parent().activeChar = Player.battleTeam[1] ;
+			change_state("Creature2Phase") ;
+		else:
+			change_state("EnemyPhase") ;
+	else:
 		change_state("EnemyPhase") ;
 
 

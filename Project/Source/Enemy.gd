@@ -9,18 +9,15 @@ onready var battleTeam = [null, null] ;
 var moveUse = [null,null] ;
 var targetUse = [null,null] ;
 
-func _ready():
-	
-	$Party.add_child(creatureX.instance()) ;
-	
-	rng.randomize() ;
-	if rng.randf_range(0,1) <= 0.5:
-		$Party.get_child(0).initializeStats(load("res://Source/CreatureTemplates/Creature System/Creature001.tres"),2) ;
-	else:
-		$Party.get_child(0).initializeStats(load("res://Source/CreatureTemplates/Creature System/Creature009.tres"),2) ;
-	
-	$Party.get_child(0).set_name($Party.get_child(0).creatureName) ;
-	
-
 func isMon2():
 	return Party.get_child_count() > 1 ;
+
+func createEncounter(encounter):
+	print("Enemy_creatingEncounter") ;
+	
+	for creature in encounter.size():
+		$Party.add_child(encounter[creature])
+		$Party.get_child(creature).set_name($Party.get_child(creature).creatureName) ;
+
+func _on_BattleStart_createEncounter():
+	createEncounter(get_parent().get_parent().battle_data) ; # Enemy -> battleSCene -> scenehandler.battle_data <- batch.encounter_data

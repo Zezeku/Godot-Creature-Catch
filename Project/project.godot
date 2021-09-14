@@ -15,19 +15,49 @@ _global_script_classes=[ {
 "path": "res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd"
 }, {
 "base": "Resource",
+"class": "DamageEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffect System/DamageEffect.gd"
+}, {
+"base": "Resource",
+"class": "ItemResource",
+"language": "GDScript",
+"path": "res://Source/ItemTemplates/ItemTemplate.gd"
+}, {
+"base": "Resource",
 "class": "ResourceTemplate",
 "language": "GDScript",
 "path": "res://Source/CreatureTemplates/Resource System/ResourceTemplate.gd"
+}, {
+"base": "Resource",
+"class": "SkillTemplate",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillTemplate.gd"
+}, {
+"base": "Resource",
+"class": "StatEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffect System/StatEffect.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Source/StateMachine.gd"
+}, {
+"base": "Resource",
+"class": "itemEffect",
+"language": "GDScript",
+"path": "res://Source/ItemTemplates/ItemEffects/CatchEffect.gd"
 } ]
 _global_script_class_icons={
 "CreatureTemplate": "",
+"DamageEffect": "",
+"ItemResource": "",
 "ResourceTemplate": "",
-"StateMachine": ""
+"SkillTemplate": "",
+"StatEffect": "",
+"StateMachine": "",
+"itemEffect": ""
 }
 
 [application]
@@ -36,12 +66,16 @@ config/name="Project"
 run/main_scene="res://Source/SceneHandler.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+TypeChart="*res://Source/TypeChart.gd"
+
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=1920
-window/size/test_height=1080
+window/size/test_width=960
+window/size/test_height=540
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

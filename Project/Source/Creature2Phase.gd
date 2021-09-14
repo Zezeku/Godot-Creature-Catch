@@ -5,15 +5,13 @@ func enter(fsm:StateMachine):
 	_fsm = fsm
 	
 	print("\nentered_player_mon_2_start") ;
+	
 	if !isMon2():
 		change_state("EnemyPhase") ;
 		return ;
 	
-	print("[Moves, Run]") ;
-	
-	
-	get_parent().activeChar = Player.battleTeam[1] ;
 	get_parent().activeChar.get_child(0).frame = 3 ;
+	get_parent().displayBattleMenu() ;
 	
 
 func isMon2():
@@ -26,3 +24,6 @@ func inputTwo():
 	get_parent().runAttempt += 1 ;
 	get_parent().activeChar.get_child(0).frame = 2 ;
 	change_state("EnemyPhase") ;
+
+func inputThree():
+	change_state("ItemState") ;

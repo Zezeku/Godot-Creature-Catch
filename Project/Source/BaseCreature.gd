@@ -1,57 +1,26 @@
 extends Node2D
 
 
+signal updatePlayerUI(player1, player2) ;
+signal updateEnemyUI(enemy1, enemy2);
 
-func getMove(source, target, moveName):
-	if moveName == "Scratch":
-		Scratch(source, target) ;
-	elif moveName == "Sediment Trap":
-		SedimentTrap(source, target) ;
-	elif moveName == "Bark Jab":
-		BarkJab(source, target) ;
-	elif moveName == "Razor Fin":
-		RazorFin(source, target) ;
-	elif moveName == "Stare Down":
-		StareDown(source, target) ;
+func execute(source, moveUse, target):
+	
+	if source.moveList[moveUse].pre_execute(source):
+		source.updateResource(source.moveList[moveUse].resourceCost, source.moveList[moveUse].resourceType.resourceName ) ;
+		source.moveList[moveUse].execute(source, target) ;
+	
+	if target.get_parent().get_parent().name != "Enemy" and target == target.get_parent().get_parent().battleTeam[0]:
+		emit_signal("updatePlayerUI", target, null)
+	elif target.get_parent().get_parent().name != "Enemy" and target == target.get_parent().get_parent().battleTeam[1]:
+		emit_signal("updatePlayerUI", null, target)
+	elif target.get_parent().get_parent().name == "Enemy" and target == target.get_parent().get_parent().battleTeam[0]:
+		emit_signal("updateEnemyUI", target, null)
+	elif target.get_parent().get_parent().name == "Enemy" and target == target.get_parent().get_parent().battleTeam[1]:
+		emit_signal("updateEnemyUI", null, target)
 	else:
-		print("N/A Error: Move does not exist") ;
-
-
-func Scratch(source, target):
-	var potency = 20 ;
-	var damage = clamp(source.stat[source.STAT.ATK] * (1 + potency / 100) * source.stat_mult[source.STAT.ATK] - target.stat[target.STAT.DEF] * target.stat_mult[source.STAT.DEF],1,target.stat[target.STAT.HP]) ;
+		pass
 	
-	print(source.name, " used Scratch on ", target.name, " and did ", damage, " damage!");
-	damageCalc(source, target, damage) ;
-
-func SedimentTrap(source, target):
-	var multiplier = -0.1 ;
-	
-	print(source.name, " used Sediment Trap on ", target.name, " and lowered its Speed!") ;
-	target.stat_mult[target.STAT.SPD] += multiplier;
-
-func BarkJab(source, target):
-	var potency = 40 ;
-	var damage = clamp(source.stat[source.STAT.ATK] * (1 + potency / 100) * source.stat_mult[source.STAT.ATK] - target.stat[target.STAT.DEF] * target.stat_mult[source.STAT.DEF],1,target.stat[target.STAT.HP]) ;
-	
-	print(source.name, " used Bark Jab on ", target.name, " and did ", damage, " damage!");
-	damageCalc(source, target, damage) ;
-
-func StareDown(source, target):
-	var multiplier = -0.1 ;
-	
-	print(source.name, " used Stare Down on ", target.name, " and lowered its Defense!") ;
-	target.stat_mult[target.STAT.DEF] += multiplier ;
-
-func RazorFin(source, target):
-	var potency = 40 ;
-	var damage = clamp(source.stat[source.STAT.ATK] * (1 + potency / 100) * source.stat_mult[source.STAT.ATK] - target.stat[target.STAT.DEF] * target.stat_mult[source.STAT.DEF],1,target.stat[target.STAT.HP]) ;
-	
-	print(source.name, " used Razor Fin on ", target.name, " and did ", damage, " damage!");
-	damageCalc(source, target, damage) ;
-
-func damageCalc(source, target, damage):
-	target.stat[source.STAT.HP] -= clamp(damage, 1, target.stat[target.STAT.HP]) ;
 	if(target.stat[target.STAT.HP] <= 0):
 		fainted(source, target) ;
 
@@ -61,6 +30,9 @@ func fainted(source, target):
 	var targetIndex = target_parent.get_parent().battleTeam.find(target) ;
 	target.visible = false ;
 	target_parent.get_parent().battleTeam[targetIndex] = null ;
+	if target_parent.name == "Enemy":
+		target_parent.remove_child(target) ;
+		target.queue_free() ;
 	#how to handle fainted creature?
 
 func gainExp(source, target) :

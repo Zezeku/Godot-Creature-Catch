@@ -1,23 +1,11 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+signal battle_start ;
 
 
 func _on_BattleStart_ShowBattleStart(player, enemy):
-	get_tree().paused = true ;
+	
 	var t = Timer.new() ;
 	add_child(t) ;
 	t.one_shot = true ;
@@ -35,4 +23,29 @@ func _on_BattleStart_ShowBattleStart(player, enemy):
 	t.queue_free() ;
 	
 	$BattleBeginPopup.visible = false ;
-	get_tree().paused = false ;
+	
+	emit_signal("battle_start") ;
+
+
+func _on_State_DisplayMoves(moveList):
+	$MoveMenu.DisplayMoves(moveList) ;
+
+
+func _on_State_DisplayMenu(creature):
+	$BattleMenu.displayBattleMenu() ;
+
+
+func _on_BattleStart_ShowBattleUI(player1, player2):
+	$PlayerUI.displayPlayerUI(player1, player2) ;
+
+
+func _on_BaseCreature_updatePlayerUI(player1, player2):
+	$PlayerUI.displayPlayerUI(player1, player2) ;
+
+
+func _on_BattleStart_ShowEnemyUI(enemy1, enemy2):
+	$EnemyUI.displayEnemyUI(enemy1, enemy2) ;
+
+
+func _on_BaseCreature_updateEnemyUI(enemy1, enemy2):
+	$EnemyUI.displayEnemyUI(enemy1, enemy2) ;
