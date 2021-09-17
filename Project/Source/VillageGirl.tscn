@@ -41,13 +41,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Starter" type="Label" parent="Panel"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 61.0
 margin_bottom = 66.0
 size_flags_vertical = 1
-text = "Climb the Mountain"
+text = "Here's a Starter Net"
 align = 1
 autowrap = true
 
@@ -60,13 +60,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel2"]
+[node name="StandHere" type="Label" parent="Panel2"]
 margin_left = 10.0
 margin_top = 8.0
 margin_right = 109.0
 margin_bottom = 39.0
 text = "Stand here and press 'Enter'"
 autowrap = true
+
+[node name="Panel3" type="Panel" parent="."]
+visible = false
+margin_left = -61.0
+margin_top = -78.0
+margin_right = 59.0
+margin_bottom = -28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heal" type="Label" parent="Panel3"]
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 109.0
+margin_bottom = 39.0
+text = "I'll Heal your team!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="DialougeArea" to="DialougeArea" method="_on_DialougeArea_body_entered"]
 [connection signal="body_exited" from="DialougeArea" to="DialougeArea" method="_on_DialougeArea_body_exited"]

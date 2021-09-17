@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name creatureX
+
 
 enum STAT {
 	MAX_HP,
@@ -25,8 +27,9 @@ var experience_needed: int ;
 var experience_given: int ;
 
 var spriteSheet ;
+
 var resourceType ;
-var creatureType ;
+var creatureType = [] ; #need to define as array to use append
 
 var stat = [null,null,null,null,null,null,null,null,null,null,null] ;
 var stat_mult = [null,null,null,null,null,null,null,null,null,null,null]
@@ -53,12 +56,24 @@ func moveList():
 
 func levelUp():
 	level += 1 ;
+	BattleLog.updateBattleLog(creatureName + " grew to level " + String(level)) ;
 	var cur_exp = experience - experience_needed ;
 	experience_needed = int(6 * pow(( 1 + 0.20), level)) ;
 	experience_given = int(6 * pow(( 1 + 0.20), level) /2) ; 
 	experience = cur_exp ;
 	creatureData.levelUp(self, level) ;
 	
+
+func updateHP(damage): #check for fainted here
+	stat[STAT.HP] -= damage ;
+	BattleLog.updateBattleLog(creatureName + " took " + String(damage)) ;
+	if resourceType.resourceName == "Rage":
+		#you get %rage bar of %damage done to health
+		var addRec = (stat[STAT.MAX_RESOURCE] * 0.5 ) ;
+		var rageCap = stat[STAT.MAX_RESOURCE] - stat[STAT.RESOURCE] ;
+		stat[STAT.RESOURCE] += clamp(addRec,1,rageCap) ;
+
+
 
 func getResource(resourceName):
 	if resourceName == "Energy":
@@ -76,3 +91,11 @@ func updateResource(resourceCost, resourceName):
 		if stat[STAT.RESOURCE] < 0:
 			stat[STAT.RESOURCE] = 0 ;
 
+func sortSpd(creatureA, creatureB):
+	if creatureA.stat[STAT.SPD] >= creatureB.stat[STAT.SPD]:
+		return true;
+	else:
+		return false ;
+	
+	
+	

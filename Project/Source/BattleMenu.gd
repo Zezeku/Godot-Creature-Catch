@@ -6,6 +6,8 @@ onready var itemButton = "VBox/HBox/VBox3/ItemButton" ;
 onready var runButton = "VBox/HBox/VBox3/RunButton" ;
 
 var menuSelection ;
+var itemMenuDisabled = true ;
+var moveMenuDisabled = false ;
 signal menuSelect(menu) ;
 
 func displayBattleMenu():
@@ -14,16 +16,22 @@ func displayBattleMenu():
 	#get_node(itemButton).set_text("Item") ;
 	#get_node(runButton).set_text("Run") ;
 	
-	get_node("VBox/HBox/VBox2/MoveButton").disabled = false ;
+	get_node("VBox/HBox/VBox2/MoveButton").disabled = moveMenuDisabled ;
 	#get_node("VBox/HBox/VBox2/SwitchButton").disabled = false ;
-	get_node("VBox/HBox/VBox3/ItemButton").disabled = false ;
+	get_node("VBox/HBox/VBox3/ItemButton").disabled = itemMenuDisabled ;
 	get_node("VBox/HBox/VBox3/RunButton").disabled = false ;
 	
 	visible = true ;
 
-	
-	
-	
+
+func showItemMenu():
+	get_node("VBox/HBox/VBox3/ItemButton").disabled = false ;
+	itemMenuDisabled = false ;
+
+func showMoveMenu():
+	get_node("VBox/HBox/VBox2/MoveButton").disabled = true ;
+	moveMenuDisabled = true ;
+
 func resetButtons():
 	get_node(moveButton).disabled = true ;
 	get_node(switchButton).disabled = true ;

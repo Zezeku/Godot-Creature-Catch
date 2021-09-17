@@ -4,11 +4,15 @@ extends Node
 #these shortcuts get used by children. so must account for them being 1 layer down from state
 onready var SceneHandler = get_node("../../../..") ;
 onready var Player = get_node("../../../../Player") ;
+onready var Inventory = get_node("../../../Player/Inventory") ;
 onready var Enemy = get_node("../../../Enemy") ;
 onready var Creature = get_node("../../../BaseCreature") ;
 
 signal DisplayMoves(moveList) ;
 signal DisplayMenu(creature) ;
+signal DisplayItems(items, items_amount) ;
+signal hideDisplayMoves ;
+signal hideDisplayItems ;
 
 var runAttempt ;
 var activeChar ;
@@ -34,30 +38,16 @@ func displayBattleMenu():
 func displayMoves() :
 	emit_signal("DisplayMoves", activeChar.moveList) ;
 
+func displayItems():
+	emit_signal("DisplayItems", Inventory.inventory, Inventory.inventory_amount) ;
 
-func _on_BattleMenu_menuSelect(menu):
+func hideDisplayMoves():
+	emit_signal("hideDisplayMoves") ;
 	
-	if activeChar == get_node("../../../Player").battleTeam[0] :
-		if menu == "Move":
-			$Creature1Phase.inputOne();
-		elif menu == "Switch":
-			pass
-		elif menu == "Item":
-			$Creature1Phase.inputThree();
-		elif menu == "Run":
-			$Creature1Phase.inputTwo();
-		else:
-			print("State: Inavlid Battle Menu Command")
-	
-	else:
-		if menu == "Move":
-			$Creature2Phase.inputOne();
-		elif menu == "Switch":
-			pass
-		elif menu == "Item":
-			$Creature2Phase.inputThree();
-		elif menu == "Run":
-			$Creature2Phase.inputTwo();
-		else:
-			print("State: Inavlid Battle Menu Command")
-	
+
+func hideItemMenu():
+	emit_signal("hideDisplayItems") ;
+
+func _on_ItemMenu_itemSelected(itemSelect):
+	get_node("../../../Player").itemUse[activeChar.get_index()] = 0 ;
+	$ItemState.decide_next_state() ;

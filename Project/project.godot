@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Source/CreatureTemplates/Skill System/SkillEffect System/DamageEffect.gd"
 }, {
 "base": "Resource",
+"class": "ElementTemplate",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Element System/ElementTemplate.gd"
+}, {
+"base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
 "path": "res://Source/ItemTemplates/ItemTemplate.gd"
@@ -44,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Source/StateMachine.gd"
 }, {
+"base": "Node2D",
+"class": "creatureX",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/CreatureX.gd"
+}, {
 "base": "Resource",
 "class": "itemEffect",
 "language": "GDScript",
@@ -52,11 +62,13 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "CreatureTemplate": "",
 "DamageEffect": "",
+"ElementTemplate": "",
 "ItemResource": "",
 "ResourceTemplate": "",
 "SkillTemplate": "",
 "StatEffect": "",
 "StateMachine": "",
+"creatureX": "",
 "itemEffect": ""
 }
 
@@ -68,7 +80,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-TypeChart="*res://Source/TypeChart.gd"
+TypeChart="*res://Source/Singetons/TypeChart.gd"
+BattleLog="*res://Source/Singetons/BattleLog.gd"
 
 [display]
 

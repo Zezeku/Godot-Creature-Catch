@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creatures/Creature006.png" type="Texture" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Scratch.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Rock.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Rage.tres" type="Resource" id=5]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/SedimentTrap.tres" type="Resource" id=6]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Wind.tres" type="Resource" id=7]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/AerialSwipe.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+creatureName = "Creature006"
+maxHP = 1.0
+maxEnergy = 50
+maxResource = 10
+ATK = 1.25
+SPATK = 1.0
+DEF = 1.5
+SPDEF = 0.5
+SPD = 1.0
+spriteSheet = ExtResource( 2 )
+resourceType = ExtResource( 5 )
+elementType = [ ExtResource( 4 ), ExtResource( 7 ) ]
+skillList = [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 8 ) ]
+moveLearn = [ 2, 2, 4 ]

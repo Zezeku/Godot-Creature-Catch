@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Skill System/SkillTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/SkillEffect System/DamageEffect.tres" type="Resource" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Rage.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Wind.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Aerial Swipe"
+tool_tip = "Create strong winds sharp enough to cut the foe"
+resourceType = ExtResource( 3 )
+resourceCost = 5
+move = 0
+elementType = ExtResource( 4 )
+potency = 60
+statToChange = [  ]
+multiplier = [  ]
+skillEffect = [ ExtResource( 2 ) ]

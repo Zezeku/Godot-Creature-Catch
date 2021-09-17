@@ -13,7 +13,7 @@ export(int) var resourceCost
 enum MOVE_TYPE {PHYSICAL, SPECIAL, STATUS}
 export(MOVE_TYPE) var  move
 
-#export(Resource) var moveTyping
+export(Resource) var elementType
 
 export(int) var potency
 

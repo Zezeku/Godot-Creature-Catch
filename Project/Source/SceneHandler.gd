@@ -4,7 +4,9 @@ onready var root = get_tree().root
 onready var base_size = root.get_visible_rect().size
 
 var scene_data ;
+var isTrainer = false ;
 var battle_data = [] ;
+
 
 enum{ 
 	WORLD, 
@@ -22,8 +24,9 @@ func _ready():
 	root.set_attach_to_screen_rect(root.get_visible_rect())
 	_on_screen_resized()
 	
-	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
 	add_child(load("res://Source/Player.tscn").instance()) ;
+	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
+	
 	$Route1Scene/YSort/PlayerController.position = Vector2(2*16+8,12*16) ;
 
 func change_state(my_state, encounter):
@@ -39,11 +42,21 @@ func world_state():
 	add_child(load("res://Source/Route1Scene.tscn").instance()) ;
 	$Route1Scene/YSort/PlayerController/PlayerCamera.current = true ;
 	move_child($Route1Scene, 0);
+	
 	$Route1Scene.loadData(scene_data) ;
-	scene_data = null ;
-	$Route1Scene/YSort/PlayerController.transform = player_pos ;
-	$Route1Scene/YSort/PlayerController.animationTree.set("parameters/Idle/blend_position", player_frame);
-	#currently, reentering collision allows encounter check to happen. need to ensure upon scene entry, this is not checked
+	scene_data = null ; 
+	
+	if !$Player.isFainted:
+		$Route1Scene/YSort/PlayerController.transform = player_pos ;
+		$Route1Scene/YSort/PlayerController.animationTree.set("parameters/Idle/blend_position", player_frame);
+	else:
+		#this position should come from route data - respawn point
+		$Route1Scene/YSort/PlayerController.position = Vector2(2*16+8,12*16) ;
+		$Player.isFainted = false ;
+	
+	$Player.setActive();
+	
+	
 
 func battle_state(encounter):
 	battle_data = encounter ;
@@ -54,23 +67,24 @@ func battle_state(encounter):
 
 func change_to_world_state():
 	
-	#we need to copy player node back into player node in scene handler
-	#do not merge! they have different functionality
-	#pass data back and forth instead
 	state = WORLD ;
 	
 	$Player.visible = false ;
 	$BattleScene.queue_free() ;
+	isTrainer = false ; #battle ending so reseting this
 	change_state(state, null) ;
 	
 func change_to_battle_state(encounter):
 	state = BATTLE ;
 	
+	scene_data = $Route1Scene.saveData() ;
 	$Player.visible = true ;
+	$Player.isActive = false ;
+	
 	player_pos = $Route1Scene/YSort/PlayerController.transform ;
 	player_frame = $Route1Scene/YSort/PlayerController.animationTree.get("parameters/Idle/blend_position");
 	
-	scene_data = $Route1Scene.saveData() ;
+	
 	$Route1Scene.queue_free() ;
 	change_state(state, encounter) ;
 	

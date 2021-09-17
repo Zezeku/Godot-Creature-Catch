@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Source/BattleScene.gd" type="Script" id=1]
 [ext_resource path="res://Source/ItemState.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Source/BattleMenu.gd" type="Script" id=7]
 [ext_resource path="res://Source/PlayerUI.gd" type="Script" id=8]
 [ext_resource path="res://Source/EnemyUI.gd" type="Script" id=9]
+[ext_resource path="res://Source/ItemMenu.gd" type="Script" id=10]
 [ext_resource path="res://Source/Enemy.gd" type="Script" id=11]
 [ext_resource path="res://Source/StateMachine.gd" type="Script" id=12]
 [ext_resource path="res://Source/State.gd" type="Script" id=13]
@@ -20,6 +21,8 @@
 [ext_resource path="res://Source/BattleEnd.gd" type="Script" id=19]
 [ext_resource path="res://Source/MoveState.gd" type="Script" id=20]
 [ext_resource path="res://Source/TargetPhase.gd" type="Script" id=21]
+[ext_resource path="res://Source/StarterState.gd" type="Script" id=22]
+[ext_resource path="res://Source/BattleLog.gd" type="Script" id=23]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -69,6 +72,9 @@ script = ExtResource( 21 )
 
 [node name="ItemState" type="Node" parent="StateMachine/State"]
 script = ExtResource( 2 )
+
+[node name="StarterState" type="Node" parent="StateMachine/State"]
+script = ExtResource( 22 )
 
 [node name="BaseCreature" type="Node2D" parent="."]
 script = ExtResource( 5 )
@@ -133,8 +139,8 @@ __meta__ = {
 }
 
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/MasterUI/BattleMenu/VBox"]
-margin_right = 550.0
-margin_bottom = 350.0
+margin_right = 562.0
+margin_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -142,8 +148,8 @@ __meta__ = {
 }
 
 [node name="VBox2" type="VBoxContainer" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox"]
-margin_right = 273.0
-margin_bottom = 350.0
+margin_right = 279.0
+margin_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -151,19 +157,20 @@ __meta__ = {
 }
 
 [node name="MoveButton" type="Button" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox2"]
-margin_right = 273.0
-margin_bottom = 173.0
+margin_right = 279.0
+margin_bottom = 179.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
 text = "Move"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="SwitchButton" type="Button" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox2"]
-margin_top = 177.0
-margin_right = 273.0
-margin_bottom = 350.0
+margin_top = 183.0
+margin_right = 279.0
+margin_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -173,9 +180,9 @@ __meta__ = {
 }
 
 [node name="VBox3" type="VBoxContainer" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox"]
-margin_left = 277.0
-margin_right = 550.0
-margin_bottom = 350.0
+margin_left = 283.0
+margin_right = 562.0
+margin_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -183,25 +190,57 @@ __meta__ = {
 }
 
 [node name="ItemButton" type="Button" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox3"]
-margin_right = 273.0
-margin_bottom = 173.0
+margin_right = 279.0
+margin_bottom = 179.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
 text = "Item"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="RunButton" type="Button" parent="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox3"]
-margin_top = 177.0
-margin_right = 273.0
-margin_bottom = 350.0
+margin_top = 183.0
+margin_right = 279.0
+margin_bottom = 362.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
 text = "Run"
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ItemMenu" type="PopupPanel" parent="CanvasLayer/MasterUI"]
+pause_mode = 1
+margin_left = 283.727
+margin_top = 208.636
+margin_right = 853.727
+margin_bottom = 578.636
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/MasterUI/ItemMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item1" type="Button" parent="CanvasLayer/MasterUI/ItemMenu/ItemGrid"]
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Im a button"
 
 [node name="MoveMenu" type="PopupPanel" parent="CanvasLayer/MasterUI"]
 pause_mode = 1
@@ -256,6 +295,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_right = 279.0
+margin_bottom = 85.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_top = 89.0
+margin_right = 279.0
+margin_bottom = 89.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3/HBox2"]
+margin_right = 275.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3/HBox2"]
+margin_left = 279.0
+margin_right = 279.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_top = 93.0
+margin_right = 279.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Move2" type="Button" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2"]
 margin_top = 183.0
 margin_right = 279.0
@@ -266,6 +349,49 @@ disabled = true
 shortcut_in_tooltip = false
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_right = 279.0
+margin_bottom = 85.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_top = 89.0
+margin_right = 279.0
+margin_bottom = 89.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3/HBox2"]
+margin_right = 275.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3/HBox2"]
+margin_left = 279.0
+margin_right = 279.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_top = 93.0
+margin_right = 279.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -289,6 +415,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_right = 279.0
+margin_bottom = 85.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_top = 89.0
+margin_right = 279.0
+margin_bottom = 89.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3/HBox2"]
+margin_right = 275.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3/HBox2"]
+margin_left = 279.0
+margin_right = 279.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_top = 93.0
+margin_right = 279.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Move4" type="Button" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3"]
 margin_top = 183.0
 margin_right = 279.0
@@ -298,6 +467,49 @@ size_flags_vertical = 3
 disabled = true
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_right = 279.0
+margin_bottom = 85.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_top = 89.0
+margin_right = 279.0
+margin_bottom = 89.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3/HBox2"]
+margin_right = 275.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3/HBox2"]
+margin_left = 279.0
+margin_right = 279.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_top = 93.0
+margin_right = 279.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -314,14 +526,15 @@ __meta__ = {
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 200.0
+margin_top = 180.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Creature1UI" type="Panel" parent="CanvasLayer/MasterUI/PlayerUI/HBox"]
+visible = false
 margin_right = 343.0
-margin_bottom = 97.0
+margin_bottom = 117.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -332,17 +545,15 @@ __meta__ = {
 [node name="VBox" type="VBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
 margin_top = 5.0
-margin_right = -100.0
-margin_bottom = -10.0
+margin_right = -200.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
-margin_right = 233.0
+margin_right = 143.0
 margin_bottom = 14.0
 text = "Creature1"
 __meta__ = {
@@ -351,7 +562,7 @@ __meta__ = {
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
 margin_top = 18.0
-margin_right = 233.0
+margin_right = 143.0
 margin_bottom = 32.0
 text = "Level:"
 __meta__ = {
@@ -360,7 +571,7 @@ __meta__ = {
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
 margin_top = 36.0
-margin_right = 233.0
+margin_right = 143.0
 margin_bottom = 50.0
 text = "HP: "
 __meta__ = {
@@ -369,7 +580,7 @@ __meta__ = {
 
 [node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
 margin_top = 54.0
-margin_right = 233.0
+margin_right = 143.0
 margin_bottom = 68.0
 
 [node name="EnergyLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox/HBox2"]
@@ -377,19 +588,29 @@ margin_right = 46.0
 margin_bottom = 14.0
 text = "Energy:"
 
-[node name="EXPLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
 margin_top = 72.0
-margin_right = 233.0
+margin_right = 143.0
 margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="EXPLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 90.0
+margin_right = 143.0
+margin_bottom = 104.0
 text = "EXP:"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Creature2UI" type="Panel" parent="CanvasLayer/MasterUI/PlayerUI/HBox"]
-margin_left = 347.0
+visible = false
 margin_right = 691.0
-margin_bottom = 97.0
+margin_bottom = 117.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -400,17 +621,15 @@ __meta__ = {
 [node name="VBox" type="VBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
 margin_top = 5.0
-margin_right = -100.0
-margin_bottom = -10.0
+margin_right = -200.0
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
-margin_right = 234.0
+margin_right = 491.0
 margin_bottom = 14.0
 text = "Creature2"
 __meta__ = {
@@ -419,7 +638,7 @@ __meta__ = {
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
 margin_top = 18.0
-margin_right = 234.0
+margin_right = 491.0
 margin_bottom = 32.0
 text = "Level:"
 __meta__ = {
@@ -428,7 +647,7 @@ __meta__ = {
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
 margin_top = 36.0
-margin_right = 234.0
+margin_right = 491.0
 margin_bottom = 50.0
 text = "HP: "
 __meta__ = {
@@ -437,7 +656,7 @@ __meta__ = {
 
 [node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
 margin_top = 54.0
-margin_right = 234.0
+margin_right = 491.0
 margin_bottom = 68.0
 
 [node name="EnergyLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox/HBox2"]
@@ -445,17 +664,20 @@ margin_right = 46.0
 margin_bottom = 14.0
 text = "Energy:"
 
-[node name="EnergyProgress" type="TextureProgress" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox/HBox2"]
-margin_left = 50.0
-margin_right = 234.0
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 72.0
+margin_right = 491.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox/HBox3"]
+margin_right = 63.0
 margin_bottom = 14.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+text = "Resource:"
 
 [node name="EXPLabel" type="Label" parent="CanvasLayer/MasterUI/PlayerUI/HBox/Creature2UI/VBox"]
-margin_top = 72.0
-margin_right = 234.0
-margin_bottom = 86.0
+margin_top = 90.0
+margin_right = 491.0
+margin_bottom = 104.0
 text = "EXP:"
 __meta__ = {
 "_edit_lock_": true
@@ -480,6 +702,7 @@ __meta__ = {
 }
 
 [node name="Creature1UI" type="Panel" parent="CanvasLayer/MasterUI/EnemyUI/HBox"]
+visible = false
 margin_right = 266.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
@@ -495,24 +718,42 @@ __meta__ = {
 [node name="NameLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_right = 266.0
 margin_bottom = 14.0
+text = "Name: "
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 18.0
 margin_right = 266.0
 margin_bottom = 32.0
+text = "Level:"
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 36.0
 margin_right = 266.0
 margin_bottom = 50.0
+text = "HP:"
 
-[node name="EXPLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 54.0
 margin_right = 266.0
 margin_bottom = 68.0
 
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_top = 72.0
+margin_right = 266.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature1UI/VBox/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
 [node name="Creature2UI" type="Panel" parent="CanvasLayer/MasterUI/EnemyUI/HBox"]
-margin_left = 270.0
+visible = false
 margin_right = 536.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
@@ -529,38 +770,104 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
-margin_right = 266.0
+margin_right = 536.0
 margin_bottom = 14.0
+text = "Name:"
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 18.0
-margin_right = 266.0
+margin_right = 536.0
 margin_bottom = 32.0
+text = "Level:"
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 36.0
-margin_right = 266.0
+margin_right = 536.0
 margin_bottom = 50.0
+text = "HP:"
 
-[node name="EXPLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 54.0
-margin_right = 266.0
+margin_right = 536.0
 margin_bottom = 68.0
 
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_top = 72.0
+margin_right = 536.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/MasterUI/EnemyUI/HBox/Creature2UI/VBox2/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="BattleLog" type="PanelContainer" parent="CanvasLayer/MasterUI"]
+margin_left = -1150.0
+margin_top = 142.0
+margin_right = -670.0
+margin_bottom = 323.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/MasterUI/BattleLog"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 473.0
+margin_bottom = 174.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/MasterUI/BattleLog/VBox"]
+margin_right = 466.0
+margin_bottom = 15.0
+text = "BattleLog"
+fit_content_height = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BattleLog" type="RichTextLabel" parent="CanvasLayer/MasterUI/BattleLog/VBox"]
+margin_top = 19.0
+margin_right = 466.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Battle Log 1"
+scroll_following = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="DisplayItems" from="StateMachine/State" to="CanvasLayer/MasterUI" method="_on_State_DisplayItems"]
 [connection signal="DisplayMenu" from="StateMachine/State" to="CanvasLayer/MasterUI" method="_on_State_DisplayMenu"]
 [connection signal="DisplayMoves" from="StateMachine/State" to="CanvasLayer/MasterUI" method="_on_State_DisplayMoves"]
+[connection signal="hideDisplayItems" from="StateMachine/State" to="CanvasLayer/MasterUI" method="_on_State_hideDisplayItems"]
+[connection signal="hideDisplayMoves" from="StateMachine/State" to="CanvasLayer/MasterUI" method="_on_State_hideDisplayMoves"]
 [connection signal="PlayBattleMusic" from="StateMachine/State/BattleStart" to="." method="_on_BattleStart_PlayBattleMusic"]
 [connection signal="ShowBattleStart" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_ShowBattleStart"]
 [connection signal="ShowBattleUI" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_ShowBattleUI"]
 [connection signal="ShowEnemyUI" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_ShowEnemyUI"]
+[connection signal="ShowItemMenu" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_ShowItemMenu"]
 [connection signal="createEncounter" from="StateMachine/State/BattleStart" to="Enemy" method="_on_BattleStart_createEncounter"]
+[connection signal="showMoveMenu" from="StateMachine/State/BattleStart" to="CanvasLayer/MasterUI" method="_on_BattleStart_showMoveMenu"]
+[connection signal="updateBattleLog" from="BaseCreature" to="CanvasLayer/MasterUI" method="_on_BaseCreature_updateBattleLog"]
 [connection signal="updateEnemyUI" from="BaseCreature" to="CanvasLayer/MasterUI" method="_on_BaseCreature_updateEnemyUI"]
 [connection signal="updatePlayerUI" from="BaseCreature" to="CanvasLayer/MasterUI" method="_on_BaseCreature_updatePlayerUI"]
-[connection signal="menuSelect" from="CanvasLayer/MasterUI/BattleMenu" to="StateMachine/State" method="_on_BattleMenu_menuSelect"]
+[connection signal="menuSelect" from="CanvasLayer/MasterUI/BattleMenu" to="StateMachine" method="_on_BattleMenu_menuSelect"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox2/MoveButton" to="CanvasLayer/MasterUI/BattleMenu" method="_on_MoveButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox2/SwitchButton" to="CanvasLayer/MasterUI/BattleMenu" method="_on_SwitchButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox3/ItemButton" to="CanvasLayer/MasterUI/BattleMenu" method="_on_ItemButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/BattleMenu/VBox/HBox/VBox3/RunButton" to="CanvasLayer/MasterUI/BattleMenu" method="_on_RunButton_pressed"]
+[connection signal="itemSelected" from="CanvasLayer/MasterUI/ItemMenu" to="StateMachine/State" method="_on_ItemMenu_itemSelected"]
+[connection signal="pressed" from="CanvasLayer/MasterUI/ItemMenu/ItemGrid/Item1" to="CanvasLayer/MasterUI/ItemMenu" method="_on_Item1_pressed"]
 [connection signal="moveSelect" from="CanvasLayer/MasterUI/MoveMenu" to="StateMachine/State/MoveState" method="_on_MoveMenu_moveSelect"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move1" to="CanvasLayer/MasterUI/MoveMenu" method="_on_Move1_pressed"]
 [connection signal="pressed" from="CanvasLayer/MasterUI/MoveMenu/VBox/HBox/VBox2/Move2" to="CanvasLayer/MasterUI/MoveMenu" method="_on_Move2_pressed"]

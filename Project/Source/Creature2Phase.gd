@@ -4,8 +4,6 @@ extends "res://Source/State.gd"
 func enter(fsm:StateMachine):
 	_fsm = fsm
 	
-	print("\nentered_player_mon_2_start") ;
-	
 	if !isMon2():
 		change_state("EnemyPhase") ;
 		return ;
@@ -17,13 +15,24 @@ func enter(fsm:StateMachine):
 func isMon2():
 	return Player.battleTeam[1] ;
 
-func inputOne():
+func inputMove():
 	change_state("MoveState") ;
 
-func inputTwo():
+func inputRun():
 	get_parent().runAttempt += 1 ;
 	get_parent().activeChar.get_child(0).frame = 2 ;
 	change_state("EnemyPhase") ;
 
-func inputThree():
+func inputItem():
 	change_state("ItemState") ;
+
+func inputCancel():
+	if Player.battleTeam[0]:
+		get_parent().activeChar.get_child(0).frame = 2 ;
+		get_parent().activeChar = Player.battleTeam[0] ;
+		Player.targetUse[0] = null ;
+		Player.moveUse[0] = null ;
+		Player.itemUse[0] = null ;
+		get_parent().runAttempt = 0 ;
+		change_state("Creature1Phase") ;
+	

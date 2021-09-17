@@ -11,12 +11,10 @@ func _ready():
 
 
 func LavaCliffsOn():
-	print("turning cliffs on")
 	LavalCliffs.set_collision_layer_bit(0,true) ;
 	LavalCliffs.set_collision_mask_bit(0,true) ;
 
 func LavaCliffsOff():
 	
-	print("turning cliffs off")
 	LavalCliffs.set_collision_layer_bit(0,false) ;
 	LavalCliffs.set_collision_mask_bit(0,false) ;

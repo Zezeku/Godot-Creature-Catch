@@ -35,3 +35,19 @@ func _input(event):
 		state.inputTwo() ;
 	if event.is_action_pressed("3") and state.has_method("inputThree"):
 		state.inputThree() ;
+	if event.is_action_pressed("ui_cancel") and state.has_method("inputCancel"):
+		state.inputCancel() ;
+
+
+func _on_BattleMenu_menuSelect(menu):
+	if menu == "Run":
+		state.inputRun() ;
+	elif menu == "Move":
+		state.inputMove() ;
+	elif menu == "Item" :
+		state.inputItem() ;
+	elif menu == "Switch" :
+		pass ;
+		#state == inputSwitch() ;
+	else:
+		print("Invalid Command ") ;

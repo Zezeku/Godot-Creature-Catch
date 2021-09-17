@@ -13,7 +13,6 @@ func isMon2():
 	return Party.get_child_count() > 1 ;
 
 func createEncounter(encounter):
-	print("Enemy_creatingEncounter") ;
 	
 	for creature in encounter.size():
 		$Party.add_child(encounter[creature])

@@ -8,5 +8,7 @@ script = ExtResource( 3 )
 
 [node name="Party" type="Node2D" parent="."]
 
+[node name="Fainted" type="Node2D" parent="."]
+
 [node name="Inventory" type="Node2D" parent="."]
 script = ExtResource( 1 )

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creatures/Creature016.png" type="Texture" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/StareDown.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Aether.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Fire.tres" type="Resource" id=6]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Plant.tres" type="Resource" id=7]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Lava Spit.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+creatureName = "Creature016"
+maxHP = 1.0
+maxEnergy = 50
+maxResource = 1
+ATK = 1.0
+SPATK = 1.5
+DEF = 1.5
+SPDEF = 2.0
+SPD = 1.0
+spriteSheet = ExtResource( 2 )
+resourceType = ExtResource( 4 )
+elementType = [ ExtResource( 6 ), ExtResource( 7 ) ]
+skillList = [ ExtResource( 3 ), ExtResource( 8 ) ]
+moveLearn = [ 2, 2 ]

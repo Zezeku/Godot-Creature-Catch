@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=2]
@@ -6,13 +6,15 @@
 [ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Scratch.tres" type="Resource" id=4]
 [ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/BarkJab.tres" type="Resource" id=5]
 [ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/SedimentTrap.tres" type="Resource" id=6]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Wood.tres" type="Resource" id=7]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Rock.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 1 )
 creatureName = "Creature001"
-maxHP = 1.0
+maxHP = 1.5
 maxEnergy = 50
-maxResource = 50
+maxResource = 10
 ATK = 1.0
 SPATK = 0.75
 DEF = 1.0
@@ -20,5 +22,6 @@ SPDEF = 1.0
 SPD = 0.75
 spriteSheet = ExtResource( 2 )
 resourceType = ExtResource( 3 )
-creatureType = [ "Wood", "Rock" ]
-skillList = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+elementType = [ ExtResource( 7 ), ExtResource( 8 ) ]
+skillList = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
+moveLearn = [ 2, 2, 3 ]

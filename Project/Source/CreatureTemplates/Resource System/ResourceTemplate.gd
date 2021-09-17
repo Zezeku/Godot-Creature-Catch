@@ -4,9 +4,12 @@ class_name ResourceTemplate
 
 export(String) var resourceName
 export(PackedScene) var resourceGUI
+export(bool) var isRage
 
 func initialize(creature):
 	creature.resourceType = self
+	if isRage:
+		creature.stat[creature.STAT.RESOURCE] = 0 ;
 #creature.resourceGUI = GUI.instance() need to make GUI scene for each resource to display info. this gets added to UI
 #creature.resourceGUI.initialize(creture.stats[creature.maxResource])
 
