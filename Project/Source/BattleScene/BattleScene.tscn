@@ -1,0 +1,871 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Source/BattleScene/BattleScene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/BeachBattleScene.png" type="Texture" id=2]
+[ext_resource path="res://Source/BattleScene/BattleUI/MoveMenu.gd" type="Script" id=3]
+[ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 8.wav" type="AudioStream" id=4]
+[ext_resource path="res://Source/BattleScene/BaseCreature.gd" type="Script" id=5]
+[ext_resource path="res://Source/BattleScene/BattleUI/BattleUI.gd" type="Script" id=6]
+[ext_resource path="res://Source/BattleScene/BattleUI/BattleMenu.gd" type="Script" id=7]
+[ext_resource path="res://Source/BattleScene/BattleUI/PlayerUI.gd" type="Script" id=8]
+[ext_resource path="res://Source/BattleScene/BattleUI/EnemyUI.gd" type="Script" id=9]
+[ext_resource path="res://Source/BattleScene/BattleUI/ItemMenu.gd" type="Script" id=10]
+[ext_resource path="res://Source/BattleScene/Enemy.gd" type="Script" id=11]
+[ext_resource path="res://Source/BattleScene/BattleFSM/StateMachine.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Source/BattleScene/BattleUI/BattleUIHandler.gd" type="Script" id=13]
+[ext_resource path="res://Source/BattleScene/BattleMusic.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Creatures/Creature002.png" type="Texture" id=15]
+[ext_resource path="res://Source/BattleScene/BattleUI/BattleLog.gd" type="Script" id=23]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+volume_db = -10.0
+script = ExtResource( 14 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BattleUI" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 7
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleBeginPopup" type="PopupDialog" parent="CanvasLayer/BattleUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.0
+margin_top = -95.4998
+margin_right = 134.0
+margin_bottom = 95.4998
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleBegingsLabel" type="Label" parent="CanvasLayer/BattleUI/BattleBeginPopup"]
+margin_left = 69.0314
+margin_top = 83.6234
+margin_right = 196.031
+margin_bottom = 97.6234
+text = "Let the Battle Begin"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleMenu" type="PopupPanel" parent="CanvasLayer/BattleUI"]
+pause_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -350.0
+margin_top = -250.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/BattleMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/BattleUI/BattleMenu/VBox"]
+margin_right = 342.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBox2" type="VBoxContainer" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox"]
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MoveButton" type="Button" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox2"]
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Move"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SwitchButton" type="Button" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox2"]
+margin_top = 123.0
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Switch"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox"]
+margin_left = 173.0
+margin_right = 342.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemButton" type="Button" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox3"]
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Item"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RunButton" type="Button" parent="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox3"]
+margin_top = 123.0
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Run"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemMenu" type="PopupPanel" parent="CanvasLayer/BattleUI"]
+pause_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -350.0
+margin_top = -250.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/BattleUI/ItemMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveMenu" type="PopupPanel" parent="CanvasLayer/BattleUI"]
+pause_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -375.0
+margin_top = -275.0
+margin_right = -25.0
+margin_bottom = -25.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox"]
+margin_right = 342.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox2" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox"]
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Move1" type="Button" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2"]
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+shortcut_in_tooltip = false
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_right = 169.0
+margin_bottom = 55.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_top = 59.0
+margin_right = 169.0
+margin_bottom = 59.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3/HBox2"]
+margin_right = 165.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3/HBox2"]
+margin_left = 169.0
+margin_right = 169.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1/VBox3"]
+margin_top = 63.0
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move2" type="Button" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2"]
+margin_top = 123.0
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+shortcut_in_tooltip = false
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_right = 169.0
+margin_bottom = 55.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_top = 59.0
+margin_right = 169.0
+margin_bottom = 59.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3/HBox2"]
+margin_right = 165.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3/HBox2"]
+margin_left = 169.0
+margin_right = 169.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2/VBox3"]
+margin_top = 63.0
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox"]
+margin_left = 173.0
+margin_right = 342.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Move3" type="Button" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3"]
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_right = 169.0
+margin_bottom = 55.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_top = 59.0
+margin_right = 169.0
+margin_bottom = 59.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3/HBox2"]
+margin_right = 165.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3/HBox2"]
+margin_left = 169.0
+margin_right = 169.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3/VBox3"]
+margin_top = 63.0
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move4" type="Button" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3"]
+margin_top = 123.0
+margin_right = 169.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox3" type="VBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginTop" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_right = 169.0
+margin_bottom = 55.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_top = 59.0
+margin_right = 169.0
+margin_bottom = 59.0
+
+[node name="MarginLeft" type="MarginContainer" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3/HBox2"]
+margin_right = 165.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="ElementTexture" type="TextureRect" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3/HBox2"]
+margin_left = 169.0
+margin_right = 169.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourceCost" type="Label" parent="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4/VBox3"]
+margin_top = 63.0
+margin_right = 169.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerUI" type="Control" parent="CanvasLayer/BattleUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 686.0
+margin_right = -1006.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creature1UI" type="Panel" parent="CanvasLayer/BattleUI/PlayerUI/HBox"]
+visible = false
+margin_right = 215.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 5.0
+margin_right = -200.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Creature1"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 18.0
+margin_right = 63.0
+margin_bottom = 32.0
+text = "Level:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 36.0
+margin_right = 63.0
+margin_bottom = 50.0
+text = "HP: "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 54.0
+margin_right = 63.0
+margin_bottom = 68.0
+
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 72.0
+margin_right = 63.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="EXPLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature1UI/VBox"]
+margin_top = 90.0
+margin_right = 63.0
+margin_bottom = 104.0
+text = "EXP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Creature2UI" type="Panel" parent="CanvasLayer/BattleUI/PlayerUI/HBox"]
+visible = false
+margin_right = 434.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 5.0
+margin_right = -200.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_right = 234.0
+margin_bottom = 14.0
+text = "Creature2"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 18.0
+margin_right = 234.0
+margin_bottom = 32.0
+text = "Level:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 36.0
+margin_right = 234.0
+margin_bottom = 50.0
+text = "HP: "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 54.0
+margin_right = 234.0
+margin_bottom = 68.0
+
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 72.0
+margin_right = 234.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="EXPLabel" type="Label" parent="CanvasLayer/BattleUI/PlayerUI/HBox/Creature2UI/VBox"]
+margin_top = 90.0
+margin_right = 234.0
+margin_bottom = 104.0
+text = "EXP:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyUI" type="Control" parent="CanvasLayer/BattleUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.49829
+margin_right = 1.49829
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1026.0
+margin_bottom = -717.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creature1UI" type="Panel" parent="CanvasLayer/BattleUI/EnemyUI/HBox"]
+visible = false
+margin_right = 205.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_right = 205.0
+margin_bottom = 14.0
+text = "Name: "
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_top = 18.0
+margin_right = 205.0
+margin_bottom = 32.0
+text = "Level:"
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_top = 36.0
+margin_right = 205.0
+margin_bottom = 50.0
+text = "HP:"
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_top = 54.0
+margin_right = 205.0
+margin_bottom = 68.0
+
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
+margin_top = 72.0
+margin_right = 205.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="Creature2UI" type="Panel" parent="CanvasLayer/BattleUI/EnemyUI/HBox"]
+visible = false
+margin_right = 414.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox2" type="VBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_right = 414.0
+margin_bottom = 14.0
+text = "Name:"
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_top = 18.0
+margin_right = 414.0
+margin_bottom = 32.0
+text = "Level:"
+
+[node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_top = 36.0
+margin_right = 414.0
+margin_bottom = 50.0
+text = "HP:"
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_top = 54.0
+margin_right = 414.0
+margin_bottom = 68.0
+
+[node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2/HBox2"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "Energy:"
+
+[node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
+margin_top = 72.0
+margin_right = 414.0
+margin_bottom = 86.0
+
+[node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2/HBox3"]
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Resource:"
+
+[node name="Creature1Sprite" type="TextureButton" parent="CanvasLayer/BattleUI/EnemyUI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+disabled = true
+texture_hover = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creature2Sprite" type="TextureButton" parent="CanvasLayer/BattleUI/EnemyUI"]
+visible = false
+margin_left = 1050.0
+margin_top = 350.0
+margin_right = 1090.0
+margin_bottom = 390.0
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleLog" type="PanelContainer" parent="CanvasLayer/BattleUI"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -60.0
+margin_right = 249.0
+margin_bottom = 273.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/BattleLog"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 242.0
+margin_bottom = 326.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/BattleUI/BattleLog/VBox"]
+margin_right = 235.0
+margin_bottom = 15.0
+text = "BattleLog"
+fit_content_height = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BattleLog" type="RichTextLabel" parent="CanvasLayer/BattleUI/BattleLog/VBox"]
+margin_top = 19.0
+margin_right = 235.0
+margin_bottom = 319.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Battle Log 1"
+scroll_following = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BattleUIHandler" type="Node" parent="CanvasLayer/BattleUI"]
+script = ExtResource( 13 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="BackgroundImage" type="TextureRect" parent="CanvasLayer/ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer/ParallaxBackground"]
+color = Color( 0.294118, 0.356863, 0.670588, 1 )
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Party" type="Node2D" parent="Enemy"]
+
+[node name="Inventory" type="Node2D" parent="Enemy"]
+
+[node name="BaseCreature" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="StateMachine" parent="." instance=ExtResource( 12 )]
+
+[connection signal="pressed" from="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox2/MoveButton" to="CanvasLayer/BattleUI/BattleMenu" method="_on_MoveButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox2/SwitchButton" to="CanvasLayer/BattleUI/BattleMenu" method="_on_SwitchButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox3/ItemButton" to="CanvasLayer/BattleUI/BattleMenu" method="_on_ItemButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/BattleMenu/VBox/HBox/VBox3/RunButton" to="CanvasLayer/BattleUI/BattleMenu" method="_on_RunButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move1" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move1_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move2_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move3_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move4_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/EnemyUI/Creature1Sprite" to="CanvasLayer/BattleUI/EnemyUI" method="_on_Creature1Sprite_pressed"]
+[connection signal="BattleMenuSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_BattleMenuSelect"]
+[connection signal="FinishBattleStart" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_FinishBattleStart"]
+[connection signal="ItemSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_ItemSelect"]
+[connection signal="MoveSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_MoveSelect"]
+[connection signal="TargetSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_TargetSelect"]
+[connection signal="updateBattleLog" from="BaseCreature" to="CanvasLayer/BattleUI" method="_on_BaseCreature_updateBattleLog"]
+[connection signal="updateEnemyUI" from="BaseCreature" to="CanvasLayer/BattleUI" method="_on_BaseCreature_updateEnemyUI"]
+[connection signal="updatePlayerUI" from="BaseCreature" to="CanvasLayer/BattleUI" method="_on_BaseCreature_updatePlayerUI"]

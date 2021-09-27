@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Source/NPCs/DialogueX.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Source/NPCs/NPCX.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Characters/VillagerSpriteSheet.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 12.3693
+
+[node name="NPCX" type="KinematicBody2D"]
+script = ExtResource( 2 )
+spriteSheet = ExtResource( 3 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+centered = false
+offset = Vector2( -7, -21 )
+
+[node name="Collision" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Collision"]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+
+[node name="DialogueX" parent="." groups=[
+"DialogueNodes",
+] instance=ExtResource( 1 )]
+
+[connection signal="body_entered" from="Collision" to="." method="_on_Collision_body_entered"]
+[connection signal="body_exited" from="Collision" to="." method="_on_Collision_body_exited"]

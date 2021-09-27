@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Creatures/Creature023.png" type="Texture" id=1]
+[ext_resource path="res://Source/TitleScreen/TitleButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Source/TitleScreen/TitleScreen.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="TitleScreen" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -720.0
+margin_top = -405.0
+margin_right = 720.0
+margin_bottom = 405.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -620.0
+margin_top = -305.0
+margin_right = 620.0
+margin_bottom = 305.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+margin_right = 1240.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+margin_top = 93.0
+margin_right = 1240.0
+margin_bottom = 107.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Creature Catch"
+align = 1
+valign = 1
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox"]
+margin_top = 204.0
+margin_right = 1240.0
+margin_bottom = 405.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="VBox2" type="VBoxContainer" parent="Margin/VBox/HBox"]
+margin_right = 570.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="NewGame" parent="Margin/VBox/HBox/VBox2" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 570.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+scene_to_load = "res://Source/RouteScenes/Route2/Route2Scene.tscn"
+sceneName = "Route2Scene"
+button_label = "New Game"
+
+[node name="Continue" parent="Margin/VBox/HBox/VBox2" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 68.0
+margin_right = 570.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+disabled = true
+button_label = "Continue"
+
+[node name="Options" parent="Margin/VBox/HBox/VBox2" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 136.0
+margin_right = 570.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+disabled = true
+button_label = "Options"
+
+[node name="MascotImage" type="TextureRect" parent="Margin/VBox/HBox"]
+margin_left = 670.0
+margin_right = 1240.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Footer" type="MarginContainer" parent="Margin/VBox"]
+margin_top = 409.0
+margin_right = 1240.0
+margin_bottom = 610.0
+size_flags_vertical = 3
+
+[node name="FadeInRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeIn" type="AnimationPlayer" parent="FadeInRect"]
+anims/fade_in = SubResource( 1 )

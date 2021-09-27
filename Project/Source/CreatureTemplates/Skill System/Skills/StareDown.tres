@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource( 1 )
 skillName = "Stare Down"
-tool_tip = "Intimidate foe with a intimidating look"
+tool_tip = "Intimidate foe with a intimidating look lowering their defense by 10%"
 resourceType = ExtResource( 2 )
 resourceCost = 5
 move = 2

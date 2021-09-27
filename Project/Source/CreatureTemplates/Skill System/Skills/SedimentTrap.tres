@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource( 1 )
 skillName = "Sediment Trap"
-tool_tip = "Throw small rocks at foe's feet to obstruct the area around them"
+tool_tip = "Throw small rocks at foe's feet to obstruct the area around them lowering their speed by 10%"
 resourceType = ExtResource( 2 )
 resourceCost = 5
 move = 2

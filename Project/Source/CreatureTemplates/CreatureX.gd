@@ -4,17 +4,17 @@ class_name creatureX
 
 
 enum STAT {
-	MAX_HP,
-	HP,
-	MAX_ENERGY,
-	ENERGY, 
-	MAX_RESOURCE, 
-	RESOURCE,
-	ATK, 
-	SPATK, 
-	DEF, 
-	SPDEF, 
-	SPD
+	MAX_HP, #0
+	HP, #1
+	MAX_ENERGY,#2
+	ENERGY, #3
+	MAX_RESOURCE,#4 
+	RESOURCE,#5
+	ATK, #6
+	SPATK, #7
+	DEF, #8
+	SPDEF, #9
+	SPD#10
 	} ;
 
 var creatureData ;

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Source/NPCs/DialogueSystem.gd" type="Script" id=1]
+
+[node name="DialogueSystem" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -720.0
+margin_top = -810.0
+margin_right = 720.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -270.0
+margin_top = -270.0
+margin_right = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+margin_right = 540.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test"
+align = 1
+valign = 1

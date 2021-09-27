@@ -9,6 +9,7 @@ func execute(source, target, item):
 	if rng.randf_range(0,1) <= item.catchRate:
 		target.get_parent().remove_child(target) ;
 		source.add_child(target) ;
+		#source.get_parent().updatePlayerMenu(target) ;
 		print("\nYou caught ", target.creatureName, " !!!") ;
 	
 	else:

@@ -1,0 +1,377 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/TypeSymbols/RockSymbol.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Creatures/Creature001.png" type="Texture" id=2]
+[ext_resource path="res://Source/Player/PlayerMenu.gd" type="Script" id=3]
+
+[node name="PlayerMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CreaturePanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.0
+margin_top = -345.0
+margin_right = 405.0
+margin_bottom = 345.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatureSlot" type="VBoxContainer" parent="CanvasLayer/CreaturePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Split" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot"]
+margin_right = 760.0
+margin_bottom = 640.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="CreatureData" type="HBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split"]
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_right = 126.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureSprite"]
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="CreatureType" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_left = 126.0
+margin_right = 253.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Type1Name" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureType"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "Rock"
+
+[node name="Type2Name" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureType"]
+margin_top = 18.0
+margin_right = 127.0
+margin_bottom = 32.0
+text = "Wood"
+
+[node name="CreatureInfo" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_left = 253.0
+margin_right = 379.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreatureName" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureInfo"]
+margin_right = 126.0
+margin_bottom = 14.0
+text = "Creature001"
+
+[node name="CreatureLv" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureInfo"]
+margin_top = 18.0
+margin_right = 126.0
+margin_bottom = 32.0
+text = "Lv 2"
+
+[node name="CreatureExp" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureInfo"]
+margin_top = 36.0
+margin_right = 126.0
+margin_bottom = 50.0
+text = "Exp 0 / 12"
+
+[node name="CreatureStats1" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_left = 379.0
+margin_right = 506.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreatureHP" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats1"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "HP 12"
+
+[node name="CreatureEnergy" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats1"]
+margin_top = 18.0
+margin_right = 127.0
+margin_bottom = 32.0
+text = "Energy 50"
+
+[node name="CreatureResource" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats1"]
+margin_top = 36.0
+margin_right = 127.0
+margin_bottom = 50.0
+text = "Resource 10"
+
+[node name="CreatureStats2" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_left = 506.0
+margin_right = 633.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreatureAtk" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats2"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "Atk 10"
+
+[node name="CreatureSpAtk" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats2"]
+margin_top = 18.0
+margin_right = 127.0
+margin_bottom = 32.0
+text = "Sp. Atk 10"
+
+[node name="CreatureSpd" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats2"]
+margin_top = 36.0
+margin_right = 127.0
+margin_bottom = 50.0
+text = "Spd 10"
+
+[node name="CreatureStats3" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData"]
+margin_left = 633.0
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatureDef" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats3"]
+margin_right = 127.0
+margin_bottom = 14.0
+text = "Def 10"
+
+[node name="CreatureSpDef" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureData/CreatureStats3"]
+margin_top = 18.0
+margin_right = 127.0
+margin_bottom = 32.0
+text = "Sp. Def 10"
+
+[node name="CreatureMove1" type="HBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split"]
+margin_top = 133.0
+margin_right = 760.0
+margin_bottom = 241.0
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="TypeSymbol" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1"]
+margin_bottom = 108.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1/TypeSymbol"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MoveInfo" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1"]
+margin_left = 100.0
+margin_right = 192.0
+margin_bottom = 108.0
+
+[node name="MoveName" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1/MoveInfo"]
+margin_right = 92.0
+margin_bottom = 14.0
+text = "Sediment Trap"
+
+[node name="MoveResource" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1/MoveInfo"]
+margin_top = 18.0
+margin_right = 92.0
+margin_bottom = 32.0
+text = "Energy 5"
+
+[node name="MoveType" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1/MoveInfo"]
+margin_top = 36.0
+margin_right = 92.0
+margin_bottom = 50.0
+text = "Status"
+
+[node name="MovePotency" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1/MoveInfo"]
+margin_top = 54.0
+margin_right = 92.0
+margin_bottom = 68.0
+text = "----"
+
+[node name="Tooltip" type="RichTextLabel" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove1"]
+margin_left = 292.0
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Throw small rocks at foe's feet to obstruct the area around them"
+
+[node name="CreatureMove2" type="HBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split"]
+margin_top = 266.0
+margin_right = 760.0
+margin_bottom = 374.0
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="TypeSymbol" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2"]
+margin_bottom = 108.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2/TypeSymbol"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MoveInfo" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2"]
+margin_left = 100.0
+margin_right = 192.0
+margin_bottom = 108.0
+
+[node name="MoveName" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2/MoveInfo"]
+margin_right = 92.0
+margin_bottom = 14.0
+text = "Sediment Trap"
+
+[node name="MoveResource" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2/MoveInfo"]
+margin_top = 18.0
+margin_right = 92.0
+margin_bottom = 32.0
+text = "Energy 5"
+
+[node name="MoveType" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2/MoveInfo"]
+margin_top = 36.0
+margin_right = 92.0
+margin_bottom = 50.0
+text = "Status"
+
+[node name="MovePotency" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2/MoveInfo"]
+margin_top = 54.0
+margin_right = 92.0
+margin_bottom = 68.0
+text = "----"
+
+[node name="Tooltip" type="RichTextLabel" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove2"]
+margin_left = 292.0
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Throw small rocks at foe's feet to obstruct the area around them"
+
+[node name="CreatureMove3" type="HBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split"]
+margin_top = 399.0
+margin_right = 760.0
+margin_bottom = 507.0
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="TypeSymbol" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3"]
+margin_bottom = 108.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3/TypeSymbol"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MoveInfo" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3"]
+margin_left = 100.0
+margin_right = 192.0
+margin_bottom = 108.0
+
+[node name="MoveName" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3/MoveInfo"]
+margin_right = 92.0
+margin_bottom = 14.0
+text = "Sediment Trap"
+
+[node name="MoveResource" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3/MoveInfo"]
+margin_top = 18.0
+margin_right = 92.0
+margin_bottom = 32.0
+text = "Energy 5"
+
+[node name="MoveType" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3/MoveInfo"]
+margin_top = 36.0
+margin_right = 92.0
+margin_bottom = 50.0
+text = "Status"
+
+[node name="MovePotency" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3/MoveInfo"]
+margin_top = 54.0
+margin_right = 92.0
+margin_bottom = 68.0
+text = "----"
+
+[node name="Tooltip" type="RichTextLabel" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3"]
+margin_left = 292.0
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Throw small rocks at foe's feet to obstruct the area around them"
+
+[node name="CreatureMove4" type="HBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split"]
+margin_top = 532.0
+margin_right = 760.0
+margin_bottom = 640.0
+size_flags_vertical = 3
+custom_constants/separation = 100
+
+[node name="TypeSymbol" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4"]
+margin_bottom = 108.0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4/TypeSymbol"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MoveInfo" type="VBoxContainer" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4"]
+margin_left = 100.0
+margin_right = 192.0
+margin_bottom = 108.0
+
+[node name="MoveName" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4/MoveInfo"]
+margin_right = 92.0
+margin_bottom = 14.0
+text = "Sediment Trap"
+
+[node name="MoveResource" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4/MoveInfo"]
+margin_top = 18.0
+margin_right = 92.0
+margin_bottom = 32.0
+text = "Energy 5"
+
+[node name="MoveType" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4/MoveInfo"]
+margin_top = 36.0
+margin_right = 92.0
+margin_bottom = 50.0
+text = "Status"
+
+[node name="MovePotency" type="Label" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4/MoveInfo"]
+margin_top = 54.0
+margin_right = 92.0
+margin_bottom = 68.0
+text = "----"
+
+[node name="Tooltip" type="RichTextLabel" parent="CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4"]
+margin_left = 292.0
+margin_right = 760.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Throw small rocks at foe's feet to obstruct the area around them"

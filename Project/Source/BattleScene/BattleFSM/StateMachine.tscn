@@ -1,0 +1,49 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Source/BattleScene/BattleFSM/MoveState.gd" type="Script" id=1]
+[ext_resource path="res://Source/BattleScene/BattleFSM/Creature1Phase.gd" type="Script" id=2]
+[ext_resource path="res://Source/BattleScene/BattleFSM/BattlePhase.gd" type="Script" id=3]
+[ext_resource path="res://Source/BattleScene/BattleFSM/StateMachine.gd" type="Script" id=4]
+[ext_resource path="res://Source/BattleScene/BattleFSM/EnemyPhase.gd" type="Script" id=5]
+[ext_resource path="res://Source/BattleScene/BattleFSM/BattleEnd.gd" type="Script" id=6]
+[ext_resource path="res://Source/BattleScene/BattleFSM/TargetPhase.gd" type="Script" id=7]
+[ext_resource path="res://Source/BattleScene/BattleFSM/ItemState.gd" type="Script" id=8]
+[ext_resource path="res://Source/BattleScene/BattleFSM/State.gd" type="Script" id=9]
+[ext_resource path="res://Source/BattleScene/BattleFSM/BattleStart.gd" type="Script" id=10]
+[ext_resource path="res://Source/BattleScene/BattleFSM/Creature2Phase.gd" type="Script" id=11]
+[ext_resource path="res://Source/BattleScene/BattleFSM/StarterState.tscn" type="PackedScene" id=12]
+
+[node name="StateMachine" type="Node"]
+script = ExtResource( 4 )
+
+[node name="State" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="BattleStart" type="Node" parent="State"]
+script = ExtResource( 10 )
+
+[node name="StarterState" parent="State" instance=ExtResource( 12 )]
+
+[node name="Creature1Phase" type="Node" parent="State"]
+script = ExtResource( 2 )
+
+[node name="Creature2Phase" type="Node" parent="State"]
+script = ExtResource( 11 )
+
+[node name="BattlePhase" type="Node" parent="State"]
+script = ExtResource( 3 )
+
+[node name="EnemyPhase" type="Node" parent="State"]
+script = ExtResource( 5 )
+
+[node name="BattleEnd" type="Node" parent="State"]
+script = ExtResource( 6 )
+
+[node name="MoveState" type="Node" parent="State"]
+script = ExtResource( 1 )
+
+[node name="TargetPhase" type="Node" parent="State"]
+script = ExtResource( 7 )
+
+[node name="ItemState" type="Node" parent="State"]
+script = ExtResource( 8 )

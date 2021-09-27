@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/WorldObjects/BeachTallGrass.png" type="Texture" id=1]
+[ext_resource path="res://Source/WorldObjects/TallGrass.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1, 1 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+uniform float speed = 1.5 ;
+uniform float dis = 0.5 ;
+
+void vertex(){
+	VERTEX.x += sin(TIME * speed ) * dis * (UV.y-1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/speed = 1.5
+shader_param/dis = 0.5
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=5]
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+
+[node name="Node2D" type="Area2D"]
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -2 )
+scale = Vector2( 4, 2 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -4, -16 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EnteredTallGrass = SubResource( 4 )
+anims/ExitTallGrass = SubResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_Node2D_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Node2D_body_exited"]
