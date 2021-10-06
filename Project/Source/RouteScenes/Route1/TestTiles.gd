@@ -13,16 +13,16 @@ func LavaCliffsOff():
 	LavalCliffs.set_collision_mask_bit(0,false) ;
 
 
-func _on_Bridge2D_body_entered(body):
+func _on_Bridge2D_body_entered(_body):
 	LavaCliffsOff()
 
-func _on_Bridge2D2_body_entered(body):
+func _on_Bridge2D2_body_entered(_body):
 	LavaCliffsOff()
 
 
-func _on_Bridge2D_body_exited(body):
+func _on_Bridge2D_body_exited(_body):
 	LavaCliffsOn()
 
 
-func _on_Bridge2D2_body_exited(body):
+func _on_Bridge2D2_body_exited(_body):
 	LavaCliffsOn()

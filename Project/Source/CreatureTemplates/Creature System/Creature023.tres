@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creatures/Creature023.png" type="Texture" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Aether.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Geometry.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Storm.tres" type="Resource" id=5]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Stormcaller.tres" type="Resource" id=6]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/AxiomaticSwap.tres" type="Resource" id=7]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/StaticPeck.tres" type="Resource" id=8]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/ForcedPerspective.tres" type="Resource" id=9]
+
+[resource]
+script = ExtResource( 1 )
+creatureName = "Creature023"
+maxHP = 1.0
+maxEnergy = 50
+maxResource = 1
+ATK = 1.25
+SPATK = 0.5
+DEF = 1.0
+SPDEF = 1.0
+SPD = 1.5
+spriteSheet = ExtResource( 2 )
+resourceType = ExtResource( 3 )
+elementType = [ ExtResource( 5 ), ExtResource( 4 ) ]
+skillList = [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ) ]
+moveLearn = [ 2, 4, 8, 10 ]

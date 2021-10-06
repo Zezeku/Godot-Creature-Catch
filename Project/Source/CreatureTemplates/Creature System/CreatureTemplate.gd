@@ -71,3 +71,4 @@ func levelUp(creature, level):
 	for skill in (skillList.size() - offset): #we want to reduce to remaing 6 by sibtracting, 10 - 4 = 6
 		if moveLearn[skill+offset] <= level: #add offset since for loop assumes 0 start, 0 + 4 = 4
 			creature.moveList.append(skillList[skill+offset]) ;
+			BattleLog.updateBattleLog(creature.creatureName + " has learned " + skillList[skill+offset].skillName) ;

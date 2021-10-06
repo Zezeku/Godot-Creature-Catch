@@ -1,31 +1,23 @@
 extends "res://Source/BattleScene/BattleFSM/State.gd"
 
 
-
 func enter(fsm:StateMachine):
 	_fsm = fsm
 	
-	get_parent().activeChar.get_child(0).frame = 3 ;
+	print("Entering creature1phase")
+	get_parent().ActivatePlayerTargetingUI(get_parent().activeChar) ;
 	#moves, switch, run
-	get_parent().DisplayBattleMenu(true, false, true) ;
+	get_parent().DisplayBattleMenu(true, true, true) ;
 	
-
-
-#this one is ok, specific to battle scene
-func isMon1():
-	return Player.battleTeam[0] ;
-	
-func isMon2():
-	return Player.battleTeam[1] ;
 
 func inputMove():
 	change_state("MoveState") ;
 
 func inputRun(): #RUN option
 	get_parent().runAttempt += 1 ;
-	get_parent().activeChar.get_child(0).frame = 2 ;
+	get_parent().HideTargetUI() ;
 	
-	if isMon2():
+	if Player.battleTeam[1] != null:
 		get_parent().activeChar = Player.battleTeam[1] ;
 		change_state("Creature2Phase") ;
 	else:
@@ -33,3 +25,6 @@ func inputRun(): #RUN option
 
 func inputItem():
 	change_state("ItemState") ;
+
+func inputSwitch():
+	change_state("SwitchState") ;

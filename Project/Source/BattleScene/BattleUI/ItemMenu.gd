@@ -1,7 +1,6 @@
 extends PopupPanel
 
 onready var itemButton = load("res://Source/BattleScene/BattleUI/ItemButtonX.tscn") ;
-signal item_select(item_key) ;
 
 func DisplayItems(inv_dict):
 	
@@ -30,7 +29,7 @@ func item_pressed(item_key):
 
 func resetButtons():
 	for child in $ItemGrid.get_child_count():
-		var my_child = $ItemGrid.get_child(child) ;
+		var my_child = $ItemGrid.get_child(0) ;
 		$ItemGrid.remove_child(my_child) ;
 		my_child.queue_free() ;
 	

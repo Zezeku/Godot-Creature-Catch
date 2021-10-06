@@ -2,9 +2,6 @@ extends Node2D
 
 var itemX = load("res://Source/ItemTemplates/ItemX.tscn") ;
 
-onready var inventory = [] ;
-onready var inventory_amount = [] ;
-
 onready var inv_dict = {} ;
 
 func addItem(item_name, qty):
@@ -28,3 +25,6 @@ func removeItem(item, item_used):
 	if inv_dict[item] <=0:
 		inv_dict.erase(item) ;
 	item_used.queue_free() ;
+
+func getItemQty(item_name):
+	return inv_dict[item_name] ;

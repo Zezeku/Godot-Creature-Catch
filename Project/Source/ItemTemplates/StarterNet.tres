@@ -10,3 +10,4 @@ itemType = 0
 maxStack = 99
 itemEffects = [ ExtResource( 1 ) ]
 catchRate = 1.0
+skillTarget = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Source/BattleScene/BattleFSM/MoveState.gd" type="Script" id=1]
 [ext_resource path="res://Source/BattleScene/BattleFSM/Creature1Phase.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Source/BattleScene/BattleFSM/BattleStart.gd" type="Script" id=10]
 [ext_resource path="res://Source/BattleScene/BattleFSM/Creature2Phase.gd" type="Script" id=11]
 [ext_resource path="res://Source/BattleScene/BattleFSM/StarterState.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Source/BattleScene/BattleFSM/SwitchState.gd" type="Script" id=13]
+[ext_resource path="res://Source/BattleScene/BattleFSM/Creature1FaintState.gd" type="Script" id=14]
+[ext_resource path="res://Source/BattleScene/BattleFSM/Creature2FaintState.gd" type="Script" id=15]
 
 [node name="StateMachine" type="Node"]
 script = ExtResource( 4 )
@@ -47,3 +50,12 @@ script = ExtResource( 7 )
 
 [node name="ItemState" type="Node" parent="State"]
 script = ExtResource( 8 )
+
+[node name="SwitchState" type="Node" parent="State"]
+script = ExtResource( 13 )
+
+[node name="Creature1FaintState" type="Node" parent="State"]
+script = ExtResource( 14 )
+
+[node name="Creature2FaintState" type="Node" parent="State"]
+script = ExtResource( 15 )

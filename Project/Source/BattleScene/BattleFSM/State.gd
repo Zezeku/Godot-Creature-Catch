@@ -2,12 +2,18 @@ extends Node
 
 
 #these shortcuts get used by children. so must account for them being 1 layer down from state
-onready var SceneHandler = get_node("../../../..") ;
-onready var Player = get_node("../../../../Player") ;
-onready var Inventory = get_node("../../../Player/Inventory") ;
-onready var Enemy = get_node("../../../Enemy") ;
-onready var Creature = get_node("../../../BaseCreature") ;
+#get a lot of warnings, anyway to simplify this?
+#just copy paste into eahc child, easy and lets me know which child uses what
 
+#I need to save player children to array
+#so that i can swap battle order around but not persist to route world
+#easy fix i believe, ignore for now
+
+onready var SceneHandler = get_node("/root/SceneHandler") ;
+onready var Player = get_node("/root/SceneHandler/Player") ;
+onready var Enemy = get_node("/root/SceneHandler/BattleScene/Enemy") ;
+
+onready var Inventory = get_node("/root/SceneHandler/Player/Inventory") ;
 
 signal createEncounter ;
 signal PlayBattleMusic ;
@@ -19,10 +25,18 @@ signal ShowEnemyUI(enemy_creature_1, enemy_creature_) ;
 signal DisplayBattleMenu(moves, items, switch, run) ;
 signal DisplayItems(inv_dict) ;
 signal DisplayMoves(moveList) ;
-signal DisplayTargetUI;
+signal DisplaySwitch(player) ;
+signal DisplayTargetingUI(player1, player2, enemy1, enemy2);
+signal ActivateTargetingUI(targets, target_select) ;
+signal ActivatePlayerTargetingUI(creature) ;
 
-signal hideDisplayMoves ;
-signal hideDisplayItems ;
+signal HideMoves ;
+signal HideItems ;
+signal HideSwitch ;
+signal HideTargetUI ;
+
+signal UpdatePlayerUI_Switch(creature, index) ;
+signal UpdateTargetUI_Switch(creature, index) ;
 
 var runAttempt ;
 var activeChar ;
@@ -66,5 +80,32 @@ func DisplayItems():
 func DisplayMoves():
 	emit_signal("DisplayMoves", activeChar.moveList) ;
 
-func DisplayTargetUI():
-	emit_signal("DisplayTargetUI") ;
+func DisplaySwitch(player):
+	emit_signal("DisplaySwitch", player) ;
+
+func DisplayTargetUI(player1, player2, enemy1, enemy2):
+	emit_signal("DisplayTargetingUI", player1, player2, enemy1, enemy2) ;
+
+func ActivateTargetingUI(targets, target_select):
+	emit_signal("ActivateTargetingUI",targets, target_select) ;
+
+func ActivatePlayerTargetingUI(creature):
+	emit_signal("ActivatePlayerTargetingUI", creature) ;
+
+func HideMoves():
+	emit_signal("HideMoves") ;
+
+func HideItems():
+	emit_signal("HideItems") ;
+
+func HideSwitch():
+	emit_signal("HideSwitch") ;
+
+func HideTargetUI():
+	emit_signal("HideTargetUI") ;
+
+func UpdatePlayerUI_Switch(creature, index):
+	emit_signal("UpdatePlayerUI_Switch", creature, index) ;
+
+func UpdateTargetUI_Switch(creature, index):
+	emit_signal("UpdateTargetUI_Switch", creature, index) ;

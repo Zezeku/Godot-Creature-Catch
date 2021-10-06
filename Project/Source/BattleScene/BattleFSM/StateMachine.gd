@@ -7,11 +7,11 @@ var history = []
 
 func _ready():
 	
-	state = get_child(0).get_child(0) ; #set initial state to BattleStart
-	_enter_state() ;
+	state = get_child(0).get_child(0) ; #set initial state to BattleStart, which inherits State
+	_enter_state() ; #this is what begins FSM execution, if we need to delay it, we do it by delaying this line
 
 func _enter_state():
-	state.enter(self) ;
+	state.enter(self) ; #pass statemahine into state. wil luse State to get access to change_to and previous state functions
 
 func _change_to(new_state):
 	history.append(state.name) ;
@@ -61,3 +61,7 @@ func _on_BattleUIHandler_MoveSelect(moveSelection):
 
 func _on_BattleUIHandler_TargetSelect(targetSelect):
 	state.inputTargetSelect(targetSelect) ;
+
+
+func _on_BattleUIHandler_SwitchSelect(creatureSelection):
+	state.inputSwitchSelect(creatureSelection) ;

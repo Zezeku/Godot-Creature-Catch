@@ -31,9 +31,9 @@ func resetButtons():
 
 
 
-func BattleMenuSelect(menuSelection):
+func BattleMenuSelect(menuSelect):
 	resetButtons() ;
-	get_node("../BattleUIHandler").BattleMenuSelect(menuSelection) ;
+	get_node("../BattleUIHandler").BattleMenuSelect(menuSelect) ;
 
 
 func _on_MoveButton_pressed():

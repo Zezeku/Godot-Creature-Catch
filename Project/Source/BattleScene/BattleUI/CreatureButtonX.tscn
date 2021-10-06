@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Source/BattleScene/BattleUI/CreatureButtonX.gd" type="Script" id=1]
+
+[node name="Creature" type="Button"]
+margin_right = 1140.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="TextureRect" parent="HBox"]
+margin_right = 568.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HP" type="Label" parent="HBox"]
+margin_left = 572.0
+margin_right = 1140.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "HP: 0 / 0"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="." to="." method="_on_Creature_pressed"]

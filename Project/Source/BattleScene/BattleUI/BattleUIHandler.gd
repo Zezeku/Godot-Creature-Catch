@@ -5,6 +5,7 @@ signal FinishBattleStart ;
 signal BattleMenuSelect(menuSelection) ;
 signal ItemSelect(item_key);
 signal MoveSelect(moveSelection) ;
+signal SwitchSelect(creatureSelection) ;
 signal TargetSelect(targetSelect) ;
 
 func FinishBattleStart():
@@ -18,6 +19,9 @@ func ItemSelect(item_key):
 
 func MoveSelect(moveSelection):
 	emit_signal("MoveSelect", moveSelection) ;
+
+func SwitchSelect(creatureSelection):
+	emit_signal("SwitchSelect", creatureSelection) ;
 
 func TargetSelect(targetSelect):
 	emit_signal("TargetSelect", targetSelect) ;

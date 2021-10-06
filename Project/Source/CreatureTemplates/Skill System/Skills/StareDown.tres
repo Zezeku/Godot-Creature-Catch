@@ -3,7 +3,7 @@
 [ext_resource path="res://Source/CreatureTemplates/Skill System/SkillTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Source/CreatureTemplates/Resource System/Energy.tres" type="Resource" id=2]
 [ext_resource path="res://Source/CreatureTemplates/Skill System/SkillEffect System/StatEffect.tres" type="Resource" id=3]
-[ext_resource path="res://Source/CreatureTemplates/Element System/Stealth.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Neutral.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
@@ -16,4 +16,6 @@ elementType = ExtResource( 4 )
 potency = 0
 statToChange = [ 8 ]
 multiplier = [ -0.1 ]
+timer = 0
 skillEffect = [ ExtResource( 3 ) ]
+skillTarget = 2

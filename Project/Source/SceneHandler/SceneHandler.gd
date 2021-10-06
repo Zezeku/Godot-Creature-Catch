@@ -3,9 +3,16 @@ extends Node
 #onready var root = get_tree().root
 #onready var base_size = root.get_visible_rect().size
 
+#loaded scripts/class
 onready var playerPause = load("res://Source/Player/PlayerPause.gd").new() ;
-var routeHandler ;
+onready var routeHandler = load("res://Source/RouteScenes/RouteHandler.gd").new() ;
+
+
+#DATA STORAGE FOR BATTLE SCENE
+#LOOK INTO ADDING DICTIONARY INTO ROUTEHANDLER FOR BATTLE SCENEs
 var cur_route = null ;
+var cur_route_name = null ;
+var cur_route_path = null ;
 var battle_data = [] ;
 
 
@@ -18,6 +25,7 @@ enum{
 var state = null ;
 var player_pos = Vector2.ZERO;
 var player_frame = 0;
+var player_z_index = 1 ;
 
 func _ready():
 #	get_tree().connect("screen_resized", self, "_on_screen_resized")
@@ -27,17 +35,25 @@ func _ready():
 	add_child(load("res://Source/Player/Player.tscn").instance()) ;
 	add_child(load("res://Source/Player/PlayerMenu.tscn").instance()) ;
 	add_child(load("res://Source/NPCs/DialogueSystem.tscn").instance()) ;
-	routeHandler = load("res://Source/RouteScenes/RouteHandler.gd").new() ;
+	
+# warning-ignore:return_value_discarded
+	$Player.connect("updateCreatureSlot", $PlayerMenu, "updateCreatureSlot") ;
+	
 	
 	add_child(load("res://Source/TitleScreen/TitleScreen.tscn").instance()) ;
+# warning-ignore:return_value_discarded
 	$TitleScreen.connect("loadScene", self, "LoadScene") ;
 	
 
 func LoadScene(scene_to_load):
 	
 	add_child(load(scene_to_load).instance()) ;
-	cur_route = scene_to_load ;
-	var routeNode = get_child(get_child_count()-1)
+	var routeNode = get_child(get_child_count()-1) ;
+	
+	cur_route = routeNode ;
+	cur_route_name = routeNode.my_route_dict["my_name"] ;
+	cur_route_path = routeNode.my_route_dict["my_path"] ;
+	
 	playerPause.setPlayerController(routeNode.get_node("YSort/PlayerController")) ;
 	$DialogueSystem.connectToNodes() ;
 	$TitleScreen.queue_free() ;
@@ -50,7 +66,11 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_cancel") and state == WORLD:
 		if $PlayerMenu/CanvasLayer/CreaturePanel.visible == false:
-			 $PlayerMenu/CanvasLayer/CreaturePanel.visible = true ;
+			$PlayerMenu/CanvasLayer/CreaturePanel.visible = true ;
+		elif $PlayerMenu/CanvasLayer/CreaturePanel/CreatureSlot.visible == true:
+			$PlayerMenu/CanvasLayer/CreaturePanel/CreatureSlot.visible = false ;
+			$PlayerMenu.resetPlayerMenu() ;
+			$PlayerMenu/CanvasLayer/CreaturePanel/CreatureSelect.visible = true ;
 		else:
 			$PlayerMenu/CanvasLayer/CreaturePanel.visible = false ;
 	
@@ -69,31 +89,29 @@ func world_state(routeScene):
 	#load the correct route scene data
 	#need to defer this until the previous scene has been freed
 	#otherwise it tries to do both simultaenously and locks up
+	add_child(load(routeScene).instance());
 	var routeNode = get_child(get_child_count()-1) ;
+	routeHandler.LoadSceneData(routeNode) ;
+	routeNode.LoadMyData() ;
+	
+	
+	
+	cur_route = routeNode ;
+	cur_route_name = routeNode.my_route_dict["my_name"] ;
+	cur_route_path = routeNode.my_route_dict["my_path"] ;
+	
 	#player camera is new current view
 	routeNode.setPlayerCamera(true) ;
 	
 	#let pause player class who new controller in route is
+	#really need to look at moving this object around as part of scenechanger
 	playerPause.setPlayerController(routeNode.playerController) ;
+	cur_route.playerController.z_index = player_z_index ;
 	
 	#connect dialogue system to new routes npcs
 	$DialogueSystem.connectToNodes() ;
 	
-	
-	if !$Player.isFainted:
-		routeNode.playerController.position = player_pos ;
-		routeNode.playerController.animationTree.set("parameters/Idle/blend_position", player_frame);
-	else:
-		#this position should come from route data - respawn point
-		routeNode.playerController.position = Vector2(2*16+8,12*16) ;
-		$Player.isFainted = false ;
-	
-	if $Player/Party.get_child_count() > 0:
-		$PlayerMenu.updatePlayerMenu($Player/Party.get_child(0)) ;
-	
 	$Player.setActive();
-	
-	
 
 func battle_state(encounter):
 	battle_data = encounter ;
@@ -101,27 +119,18 @@ func battle_state(encounter):
 
 
 func change_to_world_state(routeScene):
-	var newRoute = load(routeScene).instance() ;
+	
 	
 	if state == BATTLE:
-		$Player.visible = false ;
-		#may need to store and rmeove child first?
 		$BattleScene.queue_free() ;
-		#not sure why, but this cant be deferred or else it does add fast enough, and later 
-		#inits cant find node
-		#might be realted to player controllers
-		add_child(newRoute) ;
-		
+		#not sure why, but this cant be deferred with queue_free()  or else it's slow to load
 	elif state == WORLD:
-		#make current route invisble and turn off camera and player controller
 		var routeNode = get_child(get_child_count()-1) ;
-		#may need to store and rmeove child first?
 		routeNode.queue_free() ;
-		cur_route = routeScene ;
-		call_deferred("add_child", newRoute) ;
 	
 	state = WORLD ;
-	change_state(state, routeScene, null) ;
+	#make sure previous scene has finished excution before loading new route
+	call_deferred("change_state", state, routeScene, null);
 	
 func change_to_battle_state(encounter):
 	state = BATTLE ;
@@ -132,23 +141,25 @@ func change_to_battle_state(encounter):
 	$Player.visible = true ;
 	$Player.isActive = false ;
 	
-	player_pos = $Route2Scene/YSort/PlayerController.position;
-	player_frame = $Route2Scene/YSort/PlayerController.animationTree.get("parameters/Idle/blend_position");
+	player_pos = cur_route.playerController.position;
+	player_frame = cur_route.playerController.animationTree.get("parameters/Idle/blend_position");
+	player_z_index = cur_route.playerController.z_index ;
 	
-	var my_route_child = $Route2Scene ;
-	remove_child(my_route_child) ;
+	var my_route_child = get_child(get_child_count()-1) ;
+	routeHandler.SaveSceneData(my_route_child) ;
 	my_route_child.queue_free() ;
 	
 	change_state(state, null, encounter) ;
 	
 	
 func IsEncounter(encounter):
-	
-	if $Player.isActive:
 		change_to_battle_state(encounter) ;
-	else:
-		pass
-	
+
+
+func changeRoute(new_route):
+	var routeNode = get_child(get_child_count()-1) ;
+	routeHandler.SaveSceneData(routeNode) ;
+	change_to_world_state( routeHandler.getRoute(new_route) );
 	
 
 #func _on_screen_resized():

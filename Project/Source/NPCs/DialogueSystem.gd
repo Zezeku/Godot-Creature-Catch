@@ -10,7 +10,7 @@ func connectToNodes() :
 #using canvas layer for dialogue ok
 #but consider avoiding for messenger so that pop up doesnt move with camera
 #should stay anchored to NPC
-func activateDialogue(text, location):
+func activateDialogue(text, _location):
 	$CanvasLayer/Panel/Label.text = text ;
 	#finds the sprite location on canvas screen and set panel position to it
 	#$CanvasLayer/Panel.rect_position = location[2] ;
@@ -25,8 +25,8 @@ func deactivateDialogue():
 	$CanvasLayer/Panel.visible = false ;
 	get_parent().playerPause.unpausePlayerController() ;
 
-func activateMessage(text):
+func activateMessage(_text):
 	pass;
 	
-func deactivateMessage(text):
+func deactivateMessage(_text):
 	pass;

@@ -8,8 +8,6 @@ onready var button4 = "VBox/HBox/VBox3/Move4";
 var moveSelection 
 
 
-signal moveSelect(move) ;
-
 func DisplayMoves(moveList):
 	var buttons = [button1, button2, button3, button4] ;
 	
@@ -28,6 +26,8 @@ func resetButtons():
 	var buttons = [button1, button2, button3, button4] ;
 	
 	for m in buttons.size():
+		get_node(buttons[m]).set_text("") ;
+		get_node(buttons[m]).hint_tooltip = "" ;
 		get_node(buttons[m]).get_node("VBox3/HBox2/ElementTexture").texture = null ;
 		get_node(buttons[m]).get_node("VBox3/ResourceCost").text = "" ;
 		get_node(buttons[m]).disabled = true ;
@@ -39,9 +39,9 @@ func resetButtons():
 	
 
 
-func MoveSelect(moveSelection):
+func MoveSelect(moveSelect):
 	resetButtons() ;
-	get_node("../BattleUIHandler").MoveSelect(moveSelection) ;
+	get_node("../BattleUIHandler").MoveSelect(moveSelect) ;
 	
 
 func _on_Move1_pressed():

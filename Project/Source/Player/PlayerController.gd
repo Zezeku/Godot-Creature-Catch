@@ -29,6 +29,7 @@ func _physics_process(delta):
 			animationState.travel("Idle") ;
 			velocity = velocity.move_toward(Vector2.ZERO, friction * delta) ;
 		
+# warning-ignore:return_value_discarded
 		move_and_slide(velocity) ;
 	
 

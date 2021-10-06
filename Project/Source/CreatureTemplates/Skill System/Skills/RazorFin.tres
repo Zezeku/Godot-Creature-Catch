@@ -16,4 +16,6 @@ elementType = ExtResource( 4 )
 potency = 60
 statToChange = [  ]
 multiplier = [  ]
+timer = 0
 skillEffect = [ ExtResource( 3 ) ]
+skillTarget = 2

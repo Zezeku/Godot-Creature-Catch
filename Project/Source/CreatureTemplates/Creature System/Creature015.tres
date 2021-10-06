@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Creatures/Creature015.png" type="Texture" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Water.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Rage.tres" type="Resource" id=4]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Chime.tres" type="Resource" id=5]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/TidalSplash.tres" type="Resource" id=6]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/FaeFury.tres" type="Resource" id=7]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/JetStream.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+creatureName = "Creature015"
+maxHP = 1.5
+maxEnergy = 50
+maxResource = 10
+ATK = 0.5
+SPATK = 1.25
+DEF = 0.5
+SPDEF = 1.0
+SPD = 1.25
+spriteSheet = ExtResource( 2 )
+resourceType = ExtResource( 4 )
+elementType = [ ExtResource( 3 ) ]
+skillList = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ]
+moveLearn = [ 2, 4, 7, 10 ]

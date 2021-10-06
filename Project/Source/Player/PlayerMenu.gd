@@ -7,10 +7,20 @@ onready var creatureMove2 = get_node("CanvasLayer/CreaturePanel/CreatureSlot/Spl
 onready var creatureMove3 = get_node("CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove3") ;
 onready var creatureMove4 = get_node("CanvasLayer/CreaturePanel/CreatureSlot/Split/CreatureMove4") ;
 
+onready var creature_slot = [null, null, null, null, null, null] ;
 
 func _ready():
 	resetPlayerMenu() ;
 
+func updateCreatureSlot(creature):
+	var open_index = creature_slot.find(null) ;
+	creature_slot[open_index] = creature ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.get_child(open_index).get_child(0).get_child(0).texture = creature.spriteSheet ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.get_child(open_index).get_child(0).get_child(0).frame = 0 ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.get_child(open_index).modulate.a8 = 255 ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.get_child(open_index).text = creature.creatureName ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.get_child(open_index).disabled = false ;
+	
 func updatePlayerMenu(creature):
 	
 	creatureData.get_node("CreatureSprite/Sprite").texture = creature.spriteSheet ;
@@ -110,5 +120,37 @@ func resetPlayerMenu():
 	creatureMove4.get_node("Tooltip").text = "" ;
 
 
-func _on_Player_updateCreatureMenu(creature):
-	updatePlayerMenu(creature) ;
+func _on_Creature1_pressed():
+	updatePlayerMenu(creature_slot[0]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;
+
+
+func _on_Creature2_pressed():
+	updatePlayerMenu(creature_slot[1]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;
+
+
+func _on_Creature3_pressed():
+	updatePlayerMenu(creature_slot[2]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;
+
+
+func _on_Creature4_pressed():
+	updatePlayerMenu(creature_slot[3]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;
+
+
+func _on_Creature5_pressed():
+	updatePlayerMenu(creature_slot[4]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;
+
+
+func _on_Creature6_pressed():
+	updatePlayerMenu(creature_slot[5]) ;
+	$CanvasLayer/CreaturePanel/CreatureSelect.visible = false ;
+	$CanvasLayer/CreaturePanel/CreatureSlot.visible = true ;

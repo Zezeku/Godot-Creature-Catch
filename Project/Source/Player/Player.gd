@@ -3,15 +3,16 @@ extends Node2D
 onready var Party = $Party ;
 onready var creatureX = load("res://Source/CreatureTemplates/CreatureX.tscn") ;
 
-signal updateCreatureMenu(creature) ;
-
 var battleTeam = [null, null] ;
 var moveUse = [null,null] ;
 var itemUse = [null, null] ;
 var targetUse = [null,null] ;
+var switchUse = [null, null] ;
 
 var isActive ; #this prevents instant battles
 var isFainted = false ; #this prevents battle from having to care
+
+signal updateCreatureSlot(creature) ;
 
 func _ready():
 	isActive = false ;
@@ -32,7 +33,8 @@ func getPartySize():
 	return $Party.get_child_count() ;
 
 func getCreature(creature_index):
-	return $Party.get_child(creature_index) ;
+	if $Party.get_child_count() > 0:
+		return $Party.get_child(creature_index) ;
 
 func getCaughtQueue():
 	return $CaughtQueue ;
@@ -42,6 +44,7 @@ func resolveCaughtQueue():
 		if $Party.get_child_count() < 6:
 			$CaughtQueue.remove_child(child) ;
 			$Party.add_child(child) ;
+			emit_signal("updateCreatureSlot", child) ;
 		else:
 			print("no more room!")
 			child.queue_free() ;
@@ -60,6 +63,8 @@ func healParty():
 	for creature in $Party.get_child_count():
 		$Party.get_child(creature).stat[1] = $Party.get_child(creature).stat[0] ;
 		$Party.get_child(creature).stat[3] = $Party.get_child(creature).stat[2] ;
+	
+	resetParty() ;
 
 func setActive():
 	var t = Timer.new() ;
@@ -69,7 +74,10 @@ func setActive():
 	t.wait_time = 2 ;
 	t.start() ;
 	yield(t, "timeout") ;
+	remove_child(t) ;
+	t.queue_free() ;
 	isActive = true ;
 
-func updateMenu(creature):
-	emit_signal("updateCreatureMenu", creature) ;
+func resolveEffects():
+	for creature in $Party.get_children():
+		creature.resolveEffects() ;

@@ -14,6 +14,13 @@ export(Array, Resource) var itemEffects
 
 export(float) var catchRate
 
+enum SKILL_TARGET{
+	SELF,
+	ALLY,
+	ENEMY
+	} ;
+export(SKILL_TARGET) var skillTarget
+
 func initialize(itemX):
 	
 	itemX.itemName = itemName ;

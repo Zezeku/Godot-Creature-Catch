@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "AxiomaticSwapEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/AxiomaticSwapEffect.gd"
+}, {
+"base": "Resource",
 "class": "CreatureTemplate",
 "language": "GDScript",
 "path": "res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd"
@@ -20,14 +25,29 @@ _global_script_classes=[ {
 "path": "res://Source/CreatureTemplates/Skill System/SkillEffect System/DamageEffect.gd"
 }, {
 "base": "Resource",
+"class": "DebuffEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/DebuffEffect.gd"
+}, {
+"base": "Resource",
 "class": "ElementTemplate",
 "language": "GDScript",
 "path": "res://Source/CreatureTemplates/Element System/ElementTemplate.gd"
 }, {
 "base": "Resource",
+"class": "ForcedPerspectiveEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/ForcedPerspectiveEffect.gd"
+}, {
+"base": "Resource",
 "class": "ItemResource",
 "language": "GDScript",
 "path": "res://Source/ItemTemplates/ItemTemplate.gd"
+}, {
+"base": "Resource",
+"class": "MarkEffect",
+"language": "GDScript",
+"path": "res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/MarkEffect.gd"
 }, {
 "base": "Resource",
 "class": "ResourceTemplate",
@@ -60,10 +80,14 @@ _global_script_classes=[ {
 "path": "res://Source/ItemTemplates/ItemEffects/CatchEffect.gd"
 } ]
 _global_script_class_icons={
+"AxiomaticSwapEffect": "",
 "CreatureTemplate": "",
 "DamageEffect": "",
+"DebuffEffect": "",
 "ElementTemplate": "",
+"ForcedPerspectiveEffect": "",
 "ItemResource": "",
+"MarkEffect": "",
 "ResourceTemplate": "",
 "SkillTemplate": "",
 "StatEffect": "",
@@ -86,10 +110,11 @@ BattleLog="*res://Source/Singetons/BattleLog.gd"
 [display]
 
 window/size/width=1440
-window/size/height=810
+window/size/height=960
 window/size/always_on_top=true
 window/size/test_width=1440
-window/size/test_height=810
+window/size/test_height=960
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

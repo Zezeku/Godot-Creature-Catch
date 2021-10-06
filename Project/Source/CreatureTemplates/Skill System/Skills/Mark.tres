@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Source/CreatureTemplates/Skill System/SkillTemplate.gd" type="Script" id=1]
+[ext_resource path="res://Source/CreatureTemplates/Resource System/Aether.tres" type="Resource" id=2]
+[ext_resource path="res://Source/CreatureTemplates/Element System/Stealth.tres" type="Resource" id=3]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/MarkEffect.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+skillName = "Mark"
+tool_tip = "Mark the target to turn its strengths into... less of a strength. Marked creature loses resistance to your direct damage."
+resourceType = ExtResource( 2 )
+resourceCost = 1
+move = 2
+elementType = ExtResource( 3 )
+potency = 0
+statToChange = [  ]
+multiplier = [  ]
+timer = 0
+skillEffect = [ ExtResource( 4 ) ]
+skillTarget = 2

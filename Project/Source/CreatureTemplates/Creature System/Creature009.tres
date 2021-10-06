@@ -1,13 +1,14 @@
-[gd_resource type="Resource" load_steps=9 format=2]
+[gd_resource type="Resource" load_steps=10 format=2]
 
 [ext_resource path="res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Creatures/Creature009.png" type="Texture" id=2]
 [ext_resource path="res://Source/CreatureTemplates/Resource System/Aether.tres" type="Resource" id=3]
 [ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Scratch.tres" type="Resource" id=4]
-[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/StareDown.tres" type="Resource" id=5]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/Mark.tres" type="Resource" id=5]
 [ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/RazorFin.tres" type="Resource" id=6]
 [ext_resource path="res://Source/CreatureTemplates/Element System/Water.tres" type="Resource" id=7]
 [ext_resource path="res://Source/CreatureTemplates/Element System/Stealth.tres" type="Resource" id=8]
+[ext_resource path="res://Source/CreatureTemplates/Skill System/Skills/HiddenClaws.tres" type="Resource" id=9]
 
 [resource]
 script = ExtResource( 1 )
@@ -19,9 +20,9 @@ ATK = 1.0
 SPATK = 1.0
 DEF = 0.75
 SPDEF = 0.75
-SPD = 5.0
+SPD = 1.5
 spriteSheet = ExtResource( 2 )
 resourceType = ExtResource( 3 )
 elementType = [ ExtResource( 7 ), ExtResource( 8 ) ]
-skillList = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ]
-moveLearn = [ 2, 4, 6 ]
+skillList = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ) ]
+moveLearn = [ 2, 5, 6, 10 ]

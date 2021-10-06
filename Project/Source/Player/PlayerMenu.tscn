@@ -30,7 +30,198 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CreatureSelect" type="VBoxContainer" parent="CanvasLayer/CreaturePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creature1" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 790.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature1/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="Creature2" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 115.0
+margin_right = 790.0
+margin_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Test Button"
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature2/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="Creature3" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 230.0
+margin_right = 790.0
+margin_bottom = 325.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Test Button"
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature3/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="Creature4" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 345.0
+margin_right = 790.0
+margin_bottom = 440.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Test Button"
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature4/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="Creature5" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 460.0
+margin_right = 790.0
+margin_bottom = 555.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Test Button"
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature5/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
+[node name="Creature6" type="Button" parent="CanvasLayer/CreaturePanel/CreatureSelect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 575.0
+margin_right = 790.0
+margin_bottom = 670.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Test Button"
+
+[node name="CreatureSprite" type="Control" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/CreaturePanel/CreatureSelect/Creature6/CreatureSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+
 [node name="CreatureSlot" type="VBoxContainer" parent="CanvasLayer/CreaturePanel"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
@@ -375,3 +566,10 @@ margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Throw small rocks at foe's feet to obstruct the area around them"
+
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature1" to="." method="_on_Creature1_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature2" to="." method="_on_Creature2_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature3" to="." method="_on_Creature3_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature4" to="." method="_on_Creature4_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature5" to="." method="_on_Creature5_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreaturePanel/CreatureSelect/Creature6" to="." method="_on_Creature6_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Creature017.png-9797fafb433d09e1cb932c04fcbb1bd1.stex"
+path="res://.import/MountainTallGrass.png-719c5fcf99f1944ab7caae474c3b57ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ToImport/Creatures/Creature017.png"
-dest_files=[ "res://.import/Creature017.png-9797fafb433d09e1cb932c04fcbb1bd1.stex" ]
+source_file="res://Assets/WorldObjects/MountainTallGrass.png"
+dest_files=[ "res://.import/MountainTallGrass.png-719c5fcf99f1944ab7caae474c3b57ca.stex" ]
 
 [params]
 
