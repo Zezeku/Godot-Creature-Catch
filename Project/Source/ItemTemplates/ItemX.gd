@@ -10,5 +10,5 @@ func initialize(item):
 	itemData.initialize(self) ;
 	
 
-func execute(source, target):
-	itemData.execute(source, target) ;
+func execute(source, target, state):
+	yield(itemData.execute(source, target, state), "completed") ;

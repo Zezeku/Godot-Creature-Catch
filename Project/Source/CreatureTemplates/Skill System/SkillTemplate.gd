@@ -64,19 +64,7 @@ func pre_execute(source):
 #Aether can be redistributed if not enough
 #target can be multiple
 
-func execute(source, target, state):
-	state.add_child(load("res://Source/ItemTemplates/CatchMiniGame.tscn").instance()) ;
-	#this is Godot semantics. yield must return a GDState so that external yieeld can intpret this yield as completed
-	#we yield on a single idle frame to do this
-	#we can cascade this as needed
-	if source.get_parent().get_parent().name == "Player":
-		print("yield - skill ", skillName, ", source: ", source.creatureName, ", target: ", target.creatureName )
-		yield(state.get_child(0).execute(), "completed") ;
-		print("unyield - skill")
-	
-	var deleteNode = state.get_child(0)
-	state.remove_child(deleteNode)
-	deleteNode.queue_free() ;
+func execute(source, target, _state):
 	
 	BattleLog.updateBattleLog(source.creatureName + " used " + skillName + " on " + target.creatureName) ;
 	

@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Source/ItemTemplates/CatchMiniGame.gd" type="Script" id=1]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 19.1128
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 18.9412
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 18.8208
 
 [node name="CatchMiniGame" type="Control"]
@@ -28,7 +28,7 @@ position = Vector2( 707, 480 )
 
 [node name="OuterCircleShape" type="CollisionShape2D" parent="CanvasLayer/OuterCircleBody"]
 scale = Vector2( 12, 12 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="DeadZoneBody" type="Area2D" parent="CanvasLayer"]
 position = Vector2( 707, 480 )
@@ -36,7 +36,7 @@ position = Vector2( 707, 480 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/DeadZoneBody"]
 self_modulate = Color( 0.890196, 0.411765, 0.337255, 0.392157 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="InnerCircleBody" type="Area2D" parent="CanvasLayer"]
 position = Vector2( 707, 480 )
@@ -44,14 +44,4 @@ position = Vector2( 707, 480 )
 [node name="InnerCircelShape" type="CollisionShape2D" parent="CanvasLayer/InnerCircleBody"]
 self_modulate = Color( 0.00784314, 0, 1, 0.196078 )
 scale = Vector2( 3, 3 )
-shape = SubResource( 1 )
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 358.773
-margin_top = 254.5
-margin_right = 496.773
-margin_bottom = 308.5
-text = "Attempt: 1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+shape = SubResource( 3 )

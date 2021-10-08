@@ -11,12 +11,12 @@ func addItem(item_name, qty):
 		inv_dict[item_name] = qty ;
 	
 
-func useItem(item, source, target):
+func useItem(item, source, target, state):
 	
 	var item_to_use = itemX.instance() ;
 	item_to_use.initialize(item)
 	
-	item_to_use.execute(source, target) ;
+	yield(item_to_use.execute(source, target, state), "completed") ;
 	
 	removeItem(item, item_to_use) ;
 

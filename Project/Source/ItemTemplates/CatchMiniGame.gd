@@ -5,6 +5,7 @@ const attempts = 3 ;
 var attempt = 0 ;
 var end = false ;
 var rng = RandomNumberGenerator.new() ;
+var isSuccess = false ;
 
 signal done
 
@@ -17,8 +18,9 @@ func _ready():
 
 func execute():
 	print("yield - catchminigame")
-	yield(self, "done")
+	yield(self, "done") ;
 	print("unyield - catchminigame")
+	return isSuccess ;
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept") and is_processing() and !end:
@@ -39,7 +41,6 @@ func shrinkOuterCircle(delta):
 	
 	if $CanvasLayer/OuterCircleBody/OuterCircleShape.scale <= Vector2.ZERO and attempt < 3:
 		attempt += 1 ;
-		$CanvasLayer/Label.text = "Attempt: " + String(attempt+1)
 		if attempt < 3:
 			$CanvasLayer/OuterCircleBody/OuterCircleShape.scale = Vector2(12,12) ;
 	elif attempt >= 3:
@@ -57,10 +58,7 @@ func checkOverlap():
 	var deadZone = $CanvasLayer/DeadZoneBody/CollisionShape2D.scale
 	
 	if innerArea >= outerArea and deadZone <= outerArea:
-		$CanvasLayer/Label.text = "Catch Rate +5%!"
-		
-	else:
-		$CanvasLayer/Label.text = "No extra luck this time."
+		isSuccess = true ;
 	
 	emit_signal("done") ;
 
@@ -68,7 +66,6 @@ func startOver():
 	$CanvasLayer/OuterCircleBody/OuterCircleShape.scale = Vector2(12,12) ;
 	attempt = 0 ;
 	end = false ;
-	$CanvasLayer/Label.text = "Attempt: 1" ;
 	rng.randomize() ;
 	var randomNumber = rng.randf_range(8,12);
 	speed = randomNumber ;

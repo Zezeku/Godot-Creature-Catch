@@ -29,7 +29,7 @@ func initialize(itemX):
 		itemX.itemEffects.append(itemEffects[i]) ;
 	
 	
-func execute(source, target):
+func execute(source, target, state):
 	for i in itemEffects.size():
-		itemEffects[i].execute(source, target, self) ;
+		yield(itemEffects[i].execute(source, target, self, state), "completed") ;
 

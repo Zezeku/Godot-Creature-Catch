@@ -53,7 +53,7 @@ func change_state(next_state):
 	_fsm._change_to(next_state) ;
 
 func useItem(item_key, source, target):
-	Inventory.useItem(item_key, source, target) ;
+	Inventory.useItem(item_key, source, target, self) ;
 
 func SetBackground():
 	emit_signal("setBackground") ;

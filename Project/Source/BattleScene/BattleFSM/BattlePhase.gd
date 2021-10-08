@@ -75,25 +75,25 @@ func enter(fsm:StateMachine):
 	
 	if Player.battleTeam[0] != null and (Player.itemUse[0] != null) and Enemy.getPartySize() > 0:
 		if Player.targetUse[0] != null:
-			Player.get_node("Inventory").useItem(Player.itemUse[0], Player.get_node("CaughtQueue"), Player.targetUse[0]) ;
+			yield(Player.get_node("Inventory").useItem(Player.itemUse[0], Player.get_node("CaughtQueue"), Player.targetUse[0], self), "completed") ;
 		else:
 			var new_target ;
 			for creature in Enemy.battleTeam:
 				if creature != null:
 					new_target = creature ;
 					break ;
-			Player.get_node("Inventory").useItem(Player.itemUse[0], Player.get_node("CaughtQueue"), new_target) ;
+			Player.get_node("Inventory").useItem(Player.itemUse[0], Player.get_node("CaughtQueue"), new_target, self) ;
 	
 	if Player.battleTeam[1] != null and (Player.itemUse[1] != null) and Enemy.getPartySize() > 0:
 		if Player.targetUse[1] != null:
-			Player.get_node("Inventory").useItem(Player.itemUse[1], Player.get_node("CaughtQueue"), Player.targetUse[1]) ;
+			Player.get_node("Inventory").useItem(Player.itemUse[1], Player.get_node("CaughtQueue"), Player.targetUse[1], self) ;
 		else:
 			var new_target ;
 			for creature in Enemy.battleTeam:
 				if creature != null:
 					new_target = creature ;
 					break ;
-			Player.get_node("Inventory").useItem(Player.itemUse[1], Player.get_node("CaughtQueue"), new_target) ;
+			Player.get_node("Inventory").useItem(Player.itemUse[1], Player.get_node("CaughtQueue"), new_target, self) ;
 	
 	
 	####################### Damaging Attacks ##############################
@@ -130,9 +130,7 @@ func enter(fsm:StateMachine):
 					
 				if isPlayer and Player.battleTeam[my_index] != null and (Enemy.battleTeam[0] !=null or Enemy.battleTeam[1]!=null) :
 					if my_parent.targetUse[my_index] != null:
-						print("yield - battle phase ", myself.creatureName)
-						yield(mySkill.execute(myself, my_parent.targetUse[my_index], self), "completed") ;
-						print("unyield - battle phase")
+						mySkill.execute(myself, my_parent.targetUse[my_index], self) ;
 					else:
 						var new_target ;
 						for new_creature in Enemy.battleTeam:
