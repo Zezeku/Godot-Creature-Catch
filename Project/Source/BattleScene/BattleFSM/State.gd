@@ -15,6 +15,7 @@ onready var Enemy = get_node("/root/SceneHandler/BattleScene/Enemy") ;
 
 onready var Inventory = get_node("/root/SceneHandler/Player/Inventory") ;
 
+signal setBackground ;
 signal createEncounter ;
 signal PlayBattleMusic ;
 signal ShowBattleStart(player, enemy);
@@ -51,9 +52,11 @@ func enter(fsm:StateMachine):
 func change_state(next_state):
 	_fsm._change_to(next_state) ;
 
-
 func useItem(item_key, source, target):
 	Inventory.useItem(item_key, source, target) ;
+
+func SetBackground():
+	emit_signal("setBackground") ;
 
 func CreateEncounter():
 	emit_signal("createEncounter") ;

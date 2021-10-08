@@ -4,8 +4,10 @@ extends Control
 func connectToNodes() :
 	var dialogues = get_tree().get_nodes_in_group("DialogueNodes") ;
 	for d in dialogues.size():
-		dialogues[d].connect("activateDialogue", self, "activateDialogue") ;
-		dialogues[d].connect("deactivateDialogue", self, "deactivateDialogue") ;
+		if !dialogues[d].is_connected("activateDialogue", self, "activateDialogue"):
+			dialogues[d].connect("activateDialogue", self, "activateDialogue") ;
+		if !dialogues[d].is_connected("deactivateDialogue", self, "deactivateDialogue"):
+			dialogues[d].connect("deactivateDialogue", self, "deactivateDialogue") ;
 
 #using canvas layer for dialogue ok
 #but consider avoiding for messenger so that pop up doesnt move with camera

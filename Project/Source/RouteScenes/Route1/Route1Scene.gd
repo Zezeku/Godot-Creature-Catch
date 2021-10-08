@@ -5,11 +5,13 @@ onready var playerController = get_node("YSort/PlayerController");
 var my_route_dict = {
 	"my_name": "Route2Scene",
 	"my_path": "res://Source/RouteScenes/Route2/Route2Scene.tscn",
-	"my_respawn": Vector2(40,190)
+	"my_respawn": Vector2(40,190),
+	"my_z_index": 1
 } ;
 
 func LoadMyData():
 	playerController.position = my_route_dict["my_respawn"] ;
+	playerController.z_index = my_route_dict["my_z_index"] ;
 	
 
 func setPlayerCamera(visible):
@@ -17,7 +19,7 @@ func setPlayerCamera(visible):
 
 func _on_RouteChange_body_entered(body):
 		if body.name == "PlayerController":
-			get_parent().routeHandler.changeRespawn("Route2Scene", Vector2(190,-460)) ;
+			get_parent().routeHandler.changeRespawn("Route2Scene", Vector2(190,-460), 2) ;
 			get_parent().changeRoute("Route2Scene") ;
 
 

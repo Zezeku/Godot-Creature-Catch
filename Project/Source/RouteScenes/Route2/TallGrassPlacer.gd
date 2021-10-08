@@ -9,7 +9,7 @@ export(Texture) var tallGrassTexture ;
 export(NodePath) var batch_name ;
 export(int) var tallGrassZIndex ;
 
-func _process(delta):
+func _process(_delta):
 	if Engine.editor_hint:
 		tile_set = tileSet;
 

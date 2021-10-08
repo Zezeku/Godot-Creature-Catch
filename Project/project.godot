@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Source/CreatureTemplates/Skill System/SkillEffects_Attachers/AxiomaticSwapEffect.gd"
 }, {
 "base": "Resource",
+"class": "BattleStage",
+"language": "GDScript",
+"path": "res://Source/RouteScenes/RouteBattleStage/BattleStage.gd"
+}, {
+"base": "Resource",
 "class": "CreatureTemplate",
 "language": "GDScript",
 "path": "res://Source/CreatureTemplates/Creature System/CreatureTemplate.gd"
@@ -81,6 +86,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AxiomaticSwapEffect": "",
+"BattleStage": "",
 "CreatureTemplate": "",
 "DamageEffect": "",
 "DebuffEffect": "",
@@ -107,6 +113,10 @@ config/icon="res://icon.png"
 TypeChart="*res://Source/Singetons/TypeChart.gd"
 BattleLog="*res://Source/Singetons/BattleLog.gd"
 
+[debug]
+
+shapes/collision/shape_color=Color( 0.545098, 0.768627, 0.501961, 1 )
+
 [display]
 
 window/size/width=1440
@@ -114,7 +124,7 @@ window/size/height=960
 window/size/always_on_top=true
 window/size/test_width=1440
 window/size/test_height=960
-window/vsync/use_vsync=false
+window/vsync/vsync_via_compositor=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

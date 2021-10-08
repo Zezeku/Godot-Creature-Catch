@@ -21,7 +21,7 @@ func enter(fsm:StateMachine):
 		Player.resolveCaughtQueue() ;
 		Player.resetParty() ;
 		
-		SceneHandler.routeHandler.changeRespawn(SceneHandler.cur_route_name, SceneHandler.player_pos) ;
+		SceneHandler.routeHandler.changeRespawn(SceneHandler.cur_route_name, SceneHandler.player_pos, SceneHandler.player_z_index) ;
 		
 	
 	BattleLog.updateBattleLog("  [ ENTER ]  ") ;

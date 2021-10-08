@@ -19,7 +19,6 @@ func _ready():
 
 
 func _input(event):
-	#logic breaks if reentered scene
 	if event.is_action_pressed("ui_accept") and isActive and !($DialogueX.isActive):
 		
 		if itemGiven:
@@ -28,7 +27,7 @@ func _input(event):
 		$DialogueX.ActivateDialogue(get_global_transform_with_canvas()) ;
 		
 		if !itemGiven:
-			get_node("../../../Player/Inventory").addItem(item_to_give, 2);
+			get_node("../../../Player/Inventory").addItem(item_to_give, 1);
 			itemGiven = true ;
 			get_parent().get_parent().my_route_dict[self.name] = itemGiven ;
 			

@@ -21,4 +21,7 @@ func getPartySize():
 	return $Party.get_child_count() ;
 
 func getCreature(creature_index):
-	return $Party.get_child(creature_index) ;
+	if $Party.get_child_count() > 0:
+		return $Party.get_child(creature_index) ;
+	else:
+		return null ;

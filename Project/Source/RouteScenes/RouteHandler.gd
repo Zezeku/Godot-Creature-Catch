@@ -5,14 +5,16 @@ var route_dict = {
 	"Route1Scene": {
 		"my_name": "Route1Scene",
 		"my_path": "res://Source/RouteScenes/Route1/Route1Scene.tscn",
-		"my_respawn": Vector2(40,190)
+		"my_respawn": Vector2(40,190),
+		"my_z_index": 1
 
 	},
 	
 	"Route2Scene": {
 		"my_name": "Route2Scene",
 		"my_path": "res://Source/RouteScenes/Route2/Route2Scene.tscn",
-		"my_respawn": Vector2(-89,77)
+		"my_respawn": Vector2(-89,77),
+		"my_z_index": 1
 	}
 } ;
 
@@ -28,8 +30,9 @@ func SaveSceneData(old_route):
 func getRoute(route_name):
 	return route_dict.get(route_name, {}).get("my_path") ;
 
-func changeRespawn(route_name, respawn_point):
+func changeRespawn(route_name, respawn_point, z_index):
 	route_dict[route_name]["my_respawn"] = respawn_point ;
+	route_dict[route_name]["my_z_index"] = z_index ;
 
 
 

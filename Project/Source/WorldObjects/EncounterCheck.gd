@@ -27,6 +27,7 @@ func Encounter():
 func _on_EncounterCheck_body_entered(body):
 	if body.name =="PlayerController" and !isBeaten and get_parent().get_parent().get_parent().get_parent().get_node("Player/Party").get_child_count() != 0:
 		get_node("../PanelContainer").visible = true ;
+		
 		var t = Timer.new() ;
 		add_child(t) ;
 		t.one_shot = true ;
@@ -34,5 +35,7 @@ func _on_EncounterCheck_body_entered(body):
 		t.wait_time = 1 ;
 		t.start() ;
 		yield(t, "timeout") ;
+		remove_child(t) ;
+		t.queue_free() ;
 		
 		IsEncounter() ;

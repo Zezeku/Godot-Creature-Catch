@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://Source/Player/PlayerController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tilesets/BeachSet.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Source/CreatureTemplates/Creature System/Creature023.tres" type="Resource" id=16]
 [ext_resource path="res://Assets/WorldObjects/BeachTallGrass.png" type="Texture" id=17]
 [ext_resource path="res://Source/WorldObjects/Beach_TallGrassPlacer.tres" type="TileSet" id=18]
+[ext_resource path="res://Source/RouteScenes/RouteBattleStage/Route2BattleStage.tres" type="Resource" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -817,7 +818,7 @@ points = PoolVector2Array( 0, 8, 8, 0, 16, 0, 16, 16, 0, 16 )
 1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=59]
-extents = Vector2( 8, 10 )
+extents = Vector2( 8, 9 )
 
 [sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 8, 9 )
@@ -839,6 +840,12 @@ extents = Vector2( 51, 6 )
 
 [sub_resource type="RectangleShape2D" id=66]
 extents = Vector2( 7, 50 )
+
+[sub_resource type="RectangleShape2D" id=89]
+extents = Vector2( 8, 1 )
+
+[sub_resource type="RectangleShape2D" id=90]
+extents = Vector2( 8, 1 )
 
 [sub_resource type="ConvexPolygonShape2D" id=67]
 points = PoolVector2Array( 0, 0, 2, 0, 2, 16, 0, 16 )
@@ -975,10 +982,10 @@ points = PoolVector2Array( 0, 14, 16, 14, 16, 16, 0, 16 )
 3/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=76]
-extents = Vector2( 25, 9 )
+extents = Vector2( 27, 8 )
 
 [sub_resource type="RectangleShape2D" id=77]
-extents = Vector2( 136, 9 )
+extents = Vector2( 136, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=78]
 points = PoolVector2Array( 16, 2, 0, 2, 0, 0, 16, 0 )
@@ -1412,6 +1419,27 @@ shape = SubResource( 65 )
 position = Vector2( 464, -530 )
 shape = SubResource( 66 )
 
+[node name="Stairs_Area_Down" type="Area2D" parent="."]
+position = Vector2( -125, 52 )
+
+[node name="Stairs1Down" type="CollisionShape2D" parent="Stairs_Area_Down"]
+position = Vector2( 5, -20 )
+shape = SubResource( 89 )
+
+[node name="Stairs2Down" type="CollisionShape2D" parent="Stairs_Area_Down"]
+position = Vector2( 21, -340 )
+shape = SubResource( 89 )
+
+[node name="Stairs_Area_Up" type="Area2D" parent="."]
+
+[node name="Stairs1Up" type="CollisionShape2D" parent="Stairs_Area_Up"]
+position = Vector2( -120, 16 )
+shape = SubResource( 90 )
+
+[node name="Stairs2Up" type="CollisionShape2D" parent="Stairs_Area_Up"]
+position = Vector2( -104, -305 )
+shape = SubResource( 90 )
+
 [node name="Stairs" type="TileMap" parent="."]
 tile_set = SubResource( 75 )
 cell_size = Vector2( 16, 16 )
@@ -1433,6 +1461,10 @@ shape = SubResource( 77 )
 z_index = 2
 tile_set = SubResource( 84 )
 cell_size = Vector2( 16, 16 )
+collision_use_kinematic = true
+collision_bounce = 1.0
+collision_layer = 0
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -1441794, 0, 0, -1441793, 1, 0, -1507328, 2, 0, -1048585, 0, 0, -1048584, 1, 0, -1048583, 1, 0, -1048582, 1, 0, -1048581, 1, 0, -1048580, 1, 0, -1048579, 1, 0, -1048578, 1, 0, -1048577, 1, 0, -1114112, 1, 0, -1114111, 1, 0, -1114110, 1, 0, -1114109, 1, 0, -1114108, 1, 0, -1114107, 1, 0, -1114106, 1, 0, -1114105, 2, 0 )
 
@@ -1444,7 +1476,7 @@ format = 1
 tile_data = PoolIntArray( -1507330, 0, 0, -1507329, 1, 0, -1572864, 2, 0, -1114121, 0, 0, -1114120, 1, 0, -1114119, 1, 0, -1114118, 1, 0, -1114117, 1, 0, -1114116, 1, 0, -1114115, 1, 0, -1114114, 1, 0, -1114113, 1, 0, -1179648, 1, 0, -1179647, 1, 0, -1179646, 1, 0, -1179645, 1, 0, -1179644, 1, 0, -1179643, 1, 0, -1179642, 1, 0, -1179641, 2, 0 )
 
 [node name="BridgeFrontRope" type="TileMap" parent="."]
-z_index = 3
+z_index = 2
 tile_set = SubResource( 86 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -1496,6 +1528,7 @@ z_index = 1
 encounterRate = [ 0.6, 0.4, 0.0 ]
 encounterCreature = [ [ ExtResource( 15 ) ], [ ExtResource( 14 ) ], [ ExtResource( 15 ), ExtResource( 14 ) ] ]
 encounterLevel = [ [ 3 ], [ 3 ], [ 2, 2 ] ]
+battleStage = ExtResource( 19 )
 
 [node name="Batch2" parent="YSort" instance=ExtResource( 3 )]
 encounterRate = [ 0.5, 0.0 ]
@@ -1510,7 +1543,7 @@ encounterLevel = [ [ 4 ] ]
 [node name="NPCX" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 10, -95 )
 z_index = 1
-dialogue = "Good Evening! Here's some Starter Nets"
+dialogue = "Good Evening! Here's a Starter Net."
 dialogue2 = "You can view your caught creatures by pressing [ ESC ] or ( B )."
 item_to_give = ExtResource( 11 )
 
@@ -1664,8 +1697,12 @@ shape = SubResource( 88 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.294118, 0.356863, 0.670588, 1 )
 
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
 [connection signal="body_entered" from="Stairs_Area" to="." method="_on_Stairs_Area_body_entered"]
 [connection signal="body_exited" from="Stairs_Area" to="." method="_on_Stairs_Area_body_exited"]
+[connection signal="body_exited" from="Stairs_Area_Down" to="." method="_on_Stairs_Area_Down_body_exited"]
+[connection signal="body_exited" from="Stairs_Area_Up" to="." method="_on_Stairs_Area_Up_body_exited"]
 [connection signal="body_entered" from="Bridge_Area" to="." method="_on_Bridge_Area_body_entered"]
 [connection signal="body_exited" from="Bridge_Area" to="." method="_on_Bridge_Area_body_exited"]
 [connection signal="body_entered" from="RouteChange" to="." method="_on_RouteChange_body_entered"]

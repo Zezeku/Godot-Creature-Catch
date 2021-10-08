@@ -6,6 +6,7 @@ func enter(fsm:StateMachine):
 	_fsm = fsm
 	
 	#BattleSetUp State
+	get_parent().SetBackground() ;
 	get_parent().CreateEncounter() ;
 	get_parent().PlayBattleMusic() ;
 	get_parent().ShowBattleStart(Player, Enemy) ;

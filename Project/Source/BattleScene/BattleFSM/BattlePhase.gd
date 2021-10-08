@@ -2,13 +2,14 @@ extends "res://Source/BattleScene/BattleFSM/State.gd"
 
 onready var rng = RandomNumberGenerator.new()
 
-
 func enter(fsm:StateMachine):
 	_fsm = fsm
+	
 	
 	print("Entering BattlePhase")
 	#should we place in seperate states? allows for battle end as needed
 	#idea - RunCheckState -> SwitchCheckState -> ItemCheckState -> BattleCheckState
+	
 	
 	########################## Check for running away ###########################
 	if get_parent().runAttempt > 0 :
@@ -129,25 +130,27 @@ func enter(fsm:StateMachine):
 					
 				if isPlayer and Player.battleTeam[my_index] != null and (Enemy.battleTeam[0] !=null or Enemy.battleTeam[1]!=null) :
 					if my_parent.targetUse[my_index] != null:
-						mySkill.execute(myself, my_parent.targetUse[my_index]) ;
+						print("yield - battle phase ", myself.creatureName)
+						yield(mySkill.execute(myself, my_parent.targetUse[my_index], self), "completed") ;
+						print("unyield - battle phase")
 					else:
 						var new_target ;
 						for new_creature in Enemy.battleTeam:
 							if new_creature != null:
 								new_target = new_creature ;
 								break ;
-						mySkill.execute(myself, new_target) ;
+						mySkill.execute(myself, new_target, self) ;
 					
 				elif !isPlayer and Enemy.battleTeam[my_index] != null and (Player.battleTeam[0] !=null or Player.battleTeam[1] != null):
 					if my_parent.targetUse[my_index] != null:
-						mySkill.execute(myself, my_parent.targetUse[my_index]) ;
+						mySkill.execute(myself, my_parent.targetUse[my_index], self) ;
 					else:
 						var new_target ;
 						for new_creature in Player.battleTeam:
 							if new_creature != null:
 								new_target = new_creature ;
 								break ;
-						mySkill.execute(myself, new_target) ;
+						mySkill.execute(myself, new_target, self) ;
 						
 				elif (Player.battleTeam[0] !=null or Player.battleTeam[1] != null) and (Enemy.battleTeam[0] !=null or Enemy.battleTeam[1]!=null):
 					pass ; #if current creature died, but still other creatures on either side, keep looping

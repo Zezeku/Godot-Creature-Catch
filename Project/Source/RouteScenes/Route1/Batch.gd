@@ -11,6 +11,7 @@ onready var Player = get_node("../../../Player") ;
 export(Array, float) var encounterRate ;
 export(Array, Array, Resource) var encounterCreature ;
 export(Array, Array, int) var encounterLevel ;
+export(Resource) var battleStage ;
 #set encounters, then randomize between them
 
 func IsEncounter():
@@ -18,7 +19,7 @@ func IsEncounter():
 	var randomNumber = rng.randf_range(0, 1) ;
 	if randomNumber <= ENCOUNTER_RATE and Player.isActive:
 		#this is bad. look at throwing signal instead.
-		get_parent().get_parent().get_parent().IsEncounter(Encounter()) ;
+		get_parent().get_parent().get_parent().IsEncounter(Encounter(), battleStage) ;
 
 func Encounter():
 	

@@ -19,7 +19,7 @@ func _physics_process(delta):
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up") ;
 		input_vector = input_vector.normalized();
 			
-		if input_vector != Vector2.ZERO :
+		if input_vector != Vector2.ZERO:
 			animationTree.set("parameters/Idle/blend_position",input_vector) ;
 			animationTree.set("parameters/Walk/blend_position",input_vector) ;
 			animationState.travel("Walk") ;

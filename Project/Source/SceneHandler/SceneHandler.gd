@@ -15,6 +15,7 @@ var cur_route_name = null ;
 var cur_route_path = null ;
 var battle_data = [] ;
 
+var battle_background = null ;
 
 enum{ 
 	WORLD, 
@@ -76,12 +77,12 @@ func _input(event):
 	
 	
 
-func change_state(my_state, routeScene, encounter):
+func change_state(my_state, routeScene, encounter, battleStage):
 	match my_state:
 		WORLD:
 			world_state(routeScene) ;
 		BATTLE:
-			battle_state(encounter) ;
+			battle_state(encounter, battleStage) ;
 		MENU:
 			pass
 
@@ -106,15 +107,16 @@ func world_state(routeScene):
 	#let pause player class who new controller in route is
 	#really need to look at moving this object around as part of scenechanger
 	playerPause.setPlayerController(routeNode.playerController) ;
-	cur_route.playerController.z_index = player_z_index ;
 	
 	#connect dialogue system to new routes npcs
 	$DialogueSystem.connectToNodes() ;
 	
 	$Player.setActive();
 
-func battle_state(encounter):
+func battle_state(encounter, battleStage):
 	battle_data = encounter ;
+	print(battleStage)
+	battle_background = battleStage ;
 	add_child(load("res://Source/BattleScene/BattleScene.tscn").instance()) ;
 
 
@@ -130,9 +132,9 @@ func change_to_world_state(routeScene):
 	
 	state = WORLD ;
 	#make sure previous scene has finished excution before loading new route
-	call_deferred("change_state", state, routeScene, null);
+	call_deferred("change_state", state, routeScene, null, null);
 	
-func change_to_battle_state(encounter):
+func change_to_battle_state(encounter, battleStage):
 	state = BATTLE ;
 	
 	if $PlayerMenu/CanvasLayer/CreaturePanel.visible == true:
@@ -149,11 +151,11 @@ func change_to_battle_state(encounter):
 	routeHandler.SaveSceneData(my_route_child) ;
 	my_route_child.queue_free() ;
 	
-	change_state(state, null, encounter) ;
+	change_state(state, null, encounter, battleStage) ;
 	
 	
-func IsEncounter(encounter):
-		change_to_battle_state(encounter) ;
+func IsEncounter(encounter, battleStage):
+		change_to_battle_state(encounter, battleStage) ;
 
 
 func changeRoute(new_route):
