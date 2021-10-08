@@ -1,15 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Source/ItemTemplates/CatchMiniGame.gd" type="Script" id=1]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 19.1128
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 18.9412
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 18.8208
+[ext_resource path="res://Assets/CatchMechanic.png" type="Texture" id=2]
 
 [node name="CatchMiniGame" type="Control"]
 anchor_right = 1.0
@@ -23,25 +15,20 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="OuterCircleBody" type="Area2D" parent="CanvasLayer"]
+[node name="OuterCircleBody" type="Sprite" parent="CanvasLayer"]
+self_modulate = Color( 0.105882, 0.662745, 0.32549, 0.470588 )
 position = Vector2( 707, 480 )
-
-[node name="OuterCircleShape" type="CollisionShape2D" parent="CanvasLayer/OuterCircleBody"]
-scale = Vector2( 12, 12 )
-shape = SubResource( 1 )
-
-[node name="DeadZoneBody" type="Area2D" parent="CanvasLayer"]
-position = Vector2( 707, 480 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/DeadZoneBody"]
-self_modulate = Color( 0.890196, 0.411765, 0.337255, 0.392157 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 2 )
+texture = ExtResource( 2 )
 
-[node name="InnerCircleBody" type="Area2D" parent="CanvasLayer"]
+[node name="InnerCircleBody" type="Sprite" parent="CanvasLayer"]
+self_modulate = Color( 0.0784314, 0, 0.996078, 0.392157 )
 position = Vector2( 707, 480 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
 
-[node name="InnerCircelShape" type="CollisionShape2D" parent="CanvasLayer/InnerCircleBody"]
-self_modulate = Color( 0.00784314, 0, 1, 0.196078 )
-scale = Vector2( 3, 3 )
-shape = SubResource( 3 )
+[node name="DeadZoneBody" type="Sprite" parent="CanvasLayer"]
+self_modulate = Color( 0.105882, 0.662745, 0.32549, 0.313726 )
+position = Vector2( 707, 480 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )

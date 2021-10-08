@@ -1,5 +1,7 @@
 extends Control
 
+const speed_max = 4 ;
+const speed_min = 2 ;
 var speed ;
 const attempts = 3 ;
 var attempt = 0 ;
@@ -12,7 +14,7 @@ signal done
 func _ready():
 	set_process(false) ;
 	rng.randomize() ;
-	var randomNumber = rng.randf_range(8,12);
+	var randomNumber = rng.randf_range(speed_min,speed_max);
 	speed = randomNumber ;
 	
 
@@ -39,23 +41,23 @@ func shrinkOuterCircle(delta):
 	var shrink_speed = speed * delta ;
 	
 	
-	if $CanvasLayer/OuterCircleBody/OuterCircleShape.scale <= Vector2.ZERO and attempt < 3:
+	if $CanvasLayer/OuterCircleBody.scale <= Vector2.ZERO and attempt < 3:
 		attempt += 1 ;
 		if attempt < 3:
-			$CanvasLayer/OuterCircleBody/OuterCircleShape.scale = Vector2(12,12) ;
+			$CanvasLayer/OuterCircleBody.scale = Vector2(1,1) ;
 	elif attempt >= 3:
 		checkOverlap() ;
 	else:
-		$CanvasLayer/OuterCircleBody/OuterCircleShape.scale -= Vector2(shrink_speed,shrink_speed) ;
+		$CanvasLayer/OuterCircleBody.scale -= Vector2(shrink_speed,shrink_speed) ;
 
 func checkOverlap():
 	end = true ;
 	set_process(false)
 #	$InnerCircleBody.visible = false ;
 #	$OuterCircleBody.visible = false ;
-	var innerArea = $CanvasLayer/InnerCircleBody/InnerCircelShape.scale
-	var outerArea = $CanvasLayer/OuterCircleBody/OuterCircleShape.scale
-	var deadZone = $CanvasLayer/DeadZoneBody/CollisionShape2D.scale
+	var innerArea = $CanvasLayer/InnerCircleBody.scale
+	var outerArea = $CanvasLayer/OuterCircleBody.scale
+	var deadZone = $CanvasLayer/DeadZoneBody.scale
 	
 	if innerArea >= outerArea and deadZone <= outerArea:
 		isSuccess = true ;
@@ -63,10 +65,10 @@ func checkOverlap():
 	emit_signal("done") ;
 
 func startOver():
-	$CanvasLayer/OuterCircleBody/OuterCircleShape.scale = Vector2(12,12) ;
+	$CanvasLayer/OuterCircleBody.scale = Vector2(1,1) ;
 	attempt = 0 ;
 	end = false ;
 	rng.randomize() ;
-	var randomNumber = rng.randf_range(8,12);
+	var randomNumber = rng.randf_range(speed_min,speed_max);
 	speed = randomNumber ;
 	
