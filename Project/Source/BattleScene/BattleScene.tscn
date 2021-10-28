@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Source/BattleScene/BattleScene.gd" type="Script" id=1]
+[ext_resource path="res://Source/BattleScene/BattleUI/AetherMenu.gd" type="Script" id=2]
 [ext_resource path="res://Source/BattleScene/BattleUI/MoveMenu.gd" type="Script" id=3]
 [ext_resource path="res://ToImport/Music/Ludum Dare 28 - Track 8.wav" type="AudioStream" id=4]
 [ext_resource path="res://Source/BattleScene/BattleUI/ParallaxBackground.gd" type="Script" id=5]
@@ -40,6 +41,7 @@ anchor_bottom = 1.0
 size_flags_horizontal = 7
 script = ExtResource( 6 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -469,6 +471,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AetherMenu" type="PopupPanel" parent="CanvasLayer/BattleUI"]
+margin_left = 213.936
+margin_top = 555.969
+margin_right = 611.936
+margin_bottom = 737.969
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BattleUI/AetherMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AetherLabel" type="Label" parent="CanvasLayer/BattleUI/AetherMenu/VBox"]
+margin_right = 390.0
+margin_bottom = 14.0
+text = "Aether Available: "
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/BattleUI/AetherMenu/VBox"]
+margin_top = 24.0
+margin_right = 390.0
+margin_bottom = 44.0
+custom_constants/separation = 20
+
+[node name="TargetLabel" type="Label" parent="CanvasLayer/BattleUI/AetherMenu/VBox/HBox"]
+margin_top = 3.0
+margin_right = 179.0
+margin_bottom = 17.0
+text = "Selected Target, MoveName"
+
+[node name="TargetAether" type="Button" parent="CanvasLayer/BattleUI/AetherMenu/VBox/HBox"]
+margin_left = 199.0
+margin_right = 390.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+disabled = true
+text = "Use Available AetherCost"
+
+[node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/AetherMenu/VBox"]
+visible = false
+margin_top = 54.0
+margin_right = 435.0
+margin_bottom = 74.0
+custom_constants/separation = 20
+
+[node name="ActiveAetherLabel" type="Label" parent="CanvasLayer/BattleUI/AetherMenu/VBox/HBox2"]
+margin_top = 3.0
+margin_right = 160.0
+margin_bottom = 17.0
+text = "ActiveTarget, MoveName"
+
+[node name="ActiveAether" type="Button" parent="CanvasLayer/BattleUI/AetherMenu/VBox/HBox2"]
+margin_left = 180.0
+margin_right = 435.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Collect AetherCost"
+
 [node name="SwitchMenu" type="PopupMenu" parent="CanvasLayer/BattleUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -499,6 +572,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -513,8 +587,8 @@ __meta__ = {
 
 [node name="Creature1UI" type="Panel" parent="CanvasLayer/BattleUI/PlayerUI/HBox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 215.0
-margin_bottom = 120.0
+margin_right = 7.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -589,9 +663,9 @@ __meta__ = {
 
 [node name="Creature2UI" type="Panel" parent="CanvasLayer/BattleUI/PlayerUI/HBox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 219.0
-margin_right = 434.0
-margin_bottom = 120.0
+margin_left = 11.0
+margin_right = 18.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -667,10 +741,9 @@ __meta__ = {
 [node name="EnemyUI" type="Control" parent="CanvasLayer/BattleUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.49829
-margin_right = 1.49829
 script = ExtResource( 9 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -685,8 +758,7 @@ __meta__ = {
 
 [node name="Creature1UI" type="Panel" parent="CanvasLayer/BattleUI/EnemyUI/HBox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 205.0
-margin_bottom = 100.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -698,25 +770,25 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 14.0
 text = "Name: "
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 18.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 32.0
 text = "Level:"
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 36.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 50.0
 text = "HP:"
 
 [node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 54.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 68.0
 
 [node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox/HBox2"]
@@ -726,7 +798,7 @@ text = "Energy:"
 
 [node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox"]
 margin_top = 72.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 86.0
 
 [node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature1UI/VBox/HBox3"]
@@ -736,9 +808,9 @@ text = "Resource:"
 
 [node name="Creature2UI" type="Panel" parent="CanvasLayer/BattleUI/EnemyUI/HBox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 209.0
-margin_right = 414.0
-margin_bottom = 100.0
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -753,25 +825,25 @@ __meta__ = {
 }
 
 [node name="NameLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 14.0
 text = "Name:"
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 18.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 32.0
 text = "Level:"
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 36.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 50.0
 text = "HP:"
 
 [node name="HBox2" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 54.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 68.0
 
 [node name="EnergyLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2/HBox2"]
@@ -781,7 +853,7 @@ text = "Energy:"
 
 [node name="HBox3" type="HBoxContainer" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2"]
 margin_top = 72.0
-margin_right = 205.0
+margin_right = 63.0
 margin_bottom = 86.0
 
 [node name="ResourceLabel" type="Label" parent="CanvasLayer/BattleUI/EnemyUI/HBox/Creature2UI/VBox2/HBox3"]
@@ -794,6 +866,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 17 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -855,6 +928,7 @@ centered = false
 hframes = 4
 
 [node name="BattleLog" type="PanelContainer" parent="CanvasLayer/BattleUI"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -60.0
@@ -877,6 +951,7 @@ __meta__ = {
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/BattleUI/BattleLog/VBox"]
 margin_right = 235.0
 margin_bottom = 15.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "BattleLog"
 fit_content_height = true
 __meta__ = {
@@ -889,6 +964,7 @@ margin_right = 235.0
 margin_bottom = 319.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "Battle Log 1"
 scroll_following = true
 __meta__ = {
@@ -898,6 +974,13 @@ __meta__ = {
 [node name="BattleUIHandler" type="Node" parent="CanvasLayer/BattleUI"]
 script = ExtResource( 13 )
 
+[node name="PopupPanel2" type="PopupPanel" parent="CanvasLayer/BattleUI"]
+margin_right = 8.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 script = ExtResource( 5 )
 
@@ -906,6 +989,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -929,6 +1013,8 @@ script = ExtResource( 11 )
 [connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox2/Move2" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move2_pressed"]
 [connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move3" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move3_pressed"]
 [connection signal="pressed" from="CanvasLayer/BattleUI/MoveMenu/VBox/HBox/VBox3/Move4" to="CanvasLayer/BattleUI/MoveMenu" method="_on_Move4_pressed"]
+[connection signal="pressed" from="CanvasLayer/BattleUI/AetherMenu/VBox/HBox/TargetAether" to="CanvasLayer/BattleUI/AetherMenu" method="_on_TargetAether_pressed"]
+[connection signal="toggled" from="CanvasLayer/BattleUI/AetherMenu/VBox/HBox2/ActiveAether" to="CanvasLayer/BattleUI/AetherMenu" method="_on_ActiveAether_toggled"]
 [connection signal="focus_entered" from="CanvasLayer/BattleUI/TargetingUI/PlayerCreature1" to="CanvasLayer/BattleUI/TargetingUI" method="_on_PlayerCreature1_focus_entered"]
 [connection signal="focus_exited" from="CanvasLayer/BattleUI/TargetingUI/PlayerCreature1" to="CanvasLayer/BattleUI/TargetingUI" method="_on_PlayerCreature1_focus_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/BattleUI/TargetingUI/PlayerCreature1" to="CanvasLayer/BattleUI/TargetingUI" method="_on_PlayerCreature1_mouse_entered"]
@@ -945,6 +1031,7 @@ script = ExtResource( 11 )
 [connection signal="focus_exited" from="CanvasLayer/BattleUI/TargetingUI/EnemyCreature2" to="CanvasLayer/BattleUI/TargetingUI" method="_on_EnemyCreature2_focus_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/BattleUI/TargetingUI/EnemyCreature2" to="CanvasLayer/BattleUI/TargetingUI" method="_on_EnemyCreature2_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/BattleUI/TargetingUI/EnemyCreature2" to="CanvasLayer/BattleUI/TargetingUI" method="_on_EnemyCreature2_pressed"]
+[connection signal="AetherDistribute" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_AetherDistribute"]
 [connection signal="BattleMenuSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_BattleMenuSelect"]
 [connection signal="FinishBattleStart" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_FinishBattleStart"]
 [connection signal="ItemSelect" from="CanvasLayer/BattleUI/BattleUIHandler" to="StateMachine" method="_on_BattleUIHandler_ItemSelect"]

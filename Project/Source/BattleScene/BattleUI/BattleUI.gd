@@ -23,6 +23,8 @@ func _ready():
 # warning-ignore:return_value_discarded
 	get_node("../../StateMachine/State").connect("ActivatePlayerTargetingUI", self, "ActivatePlayerTargetingUI") ;
 # warning-ignore:return_value_discarded
+	get_node("../../StateMachine/State").connect("DisplayResourceMenu", self, "DisplayResourceMenu") ;
+# warning-ignore:return_value_discarded
 	get_node("../../StateMachine/State").connect("HideItems", self, "HideItems") ;
 # warning-ignore:return_value_discarded
 	get_node("../../StateMachine/State").connect("HideMoves", self, "HideMoves") ;
@@ -30,6 +32,8 @@ func _ready():
 	get_node("../../StateMachine/State").connect("HideSwitch", self, "HideSwitch") ;
 # warning-ignore:return_value_discarded
 	get_node("../../StateMachine/State").connect("HideTargetUI", self, "HideTargetUI") ;
+# warning-ignore:return_value_discarded
+	get_node("../../StateMachine/State").connect("HideResourceMenu", self, "HideResourceMenu") ;
 # warning-ignore:return_value_discarded
 	get_node("../../StateMachine/State").connect("UpdatePlayerUI_Switch", self, "UpdatePlayerUI_Switch") ;
 # warning-ignore:return_value_discarded
@@ -85,8 +89,12 @@ func ActivateTargetingUI(targets, target_select):
 
 func ActivatePlayerTargetingUI(creature):
 	$TargetingUI.ActivatePlayerTargetingUI(creature) ;
+	
 func HideMoves():
 	$MoveMenu.resetButtons() ;
+
+func DisplayResourceMenu(creature, target, move):
+	$AetherMenu.DisplayAetherMenu(creature, target, move) ;
 
 func HideItems():
 	$ItemMenu.resetButtons() ;
@@ -96,6 +104,9 @@ func HideSwitch():
 
 func HideTargetUI():
 	$TargetingUI.HideTargetingUI() ;
+
+func HideResourceMenu():
+	$AetherMenu.ResetAetherMenu() ;
 
 func _on_BaseCreature_updatePlayerUI(player):
 	$PlayerUI.updatePlayerUI(player) ;

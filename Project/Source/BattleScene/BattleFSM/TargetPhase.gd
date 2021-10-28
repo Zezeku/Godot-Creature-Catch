@@ -38,14 +38,27 @@ func enter(fsm:StateMachine):
 					targets.append(enemy) ;
 			target_select = 1 ;
 	
-	print("targets: ", targets) ;
-	print("target_select: ", target_select) ;
+#	print("targets: ", targets) ;
+#	print("target_select: ", target_select) ;
 	get_parent().ActivateTargetingUI(targets, target_select) ;
 
 
 
 func decide_next_state():
 	
+	#if Aether, go to additional state
+	var _target = Player.targetUse[Player.battleTeam.find(get_parent().activeChar)] ;
+	var move = null ;
+	
+	if Player.moveUse[Player.battleTeam.find(get_parent().activeChar)]:
+		move = get_parent().activeChar.moveList[Player.moveUse[Player.battleTeam.find(get_parent().activeChar)]] ;
+	#	print(target.creatureName) ;
+	#	print(move.resourceType.resourceName) ;
+		#dont go into if target already has effect, eventually needs checked properly in skill
+		if move.resourceType.resourceName == "Aether":
+			change_state("ResourcePhase")
+			return ;
+		
 	get_parent().activeChar.get_child(0).frame = 2 ;
 	
 	if get_parent().activeChar == Player.battleTeam[0]:

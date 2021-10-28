@@ -30,11 +30,13 @@ signal DisplaySwitch(player) ;
 signal DisplayTargetingUI(player1, player2, enemy1, enemy2);
 signal ActivateTargetingUI(targets, target_select) ;
 signal ActivatePlayerTargetingUI(creature) ;
+signal DisplayResourceMenu(creature, target, move) ;
 
 signal HideMoves ;
 signal HideItems ;
 signal HideSwitch ;
 signal HideTargetUI ;
+signal HideResourceMenu ;
 
 signal UpdatePlayerUI_Switch(creature, index) ;
 signal UpdateTargetUI_Switch(creature, index) ;
@@ -95,6 +97,9 @@ func ActivateTargetingUI(targets, target_select):
 func ActivatePlayerTargetingUI(creature):
 	emit_signal("ActivatePlayerTargetingUI", creature) ;
 
+func DisplayResourceMenu(creature, target, move):
+	emit_signal("DisplayResourceMenu", creature, target, move) ;
+	
 func HideMoves():
 	emit_signal("HideMoves") ;
 
@@ -106,6 +111,9 @@ func HideSwitch():
 
 func HideTargetUI():
 	emit_signal("HideTargetUI") ;
+
+func HideResourceMenu():
+	emit_signal("HideResourceMenu") ;
 
 func UpdatePlayerUI_Switch(creature, index):
 	emit_signal("UpdatePlayerUI_Switch", creature, index) ;

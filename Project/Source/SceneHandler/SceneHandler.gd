@@ -1,7 +1,7 @@
 extends Node
 
-#onready var root = get_tree().root
-#onready var base_size = root.get_visible_rect().size
+onready var root = get_tree().root
+onready var base_size = root.get_visible_rect().size
 
 #loaded scripts/class
 onready var playerPause = load("res://Source/Player/PlayerPause.gd").new() ;
@@ -29,10 +29,10 @@ var player_frame = 0;
 var player_z_index = 1 ;
 
 func _ready():
-#	get_tree().connect("screen_resized", self, "_on_screen_resized")
+	get_tree().connect("screen_resized", self, "_on_screen_resized")
+	root.set_attach_to_screen_rect(root.get_visible_rect())
+	_on_screen_resized()
 	
-#	root.set_attach_to_screen_rect(root.get_visible_rect())
-#	_on_screen_resized()
 	add_child(load("res://Source/Player/Player.tscn").instance()) ;
 	add_child(load("res://Source/Player/PlayerMenu.tscn").instance()) ;
 	add_child(load("res://Source/NPCs/DialogueSystem.tscn").instance()) ;
@@ -164,24 +164,24 @@ func changeRoute(new_route):
 	change_to_world_state( routeHandler.getRoute(new_route) );
 	
 
-#func _on_screen_resized():
-#	var new_window_size = OS.window_size
-#
-#	var scale_w = max(int(new_window_size.x / base_size.x), 1)
-#	var scale_h = max(int(new_window_size.y / base_size.y), 1)
-#	var scale = min(scale_w, scale_h)
-#
-#	var diff = new_window_size - (base_size * scale)
-#	var diffhalf = (diff * 0.5).floor()
-#
-#	root.set_attach_to_screen_rect(Rect2(diffhalf, base_size * scale))
-#
-#	# Black bars to prevent flickering:
-#	var odd_offset = Vector2(int(new_window_size.x) % 2, int(new_window_size.y) % 2)
-#
-#	VisualServer.black_bars_set_margins(
-#		max(diffhalf.x, 0), # prevent negative values, they make the black bars go in the wrong direction.
-#		max(diffhalf.y, 0),
-#		max(diffhalf.x, 0) + odd_offset.x,
-#		max(diffhalf.y, 0) + odd_offset.y
-#	)
+func _on_screen_resized():
+	var new_window_size = OS.window_size
+
+	var scale_w = max(int(new_window_size.x / base_size.x), 1)
+	var scale_h = max(int(new_window_size.y / base_size.y), 1)
+	var scale = min(scale_w, scale_h)
+
+	var diff = new_window_size - (base_size * scale)
+	var diffhalf = (diff * 0.5).floor()
+
+	root.set_attach_to_screen_rect(Rect2(diffhalf, base_size * scale))
+
+	# Black bars to prevent flickering:
+	var odd_offset = Vector2(int(new_window_size.x) % 2, int(new_window_size.y) % 2)
+
+	VisualServer.black_bars_set_margins(
+		max(diffhalf.x, 0), # prevent negative values, they make the black bars go in the wrong direction.
+		max(diffhalf.y, 0),
+		max(diffhalf.x, 0) + odd_offset.x,
+		max(diffhalf.y, 0) + odd_offset.y
+	)

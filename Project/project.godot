@@ -105,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project"
-run/main_scene="res://Source/SceneHandler/SceneHandler.tscn"
+run/main_scene="res://Source/RouteScenes/AbyssDungeon/AbyssArea.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -119,11 +119,10 @@ shapes/collision/shape_color=Color( 0.545098, 0.768627, 0.501961, 1 )
 
 [display]
 
-window/size/width=1440
-window/size/height=960
-window/size/always_on_top=true
-window/size/test_width=1440
-window/size/test_height=960
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1920
+window/size/test_height=1080
 window/vsync/vsync_via_compositor=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

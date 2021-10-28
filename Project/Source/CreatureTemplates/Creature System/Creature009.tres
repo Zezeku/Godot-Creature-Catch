@@ -25,4 +25,4 @@ spriteSheet = ExtResource( 2 )
 resourceType = ExtResource( 3 )
 elementType = [ ExtResource( 7 ), ExtResource( 8 ) ]
 skillList = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ) ]
-moveLearn = [ 2, 5, 6, 10 ]
+moveLearn = [ 2, 3, 5, 10 ]

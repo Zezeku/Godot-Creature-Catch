@@ -39,7 +39,8 @@ var stat_mult = [null,null,null,null,null,null,null,null,null,null,null]
 var moveList = [] ;
 
 var moveEffects = [] ; #this will keep track of effects such as poison
-
+var targetEffects = [] ; #this will help an aether creatures find their aether 
+var resourceToDistribute = [] ;
 
 signal UpdatePlayerUI(myself) 
 signal UpdatePlayerUI_Fainted(myself);
@@ -79,6 +80,8 @@ func updateHP(damage_source, damage): #check for fainted here
 		#ie you get 2 full rage bars assuming no healing is done, and no overcapping
 		var addRec = int( (stat[STAT.MAX_RESOURCE] * 2 * damage / stat[STAT.MAX_HP] ) );
 		var rageCap = stat[STAT.MAX_RESOURCE] - stat[STAT.RESOURCE] ;
+		print("updateHP() maxHP: ", stat[STAT.MAX_HP])
+		print("updateHP() damage: ", damage)
 		print("updateHP() addRec: ", addRec) ;
 		stat[STAT.RESOURCE] += clamp(addRec,1,rageCap) ;
 	
@@ -97,6 +100,18 @@ func fainted(_damage_source):
 	var myIndex = my_parent.battleTeam.find(self) ;
 	my_parent.battleTeam[myIndex] = null ;
 	
+	var list_size = enemy_experience_tracker.size() - 1 ;
+	for creature in enemy_experience_tracker.size():
+		if enemy_experience_tracker[list_size - creature].get_parent().name == "Fainted":
+			enemy_experience_tracker.remove(list_size - creature) ;
+	
+	#now distribute experience to remaining player creatures that saw you
+	for creature in enemy_experience_tracker.size():
+		enemy_experience_tracker[creature].gainExp(ceil(experience_given/enemy_experience_tracker.size())+1) ;
+	
+	for effect in moveEffects:
+		effect.destory() ;
+	
 	if my_parent.name == "Enemy":
 		my_parent.get_node("Party").remove_child(self) ;
 		queue_free() ;
@@ -107,19 +122,6 @@ func fainted(_damage_source):
 		my_parent.get_node("Fainted").add_child(self) ;
 		emit_signal("UpdatePlayerUI_Fainted", self) ;
 		emit_signal("UpdateTargetingUI_Fainted", self) ;
-		
-	#damage_source.gainExp(experience_given) ;
-	#remove all fainted playe rcreatures from your list
-	#traverse backwards so we can remove without throwing of indicies
-	var list_size = enemy_experience_tracker.size() - 1 ;
-	for creature in enemy_experience_tracker.size():
-		if enemy_experience_tracker[list_size - creature].get_parent().name == "Fainted":
-			enemy_experience_tracker.remove(list_size - creature) ;
-	
-	#now distribute experience to remaining player creatures that saw you
-	for creature in enemy_experience_tracker.size():
-		enemy_experience_tracker[creature].gainExp(ceil(experience_given/enemy_experience_tracker.size())+1) ;
-	
 	
 
 func gainExp(experience_gain) :
@@ -192,3 +194,6 @@ func resolveEffects():
 		if effects.has_method("destroy"):
 			effects.destroy() ;
 		moveEffects.erase(effects) ;
+	
+	for effects in targetEffects:
+		targetEffects.erase(effects) ;

@@ -129,7 +129,10 @@ func enter(fsm:StateMachine):
 				var mySkill = myself.moveList[my_parent.moveUse[my_index]]
 					
 				if isPlayer and Player.battleTeam[my_index] != null and (Enemy.battleTeam[0] !=null or Enemy.battleTeam[1]!=null) :
-					if my_parent.targetUse[my_index] != null:
+#					print(my_parent.targetUse[my_index])
+#					print(my_parent.targetUse[my_index].is_queued_for_deletion())
+#					print(!my_parent.targetUse[my_index].is_queued_for_deletion())
+					if !my_parent.targetUse[my_index].is_queued_for_deletion(): #should replace with a targetCreature.isFainted check
 						mySkill.execute(myself, my_parent.targetUse[my_index], self) ;
 					else:
 						var new_target ;
@@ -140,7 +143,7 @@ func enter(fsm:StateMachine):
 						mySkill.execute(myself, new_target, self) ;
 					
 				elif !isPlayer and Enemy.battleTeam[my_index] != null and (Player.battleTeam[0] !=null or Player.battleTeam[1] != null):
-					if my_parent.targetUse[my_index] != null:
+					if my_parent.targetUse[my_index] != null: #should replace with a targetCreature.isFainted check
 						mySkill.execute(myself, my_parent.targetUse[my_index], self) ;
 					else:
 						var new_target ;

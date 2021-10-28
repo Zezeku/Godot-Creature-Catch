@@ -1,6 +1,6 @@
 extends Control
 
-const speed_max = 4 ;
+const speed_max = 4.5 ;
 const speed_min = 2 ;
 var speed ;
 const attempts = 3 ;
@@ -44,7 +44,7 @@ func shrinkOuterCircle(delta):
 	if $CanvasLayer/OuterCircleBody.scale <= Vector2.ZERO and attempt < 3:
 		attempt += 1 ;
 		if attempt < 3:
-			$CanvasLayer/OuterCircleBody.scale = Vector2(1,1) ;
+			$CanvasLayer/OuterCircleBody.scale = Vector2(2.5,2.5) ;
 	elif attempt >= 3:
 		checkOverlap() ;
 	else:
@@ -65,7 +65,7 @@ func checkOverlap():
 	emit_signal("done") ;
 
 func startOver():
-	$CanvasLayer/OuterCircleBody.scale = Vector2(1,1) ;
+	$CanvasLayer/OuterCircleBody.scale = Vector2(2,2) ;
 	attempt = 0 ;
 	end = false ;
 	rng.randomize() ;

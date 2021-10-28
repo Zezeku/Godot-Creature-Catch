@@ -57,7 +57,11 @@ export(SKILL_TARGET) var skillTarget
 
 #checking if enough energy
 func pre_execute(source):
-	return resourceCost <= source.getResource(resourceType.resourceName) ;
+	
+	if resourceType.resourceName != "Aether":
+		return resourceCost <= source.getResource(resourceType.resourceName) ;
+	else:
+		return true ;
 	#if aether, one more step - show all current aethers location
 	#and retarget them, lose current effect on target
 
@@ -70,6 +74,12 @@ func execute(source, target, _state):
 	
 	source.updateResource(resourceCost, resourceType.resourceName)
 	#aether needs to store cost and target somwehere
+	
+	if resourceType.resourceName == "Aether" and source.resourceToDistribute.size() > 0:
+		for aether in source.resourceToDistribute:
+			aether.my_target.moveEffects.erase(aether) ;
+			aether.my_source.targetEffects.erase(aether) ;
+		source.resourceToDistribute = [] ;
 	
 	for skill in skillEffect:
 		skill.execute(source, target, self) ;

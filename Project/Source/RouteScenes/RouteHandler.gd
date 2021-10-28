@@ -15,7 +15,15 @@ var route_dict = {
 		"my_path": "res://Source/RouteScenes/Route2/Route2Scene.tscn",
 		"my_respawn": Vector2(-89,77),
 		"my_z_index": 1
+	},
+	
+	"DungeonRoute": {
+		"my_name": "DungeonRoute",
+		"my_path": "res://Source/RouteScenes/Dungeon1/DungeonRoute.tscn",
+		"my_respawn": Vector2(0,0),
+		"my_z_index": 1
 	}
+	
 } ;
 
 func _ready():

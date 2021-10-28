@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var friction = 500 ;
 var acceleration = 500 ;
-var max_speed = 60 ;
+var max_speed = 50 ;
 var velocity = Vector2.ZERO;
 var isActive = true ;
 
@@ -11,6 +11,8 @@ onready var animationPlayer = $AnimationPlayer ;
 onready var animationTree = $AnimationTree ;
 onready var animationState = animationTree.get("parameters/playback") ;
 
+#func _ready():
+#	set_physics_process(false) ;
 
 func _physics_process(delta):
 	if isActive:
@@ -35,7 +37,7 @@ func _physics_process(delta):
 
 func _input(event):
 	if event.is_action_pressed("Sprint"):
-		max_speed = 100 ;
+		max_speed = 75 ;
 	if event.is_action_released("Sprint"):
-		max_speed = 60 ;
+		max_speed = 50 ;
 

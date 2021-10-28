@@ -30,3 +30,11 @@ func react(_source, _target, skill):
 			print("forced perspective react(): addRec: ", addRec) ;
 			my_target.stat[my_target.STAT.RESOURCE] += clamp(addRec,1,rageCap) ;
 	
+
+func destory():
+	#not sure this is necessary once targeting is correct
+	if !my_source.is_queued_for_deletion():
+		my_source.updateResource(-1*my_resourceCost, "Aether") ;
+		my_source.targetEffects.erase(self) ;
+	if !my_target.is_queued_for_deletion():
+		my_target.moveEffects.erase(self) ;

@@ -5,12 +5,13 @@ onready var playerController = get_node("YSort/PlayerController");
 
 
 onready var my_route_dict = {
-	"my_name": "Route2Scene",
-	"my_path": "res://Source/RouteScenes/Route2/Route2Scene.tscn",
+	"my_name": name,
+	"my_path": filename,
 	"my_respawn": Vector2(-89,77),
 	"my_z_index": 1, 
 	"NPCX": $YSort/NPCX.itemGiven,
-	"NPCX2": $YSort/NPCX2.itemGiven
+	"NPCX2": $YSort/NPCX2.itemGiven,
+	"NPCX3": $YSort/NPCX3.itemGiven
 } ;
 
 func LoadMyData():
@@ -18,6 +19,7 @@ func LoadMyData():
 	playerController.z_index = my_route_dict["my_z_index"] ;
 	$YSort/NPCX.itemGiven = my_route_dict["NPCX"] ;
 	$YSort/NPCX2.itemGiven = my_route_dict["NPCX2"] ;
+	$YSort/NPCX3.itemGiven = my_route_dict["NPCX3"] ;
 	
 	$Bridges.set_collision_layer_bit(0, false) ;
 	$Bridges.set_collision_mask_bit(0, false) ;
@@ -28,8 +30,8 @@ func setPlayerCamera(visible):
 
 func _on_RouteChange_body_entered(body):
 	if body.name == "PlayerController":
-		get_parent().routeHandler.changeRespawn("Route1Scene", Vector2(730,-220), 1) ;
-		get_parent().changeRoute("Route1Scene") ;
+		get_parent().routeHandler.changeRespawn("DungeonRoute", Vector2(184,24), 1) ;
+		get_parent().changeRoute("DungeonRoute") ;
 
 
 func _on_Stairs_Area_body_entered(body):
@@ -87,3 +89,8 @@ func _on_Bridge_Area_body_exited(body):
 
 
 
+
+
+func _on_HealParty_body_entered(body):
+	if body.name == "PlayerController":
+		get_node("../Player").healParty() ;

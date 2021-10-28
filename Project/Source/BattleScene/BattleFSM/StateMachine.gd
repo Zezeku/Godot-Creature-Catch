@@ -65,3 +65,7 @@ func _on_BattleUIHandler_TargetSelect(targetSelect):
 
 func _on_BattleUIHandler_SwitchSelect(creatureSelection):
 	state.inputSwitchSelect(creatureSelection) ;
+
+
+func _on_BattleUIHandler_AetherDistribute():
+	state.AetherDistribute() ;

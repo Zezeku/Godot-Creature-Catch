@@ -7,6 +7,7 @@ signal ItemSelect(item_key);
 signal MoveSelect(moveSelection) ;
 signal SwitchSelect(creatureSelection) ;
 signal TargetSelect(targetSelect) ;
+signal AetherDistribute ;
 
 func FinishBattleStart():
 	emit_signal("FinishBattleStart") ;
@@ -25,3 +26,6 @@ func SwitchSelect(creatureSelection):
 
 func TargetSelect(targetSelect):
 	emit_signal("TargetSelect", targetSelect) ;
+
+func AetherDistribute():
+	emit_signal("AetherDistribute") ;
