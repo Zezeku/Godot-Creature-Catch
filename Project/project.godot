@@ -105,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project"
-run/main_scene="res://Source/RouteScenes/AbyssDungeon/AbyssArea.tscn"
+run/main_scene="res://Source/RouteScenes/Intro_AbyssRoute/NewGame_AbyssRoute.tscn"
 config/icon="res://icon.png"
 
 [autoload]

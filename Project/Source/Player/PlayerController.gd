@@ -4,7 +4,7 @@ var friction = 500 ;
 var acceleration = 500 ;
 var max_speed = 50 ;
 var velocity = Vector2.ZERO;
-var isActive = true ;
+var isActive = true ; #dont think i need anymore, now that i know i can turn off process with set_physicsProcess
 
 
 onready var animationPlayer = $AnimationPlayer ;
@@ -22,6 +22,8 @@ func _physics_process(delta):
 		input_vector = input_vector.normalized();
 			
 		if input_vector != Vector2.ZERO:
+			if !animationTree.active: #we check for this because in some cases like cutscenes, we override the animation tree
+				animationTree.active = true ; #not doing so causes the sprite to change to default animation tree frame when we dont want it to
 			animationTree.set("parameters/Idle/blend_position",input_vector) ;
 			animationTree.set("parameters/Walk/blend_position",input_vector) ;
 			animationState.travel("Walk") ;
@@ -35,9 +37,11 @@ func _physics_process(delta):
 		move_and_slide(velocity) ;
 	
 
-func _input(event):
-	if event.is_action_pressed("Sprint"):
-		max_speed = 75 ;
-	if event.is_action_released("Sprint"):
-		max_speed = 50 ;
+#func _input(event):
+#	if event.is_action_pressed("Sprint"):
+#		max_speed = 50 ;
+#	if event.is_action_released("Sprint"):
+#		max_speed = 50 ;
 
+func setSpeed(speed):
+	max_speed = speed ;
