@@ -1,17 +1,21 @@
 extends Node2D
 
-onready var templeStart_ypos = $TempleBackground.position.y + 5 + $TempleBackground/TempleTexture.rect_size.y / 2 ;
 
 func _ready():
 	set_process(false) ;
 	initializePlayerController() ;
 	$AbyssIntroCutscenes.play("Abyss_Intro") ;
 	yield($AbyssIntroCutscenes, "animation_finished") ;
+	
+	
 
 func _process(_delta):
-	$TempleBackground/TempleTexture.rect_position.y = ($PlayerController.position.y - templeStart_ypos) * 0.85;
-	print($TempleBackground/TempleTexture.rect_position.y)
-
+	var offset = $TempleBackground.position.y + $TempleBackground/TempleTexture.texture.get_height() - 130 ;
+	var curr_pos = $TempleBackground/TempleTexture.position.y
+	var target_pos = ($PlayerController.position.y - offset) * 0.90 ;
+	
+	$TempleBackground/TempleTexture.position.y = lerp(curr_pos, target_pos, 0.2) ;
+	
 
 func _on_ScrollTrigger_body_entered(body):
 	if body.name == "PlayerController":
@@ -42,3 +46,9 @@ func _on_PlayerBoundaries_body_exited(body):
 	if body.name == "PlayerController":
 		if !$AbyssIntroCutscenes.is_playing():
 			$AbyssIntroCutscenes.play("Abyss_Reset") ;
+
+
+func _on_OutroTrigger_body_entered(body):
+	if body.name == "PlayerController":
+		print("playing outro sequence")
+		

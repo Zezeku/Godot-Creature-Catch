@@ -44,4 +44,15 @@ func _physics_process(delta):
 #		max_speed = 50 ;
 
 func setSpeed(speed):
+	
+	
+	
 	max_speed = speed ;
+
+func move_to(pos, time):
+	
+	$Tween.interpolate_property(self, "position", position, pos, time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT) ;
+	$Tween.start() ;
+
+func play_anim(animation):
+	$AnimationPlayer.play(animation) ;

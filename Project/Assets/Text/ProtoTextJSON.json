@@ -1,0 +1,43 @@
+{
+	"$baseURI": "https://yal.cc/r/20/pixelfont/",
+	"$version": "1.0",
+	"in-glyphs": [
+		"ABCDEFGHIJ",
+		"KLMNOPQRST",
+		"UVWXYZ",
+		"abcdefghij",
+		"klmnopqrst",
+		"uvwxyz"
+	],
+	"glyph-color": "opaque",
+	"in-kerning": [
+		""
+	],
+	"glyph-width": 8,
+	"glyph-height": 16,
+	"glyph-ofs-x": 17,
+	"glyph-ofs-y": 15,
+	"glyph-sep-x": 2,
+	"glyph-sep-y": 2,
+	"glyph-base-x": 0,
+	"glyph-baseline": 0,
+	"glyph-spacing": 2,
+	"font-is-mono": false,
+	"font-em-square": 1024,
+	"font-line-gap": 768,
+	"font-ascend": 768,
+	"font-descend": -256,
+	"font-px-size": 128,
+	"font-name": "Mystery Font",
+	"font-author": "You, of course",
+	"font-copy": "(c)",
+	"font-version": "Version 1.0",
+	"font-desc": "Sweet fonts to leave your worries behind you",
+	"font-license": "You have the permission",
+	"font-license-url": "",
+	"font-sample-text": "Hello!",
+	"font-preview-text": [
+		" Do the little letters work",
+		"why are the little letters so close"
+	]
+}
